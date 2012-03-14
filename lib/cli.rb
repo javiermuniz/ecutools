@@ -1,4 +1,5 @@
 require 'optparse'
+require 'thor'
 
 module ECUTools
   class CLI < Thor
@@ -9,15 +10,16 @@ module ECUTools
     
     default_task :disassemble
     
-    desc "disassemble", "Disassembles a ROM into the current working directory"
+    desc "disassemble <ROM>", "Disassembles a ROM into the current working directory"
     long_desc <<-D
       Dissassemble will take a hex or binary ROM and disassemble it into the proper M32R assembly code.
       Tables and data will be disassembled as code, which will need to be sorted out by the user.
     D
-    method_option "from", :type => :string, :required => true, :banner =>
-      "The ROM to disassemble"
-    def disassemble
-      puts "disassemble called"
+    method_option "out", :type => :string, :aliases => "-o", :banner =>
+      "The output filename. If none is provided the rom name will be used with a .asm extension"
+    def disassemble(rom)
+      outfile = "#{File.basename(rom, File.extname(rom))}.asm"
+      %x!gobjdump -b binary --architecture=m32r --disassemble-all --disassemble-zeroes -EB #{rom} > #{outfile}!
     end
   end
 end
