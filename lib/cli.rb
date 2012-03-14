@@ -21,5 +21,22 @@ module ECUTools
       outfile = "#{File.basename(rom, File.extname(rom))}.asm"
       %x!gobjdump -b binary --architecture=m32r --disassemble-all --disassemble-zeroes -EB #{rom} > #{outfile}!
     end
+    
+    desc "baseaddress <ROM>", "Returns the base address of the given ROM"
+    long_desc <<-D
+      Returns the base address for use when finding absolute addresses in memory.
+    D
+    def baseaddress(rom)
+      %x!gobjdump -b binary --architecture=m32r --disassemble-all --disassemble-zeroes -EB #{rom} > .temp.asm!
+      file = File.new('.temp.asm')
+      while (line = file.gets)
+        if line =~ /st r3,@r0 \|\| nop/ then
+          l2 = file.gets
+          fp = /ld24 fp,(0x\w+)/.match(l2)
+          puts fp[1]
+        end
+      end
+      %x!rm .temp.asm!
+    end
   end
 end
