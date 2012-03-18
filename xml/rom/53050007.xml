@@ -1,0 +1,25 @@
+<!-- 
+GoldenEvo.com Definition File 
+ by Michael Golden 
+
+ donations at golden@goldenevo.com 
+-->
+<rom>
+  <romid>
+    <xmlid>53050007</xmlid>
+    <internalidaddress>5002a</internalidaddress>
+    <internalidhex>53050007</internalidhex>
+    <make>Mitsubishi</make>
+    <market>EDM</market>
+    <model>Lancer</model>
+    <submodel>Evolution X</submodel>
+    <transmission>SST</transmission>
+    <year>2008</year>
+    <flashmethod>mitsucan</flashmethod>
+    <memmodel>M32186F8</memmodel>
+    <checksummodule>mitsucan</checksummodule>
+  </romid>
+
+  <include>53050006</include>
+
+</rom>

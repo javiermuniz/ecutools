@@ -11,8 +11,7 @@ module ECUTools
     end
     
     def open(file)
-      lines = load file
-      @assembly = process lines
+      @assembly = load file
     end
     
     def write(file)
@@ -23,21 +22,17 @@ module ECUTools
       header << "\#\n"
       f.write(header)
       @assembly.each do |instruction|
-        f.write(instruction)
+        f.write("#{instruction}\n")
       end
     end
     
     private
     
     def load(file)
-      `gobjdump -b binary --architecture=m32r --disassemble-all --disassemble-zeroes -EB #{input}`.split("\n")
-    end
-    
-    # process raw objdump output into an assembly digest hash
-    def process(lines)
       h = '[\d|[a-f]|[A-F]]'
       assembly = []
-      lines.each do |line|
+      io = IO.popen("gobjdump -b binary --architecture=m32r --disassemble-all --disassemble-zeroes -EB #{file}")
+      while line = io.gets
         match = /\s+(#{h}+):\s+(#{h}{2}) (#{h}{2}) (#{h}{2}) (#{h}{2})\s+(.+)/.match(line)
         if match
           assembly << Instruction.new(match[1], [ match[2], match[3], match[4], match[5] ], match[6])
@@ -52,9 +47,9 @@ module ECUTools
     end
     
     def base_address
-      @assembly.each_with_index do |i,instruction|
+      @assembly.each_with_index do |instruction,i|
         if instruction.assembly == "st r3,@r0 \|\| nop"
-          match = /ld24 fp,(0x\w+)/.match(@assembly[i+1])
+          match = /ld24 fp,(0x\w+)/.match(@assembly[i+1].assembly)
           return match[1] if match
         end
       end

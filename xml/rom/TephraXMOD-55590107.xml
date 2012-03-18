@@ -1,0 +1,69 @@
+<!-- COPY THE FILE INTO YOUR ECUFLASH ROMMETADATA.... DIRECTORY -->
+<rom>
+	<romid>
+		<xmlid>55590107</xmlid>
+		<internalidaddress>5002a</internalidaddress>
+		<internalidhex>55590107</internalidhex>
+		<make>Mitsubishi</make>
+		<market>USDM</market>
+		<model>Lancer</model>
+		<submodel>Ralliart</submodel>
+		<transmission>SST</transmission>
+		<year>2010</year>
+		<flashmethod>mitsucan</flashmethod>
+		<memmodel>M32186F8</memmodel>
+		<checksummodule>mitsucan</checksummodule>
+	</romid>
+
+	<include>55590007</include>
+
+	<table name="Alt Fuel Injector Scaling" address="efffe" category="TephraXMOD V1" type="1D" scaling="InjectorScaling"/>
+
+	<table name="Alt High Octane Fuel Map" address="f0007" category="TephraXMOD V1" type="3D" swapxy="true" scaling="AFR">
+		<table name="Load" type="X Axis" address="6112c" elements="21" scaling="Load"/>
+		<table name="RPM" type="Y Axis" address="61106" elements="16" scaling="RPM"/>
+	</table>
+
+	<table name="Alt High Octane Timing Map" address="f0167" category="TephraXMOD V1" type="3D" swapxy="true" scaling="Timing">
+		<table name="Load" type="X Axis" address="611a6" elements="22" scaling="Load"/>
+		<table name="RPM" type="Y Axis" address="61172" elements="23" scaling="RPM"/>
+	</table>
+
+	<table name="Alt Reactive Solenoid Base WGDC Map #2 (Low Gear Range)" address="f0377" category="TephraXMOD V1" type="3D" swapxy="true" scaling="WGDuty">
+		<table name="Throttle" type="X Axis" address="6286a" elements="9" scaling="Throttle %"/>
+		<table name="RPM" type="Y Axis" address="627e8" elements="18" scaling="RPM"/>
+	</table>
+
+	<table name="Alt Reactive Solenoid Base WGDC Map #1A (High Gear Range)" address="f0427" category="TephraXMOD V1" type="3D" swapxy="true" scaling="WGDuty">
+		<table name="Throttle" type="X Axis" address="6286a" elements="9" scaling="Throttle %"/>
+		<table name="RPM" type="Y Axis" address="627e8" elements="18" scaling="RPM"/>
+	</table>
+
+	<table name="Alt Boost Target Engine Load #2 (Low Gear Range)" address="f0517" category="TephraXMOD V1" type="3D" swapxy="true" scaling="Load8">
+		<table name="Throttle" type="X Axis" address="6286a" elements="9" scaling="Throttle %"/>
+		<table name="RPM" type="Y Axis" address="627e8" elements="18" scaling="RPM"/>
+	</table>
+
+	<table name="Alt Boost Target Engine Load #1A (High Gear Range)" address="f05c7" category="TephraXMOD V1"  type="3D" swapxy="true" scaling="Load8">
+		<table name="Throttle" type="X Axis" address="6286a" elements="9" scaling="Throttle %"/>
+		<table name="RPM" type="Y Axis" address="627e8" elements="18" scaling="RPM"/>
+	</table>
+
+  <table name="Alt Cranking Enrichment IPW Adder (Main)" address="f0676" category="TephraXMOD V1" type="2D" scaling="TimeInjCranking">
+    <table name="Coolant Temperature" address="6124e" type="Y Axis" elements="9" scaling="Temp"/>
+  </table>
+
+	<scaling name="ECUTime" units="ms" toexpr="1000*x/102" frexpr="102*x/1000" format="%.0f" min="0" max="100000" inc="10" storagetype="uint16" endian="big"/>
+	<scaling name="Percent256" units="%" toexpr="100*x/256" frexpr="256*x/100" format="%.1f" min="0" max="100" inc="0.5" storagetype="uint16" endian="big"/>
+
+	<table name="Load Required for CEL on Knock" category="TephraXMOD V1" address="fb490" type="1D" scaling="Load"/>
+	<table name="KnockSum Required for Slow CEL (Low Knock)" category="TephraXMOD V1" address="fb492" type="1D" scaling="uint16"/>
+	<table name="KnockSum Required for Fast CEL (High Knock)" category="TephraXMOD V1" address="fb494" type="1D" scaling="uint16"/>
+	<table name="Knock CEL Flash time" category="TephraXMOD V1" address="fb496" type="1D" scaling="ECUTime"/>
+
+	<table name="Alternate Map Master (0=OFF, 1=5V ADC, 2=CruiseControl, 3=TPS, 4=Ground ADC)" category="TephraXMOD V1" address="fb498" type="1D" scaling="uint16"/>
+	<table name="Alternate Map Load Threshold" category="TephraXMOD V1" address="fb49a" type="1D" scaling="Load"/>
+	<table name="Alternate Map Time to Activate" category="TephraXMOD V1" address="fb49c" type="1D" scaling="ECUTime"/>
+	<table name="Alternate Map ADC Threshold" category="TephraXMOD V1" address="fb49e" type="1D" scaling="VoltsADC1023"/>
+	
+</rom>

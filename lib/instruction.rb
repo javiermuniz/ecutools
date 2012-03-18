@@ -1,6 +1,5 @@
 module ECUTools
   class Instruction
-    attr_accessible :address, :words, :comments, :assembly
     
     def initialize(address, words, assembly)
       @address = address
@@ -10,7 +9,11 @@ module ECUTools
     end
     
     def to_s
-      "#{@address}: #{@words.join(' ')}: #{@assembly} \##{@comments.join(' ')}"
+      "#{@address}\t#{@words.join(' ')}\t\t#{@assembly}" + (@comments.length > 0 ? "\t\t\##{@comments.join(', ')}" : '')
+    end
+    
+    def assembly
+      @assembly
     end
     
   end
