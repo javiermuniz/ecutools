@@ -46,8 +46,8 @@ module ECUTools
         end
       end
       
-      $stderr.puts "WARNING: Base address unknown!" if verbose
-      @base_address = "*unknown*" 
+      $stderr.puts "WARNING: Base address unknown! Setting to 0 (THIS IS WRONG!)" if verbose
+      @base_address = 0 
     end
     
     def absolute_address(relative_address)
@@ -59,10 +59,21 @@ module ECUTools
       @address_descriptions = {}
       xml = Nokogiri::XML(File.open(File.dirname(__FILE__) + "/../xml/ram/#{rom_id}.xml"))
       xml.xpath('/EvoScanDataLogger/vehicle/ecu/Mode2/DataListItem').each do |node|
-        @address_descriptions[node.attr('RequestID')[2..-1]] = node.attr('Notes')
+        @address_descriptions[node.attr('RequestID')[2..-1]] = node.attr('Display')
       end
       
       @address_descriptions
+    end
+    
+    def subroutine_descriptions
+      return @subroutine_descriptions if @subroutine_descriptions
+      @subroutine_descriptions = {}
+      xml = Nokogiri::XML(File.open(File.dirname(__FILE__) + "/../xml/code/#{rom_id}.xml"))
+      xml.xpath('/rom/routine').each do |node|
+        @address_descriptions[node.attr('address')] = node.attr('name')
+      end
+      
+      @subroutine_descriptions
     end
     
     def rom_xml

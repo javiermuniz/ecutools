@@ -97,6 +97,7 @@ module ECUTools
         storage_size.times do |n|
           instruction = instruction_at(address + n)
           instruction.comments[0] = table.attr('name') + "(0x#{table.attr('address')} -> 0x#{(address + storage_size - 1).to_s(16)}, #{storage_size} bytes)"
+          instruction.data = true
         end
         
         $stderr.puts "Annotated: #{table.attr('name')}" if verbose
@@ -105,10 +106,23 @@ module ECUTools
       $stderr.puts "#{count} tables annotated." if verbose
     end
     
+    def annotate_subroutines
+       # annotate subroute prologue/epilogue
+        if instruction.assembly =~ /push lr/
+          c = 'begin subroutine'
+          c << " #{subroutine_descriptions[instruction.address]}" if subroutine_descriptions.include? instruction.address
+          instruction.comments << c
+        end
+        if instruction.assembly =~ /jmp lr/ 
+          instruction.comments << 'return'
+        end
+    end
+    
     def annotate_code
       $stderr.puts "Annotating code..." if verbose
       count = 0
-      found_addresses = {}
+      found_rom_addresses = {}
+      found_ram_addresses = {}
       @assembly.each do |instruction|
         
         # annotate address references
@@ -117,24 +131,23 @@ module ECUTools
           instruction.comments << "contains possible reference to '#{@reference_addresses[address[1]]}'"
           $stderr.puts "Annotated reference to: #{@reference_addresses[address[1]]} at #{instruction.address}" if verbose
           count = count + 1
-          found_addresses[@reference_addresses[address[1]]] = true 
+          found_rom_addresses[@reference_addresses[address[1]]] = true 
         end
         
-        # annotate subroute prologue/epilogue
-        if instruction.assembly =~ /push lr/
-          instruction.comments << 'begin subroutine'
-          count = count + 1
-        end
-        if instruction.assembly =~ /jmp lr/ 
-          instruction.comments << 'return'
-          count = count + 1
+        # annotate subroutine calls
+        match = /bl 0x(\w+)/.match(instruction.assembly)
+        if match
+          address = match[1]
+          if subroutine_descriptions.include? address
+            instruction.comments << "Call #{subroutine_descriptions[address]}"
+          end
         end
         
-        # annotate RAM addressing
+        # annotate relative RAM addressing
         match = /(\w+)\s+.+?@\((-?\d+),fp\)/.match(instruction.assembly)
         if match
           address = absolute_address match[2].to_i
-          notes = address_descriptions[address]
+          display = address_descriptions[address]
           
           case match[1]
           when "lduh"
@@ -151,20 +164,27 @@ module ECUTools
             op = "Store byte at"
           when "sth"
             op = "Store half word at"
+          when "bclr"
+              op = "Clear bit in"
           else
             op = "Unknown op on"
           end
-          if !notes.nil? and verbose
-            $stderr.puts "Found reference to RAM address #{address} (#{notes})"
+          if !display.nil? and verbose
+            $stderr.puts "Found reference to RAM address #{address} (#{display})"
           end
-          instruction.comments << "#{op} 0x#{address}" + (notes.nil? ? '' : "(#{notes})")
+          instruction.comments << "#{op} RAM address 0x#{address}" + (display.nil? ? '' : " (#{display})")
+          found_ram_addresses[display] = true if !display.nil?
+          count = count + 1
         end
       end
       $stderr.puts "#{count} lines of code annotated." if verbose
       if verbose
         @reference_addresses.each_key do |key|
-          $stderr.puts "Unable to find any reference to #{@reference_addresses[key]}" if !found_addresses.include? @reference_addresses[key]
-          found_addresses[@reference_addresses[key]] = true # stop multiple reports
+          $stderr.puts "Unable to find any reference to table #{@reference_addresses[key]}" if !found_rom_addresses.include? @reference_addresses[key]
+          found_rom_addresses[@reference_addresses[key]] = true # stop multiple reports
+        end
+        address_descriptions.each_key do |key|
+          $stderr.puts "Unable to find any reference to RAM address #{address_descriptions[key]} (#{key})" if !found_ram_addresses.include? address_descriptions[key]
         end
       end
     end

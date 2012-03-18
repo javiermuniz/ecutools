@@ -6,14 +6,26 @@ module ECUTools
       @bytes = bytes
       @assembly = assembly
       @comments = []
+      @data = !(/unknown/.match(assembly).nil?)
     end
     
     def to_s
-      "#{@address}:\t#{@bytes.join(' ')}\t#{@assembly}" + (@comments.length > 0 ? "\t; #{@comments.join(', ')}" : '')
+      s = "0x#{@address}:\t#{@bytes.join(' ')}"
+      s << "\t#{@assembly}" if (!data) 
+      s << "\t; #{@comments.join(', ')}" if @comments.length > 0
+      s
     end
     
     def address
       @address
+    end
+    
+    def data
+      @data
+    end
+    
+    def data=(val)
+      @data=val
     end
     
     def assembly
