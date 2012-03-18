@@ -70,7 +70,7 @@ module ECUTools
       @subroutine_descriptions = {}
       xml = Nokogiri::XML(File.open(File.dirname(__FILE__) + "/../xml/code/#{rom_id}.xml"))
       xml.xpath('/rom/routine').each do |node|
-        @address_descriptions[node.attr('address')] = node.attr('name')
+        @subroutine_descriptions[node.attr('address')] = node.attr('name')
       end
       
       @subroutine_descriptions

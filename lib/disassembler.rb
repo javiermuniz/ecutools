@@ -6,7 +6,7 @@ require 'nokogiri'
 module ECUTools
   class Disassembler
     include ECUTools::Helpers
-    
+
     def initialize(input = nil, options = {})
       @options = options
       @reference_addresses = {}
@@ -14,11 +14,11 @@ module ECUTools
         open input
       end
     end
-    
+
     def verbose
       @options[:verbose]
     end
-    
+
     def open(file)
       $stderr.puts "Disassembling binary..." if verbose
       h = '[\d|[a-f]|[A-F]]'
@@ -30,10 +30,10 @@ module ECUTools
           @assembly << Instruction.new(match[1], [ match[2], match[3], match[4], match[5] ], match[6])
         end
       end
-      
+
       $stderr.puts "Disassembly complete." if verbose
     end
-    
+
     def write(file)
       f = File.new(file,"w")
       header = "; ecutools v#{ECUTools::VERSION}\n"
@@ -47,14 +47,15 @@ module ECUTools
       end
       $stderr.puts "Done." if verbose
     end
-    
+
     def analyze
       $stderr.puts "Analyzing assembly..." if verbose
       annotate_tables
+      annotate_subroutines
       annotate_code
       $stderr.puts "Analyzation complete." if verbose
     end
-    
+
     def annotate_tables
       $stderr.puts "Annotating tables..." if verbose
       tables = rom_xml.xpath('/rom/table')
@@ -63,13 +64,15 @@ module ECUTools
         elements = 1 # all tables start with one element
         element_size = rom_xml.xpath("/rom/scaling[@name='#{table.attr('scaling')}']").attr('storagetype').value().gsub(/[^\d]+/,'').to_i / 8
         address = from_hex table.attr('address')
-        
+        is_data = false
+
         table.xpath('table').each do |subtable|
           elements = elements * subtable.attr('elements').to_i
+          is_data = true
         end
-        
+
         possible_offsets = []
-        
+
         case elements
         when 1,4
           possible_offsets << 0
@@ -83,7 +86,7 @@ module ECUTools
           possible_offsets << 10
           possible_offsets << 16
         end
-        
+
         possible_offsets.each do |offset|
           offset_hex = (address - offset).to_s(16)
           if verbose and @reference_addresses.include? offset_hex
@@ -91,23 +94,32 @@ module ECUTools
           end
           @reference_addresses[offset_hex] = table.attr('name')
         end
-        
+
         storage_size = element_size * elements
-        
+
         storage_size.times do |n|
           instruction = instruction_at(address + n)
           instruction.comments[0] = table.attr('name') + "(0x#{table.attr('address')} -> 0x#{(address + storage_size - 1).to_s(16)}, #{storage_size} bytes)"
-          instruction.data = true
+          instruction.data = is_data
         end
-        
+
         $stderr.puts "Annotated: #{table.attr('name')}" if verbose
         count = count + 1
       end
       $stderr.puts "#{count} tables annotated." if verbose
     end
-    
+
     def annotate_subroutines
-       # annotate subroute prologue/epilogue
+
+    end
+
+    def annotate_code
+      $stderr.puts "Annotating code..." if verbose
+      count = 0
+      found_rom_addresses = {}
+      found_ram_addresses = {}
+      @assembly.each do |instruction|
+        # annotate subroute prologue/epilogue
         if instruction.assembly =~ /push lr/
           c = 'begin subroutine'
           c << " #{subroutine_descriptions[instruction.address]}" if subroutine_descriptions.include? instruction.address
@@ -116,24 +128,7 @@ module ECUTools
         if instruction.assembly =~ /jmp lr/ 
           instruction.comments << 'return'
         end
-    end
-    
-    def annotate_code
-      $stderr.puts "Annotating code..." if verbose
-      count = 0
-      found_rom_addresses = {}
-      found_ram_addresses = {}
-      @assembly.each do |instruction|
-        
-        # annotate address references
-        address = /0x([\d|[a-f]|[A-F]]+)/.match(instruction.assembly)
-        if address and @reference_addresses.include? address[1]
-          instruction.comments << "contains possible reference to '#{@reference_addresses[address[1]]}'"
-          $stderr.puts "Annotated reference to: #{@reference_addresses[address[1]]} at #{instruction.address}" if verbose
-          count = count + 1
-          found_rom_addresses[@reference_addresses[address[1]]] = true 
-        end
-        
+
         # annotate subroutine calls
         match = /bl 0x(\w+)/.match(instruction.assembly)
         if match
@@ -143,12 +138,41 @@ module ECUTools
           end
         end
         
+        # annotate table address references
+        address = /0x([\d|[a-f]|[A-F]]+)/.match(instruction.assembly)
+        if address and @reference_addresses.include? address[1]
+          instruction.comments << "contains possible reference to '#{@reference_addresses[address[1]]}'"
+          $stderr.puts "Annotated reference to: #{@reference_addresses[address[1]]} at #{instruction.address}" if verbose
+          count = count + 1
+          found_rom_addresses[@reference_addresses[address[1]]] = true 
+        end
+        
+        # annotate absolute RAM addressing ld24 r4,0x800700
+        match = /(\w+)\s+\w\w,0x(8\w\w\w\w\w)/.match(instruction.assembly)
+        if match
+          address = match[2]
+          display = address_descriptions[address]
+          
+          if match[1] == "ld24"
+            op = "Assign pointer to"
+          else
+            op = "Unknown op on"
+          end
+            
+          if !display.nil? and verbose
+            $stderr.puts "Found reference to absolute RAM address #{address} (#{display})"
+          end
+          instruction.comments << "#{op} RAM address 0x#{address}" + (display.nil? ? '' : " (#{display})")
+          found_ram_addresses[display] = true if !display.nil?
+          count = count + 1
+        end
+
         # annotate relative RAM addressing
         match = /(\w+)\s+.+?@\((-?\d+),fp\)/.match(instruction.assembly)
         if match
           address = absolute_address match[2].to_i
           display = address_descriptions[address]
-          
+
           case match[1]
           when "lduh"
             op = "Load unsigned halfword from"
@@ -165,18 +189,20 @@ module ECUTools
           when "sth"
             op = "Store half word at"
           when "bclr"
-              op = "Clear bit in"
+            op = "Clear bit in"
           else
             op = "Unknown op on"
           end
           if !display.nil? and verbose
-            $stderr.puts "Found reference to RAM address #{address} (#{display})"
+            $stderr.puts "Found reference to relative RAM address #{address} (#{display})"
           end
           instruction.comments << "#{op} RAM address 0x#{address}" + (display.nil? ? '' : " (#{display})")
           found_ram_addresses[display] = true if !display.nil?
           count = count + 1
         end
+      
       end
+
       $stderr.puts "#{count} lines of code annotated." if verbose
       if verbose
         @reference_addresses.each_key do |key|
@@ -188,6 +214,6 @@ module ECUTools
         end
       end
     end
-    
+
   end
 end

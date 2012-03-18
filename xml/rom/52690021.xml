@@ -1146,5 +1146,11 @@ donations at golden@goldenevo.com
       <data>Catalyst</data> 
     </table>
   </table>
-
+  
+  <table name="Unknown Map #1 vs RPM - Below SST Clutch Pressure" address="50568" category="EcuTools Research" type="2D" scaling="RPM8">
+    <table name="RPM" address="63c7a" type="Y Axis" elements="16" scaling="RPM"/>
+  </table>
+  <table name="Unknown Map #2 vs RPM - Below SST Clutch Pressure" address="5057c" category="EcuTools Research" type="2D" scaling="RPM8">
+    <table name="RPM" address="63c7a" type="Y Axis" elements="16" scaling="RPM"/>
+  </table>
 </rom>
