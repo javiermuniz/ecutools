@@ -3,17 +3,17 @@ module ECUTools
     def rom_id
       return @rom_id if @rom_id
       $stderr.puts "Getting ROM ID..." if verbose
-      @rom_id = read_words("5002a", 4).join
+      @rom_id = read_bytes("5002a", 4).join
     end
     
-    def read_words(address, number)
-      words = []
+    def read_bytes(address, number)
+      bytes = []
       start = from_hex address
       number.times do |n|
         inst = instruction_at(start + n)
-        words << inst.words[(start+n) % 4]
+        bytes << inst.bytes[(start+n) % 4]
       end
-      words
+      bytes
     end
     
     def instruction_at(address, strict = false)
@@ -48,6 +48,11 @@ module ECUTools
       
       $stderr.puts "WARNING: Base address unknown!" if verbose
       @base_address = "*unknown*" 
+    end
+    
+    def rom_xml
+      return @rom_xml if @rom_xml
+      @rom_xml = Nokogiri::XML(File.open(File.dirname(__FILE__) + "/../xml/rom/#{rom_id}.xml"))
     end
   end
 end

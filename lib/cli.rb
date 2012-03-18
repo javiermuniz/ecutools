@@ -20,6 +20,7 @@ module ECUTools
     def disassemble(input)
       outfile = "#{File.basename(input, File.extname(input))}.asm"
       dasm = ECUTools::Disassembler.new(input, {:verbose => true})
+      dasm.analyze
       dasm.write(outfile)
     end
 
