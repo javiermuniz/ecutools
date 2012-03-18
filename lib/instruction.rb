@@ -9,7 +9,7 @@ module ECUTools
     end
     
     def to_s
-      "#{@address}:\t#{@words.join(' ')}\t\t#{@assembly}" + (@comments.length > 0 ? "\t\t\##{@comments.join(', ')}" : '')
+      "#{@address}:\t#{@words.join(' ')}\t\t#{@assembly}" + (@comments.length > 0 ? "\t\t// #{@comments.join(', ')}" : '')
     end
     
     def address

@@ -19,7 +19,7 @@ module ECUTools
       "The output filename. If none is provided the rom name will be used with a .asm extension"
     def disassemble(input)
       outfile = "#{File.basename(input, File.extname(input))}.asm"
-      dasm = ECUTools::Disassembler.new(input)
+      dasm = ECUTools::Disassembler.new(input, {:verbose => true})
       dasm.write(outfile)
     end
 

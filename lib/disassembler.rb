@@ -1,17 +1,17 @@
 require 'version'
 require 'instruction'
 require 'helpers'
+require 'nokogiri'
 
 module ECUTools
   class Disassembler
-    
     include ECUTools::Helpers
     
     def initialize(input = nil, options = {})
+      @options = options
       if(!input.nil?)
         open input
       end
-      @options = options
     end
     
     def verbose
@@ -29,21 +29,35 @@ module ECUTools
           @assembly << Instruction.new(match[1], [ match[2], match[3], match[4], match[5] ], match[6])
         end
       end
+      
       $stderr.puts "Disassembly complete." if verbose
     end
     
     def write(file)
-      $stderr.puts "Writing assembly..." if verbose
       f = File.new(file,"w")
-      header = "\# ecutools v#{ECUTools::VERSION}\n"
-      header << "\# Generated assembly, ROM ID #{rom_id}\n"
-      header << "\# Base Address: #{base_address}\n"
-      header << "\#\n"
+      header = "// ecutools v#{ECUTools::VERSION}\n"
+      header << "// Generated assembly, ROM ID #{rom_id}\n"
+      header << "// Base Address: #{base_address}\n"
+      header << "//\n"
       f.write(header)
+      $stderr.puts "Writing assembly..." if verbose
       @assembly.each do |instruction|
         f.write("#{instruction}\n")
       end
       $stderr.puts "Done." if verbose
     end
+    
+    def analyze
+      annotate_tables
+    end
+    
+    def annotate_tables
+      
+    end
+    
+    def list_tables
+      doc = Nokogiri::XML(open(File.dirname(__FILE__) + /xml/))
+    end
+    
   end
 end

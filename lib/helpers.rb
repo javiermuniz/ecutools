@@ -18,7 +18,9 @@ module ECUTools
     
     def instruction_at(address, strict = false)
       address = from_hex address
-      if strict and (address % 4) > 0 raise ""
+      if strict and (address % 4) > 0 
+        raise "Address #{address} does not fall on an instruction boundary and strict is enabled." 
+      end
       @assembly[(address - (address % 4)) / 4]
     end
     
