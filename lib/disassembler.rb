@@ -92,12 +92,11 @@ module ECUTools
           @reference_addresses[offset_hex] = table.attr('name')
         end
         
-        
         storage_size = element_size * elements
         
         storage_size.times do |n|
           instruction = instruction_at(address + n)
-          instruction.comments[0] = table.attr('name') + "(#{table.attr('address')} -> #{(address + storage_size - 1).to_s(16)}, #{storage_size} bytes)"
+          instruction.comments[0] = table.attr('name') + "(0x#{table.attr('address')} -> 0x#{(address + storage_size - 1).to_s(16)}, #{storage_size} bytes)"
         end
         
         $stderr.puts "Annotated: #{table.attr('name')}" if verbose
@@ -130,6 +129,36 @@ module ECUTools
           instruction.comments << 'return'
           count = count + 1
         end
+        
+        # annotate RAM addressing
+        match = /(\w+)\s+.+?@\((-?\d+),fp\)/.match(instruction.assembly)
+        if match
+          address = absolute_address match[2].to_i
+          notes = address_descriptions[address]
+          
+          case match[1]
+          when "lduh"
+            op = "Load unsigned halfword from"
+          when "ldub"
+            op = "Load unsigned byte from"
+          when "ld"
+            op = "Load from"
+          when "ldb"
+            op = "Load byte from"
+          when "st" 
+            op = "Store at"
+          when "stb"
+            op = "Store byte at"
+          when "sth"
+            op = "Store half word at"
+          else
+            op = "Unknown op on"
+          end
+          if !notes.nil? and verbose
+            $stderr.puts "Found reference to RAM address #{address} (#{notes})"
+          end
+          instruction.comments << "#{op} 0x#{address}" + (notes.nil? ? '' : "(#{notes})")
+        end
       end
       $stderr.puts "#{count} lines of code annotated." if verbose
       if verbose
@@ -138,10 +167,6 @@ module ECUTools
           found_addresses[@reference_addresses[key]] = true # stop multiple reports
         end
       end
-    end
-    
-    def list_tables
-      
     end
     
   end

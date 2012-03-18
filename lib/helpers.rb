@@ -50,6 +50,21 @@ module ECUTools
       @base_address = "*unknown*" 
     end
     
+    def absolute_address(relative_address)
+      (base_address.to_i(16) + relative_address).to_s(16)
+    end
+    
+    def address_descriptions
+      return @address_descriptions if @address_descriptions
+      @address_descriptions = {}
+      xml = Nokogiri::XML(File.open(File.dirname(__FILE__) + "/../xml/ram/#{rom_id}.xml"))
+      xml.xpath('/EvoScanDataLogger/vehicle/ecu/Mode2/DataListItem').each do |node|
+        @address_descriptions[node.attr('RequestID')[2..-1]] = node.attr('Notes')
+      end
+      
+      @address_descriptions
+    end
+    
     def rom_xml
       return @rom_xml if @rom_xml
       @rom_xml = Nokogiri::XML(File.open(File.dirname(__FILE__) + "/../xml/rom/#{rom_id}.xml"))
