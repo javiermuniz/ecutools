@@ -1,6 +1,6 @@
 module ECUTools
   class Assembler
-    instructions = [ 
+    @@instructions = [ 
       :invalid, :add, :add3, :and, :and3, :or, :or3, :xor,
       :xor3, :addi, :addv, :addv3, :addx, :bc8, :bc24, :beq, 
       :beqz, :bgez, :bgtz, :blez, :bltz, :bnez, :bl8, :bl24, :bcl8, :bcl24, :bnc8, :bnc24,
@@ -14,6 +14,9 @@ module ECUTools
       :srai, :srl, :srl3, :srli, :st, :st_d, :stb, :stb_d, :sth, :sth_d, :st_plus, :st_minus,
       :sub, :subv, :subx, :trap, :unlock, :satb, :sath, :sat, :pcmpbz, :sadd, :macwu1, :msblo,
       :mulwu1, :maclh1, :sc, :snc, :max ]
+      
+    def initialize
+    end
     
   end
 end

@@ -9,11 +9,32 @@ module ECUTools
     end
     
     def to_s
-      "#{@address}\t#{@words.join(' ')}\t\t#{@assembly}" + (@comments.length > 0 ? "\t\t\##{@comments.join(', ')}" : '')
+      "#{@address}:\t#{@words.join(' ')}\t\t#{@assembly}" + (@comments.length > 0 ? "\t\t\##{@comments.join(', ')}" : '')
+    end
+    
+    def address
+      @address
     end
     
     def assembly
       @assembly
+    end
+    
+    def assembly=(value)
+      @assembly = value
+      # TODO: Update words based on assembly instructions
+    end
+    
+    def binary
+      @words.join.to_a.pack("H*")
+    end
+    
+    def words
+      @words
+    end
+    
+    def comments
+      @comments
     end
     
   end

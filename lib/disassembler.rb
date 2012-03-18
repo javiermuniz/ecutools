@@ -1,20 +1,39 @@
 require 'version'
 require 'instruction'
+require 'helpers'
 
 module ECUTools
   class Disassembler
     
-    def initialize(input = nil)
+    include ECUTools::Helpers
+    
+    def initialize(input = nil, options = {})
       if(!input.nil?)
         open input
       end
+      @options = options
+    end
+    
+    def verbose
+      @options[:verbose]
     end
     
     def open(file)
-      @assembly = load file
+      $stderr.puts "Disassembling binary..." if verbose
+      h = '[\d|[a-f]|[A-F]]'
+      @assembly = []
+      io = IO.popen("gobjdump -b binary --architecture=m32r --disassemble-all --disassemble-zeroes -EB #{file}")
+      while line = io.gets
+        match = /\s+(#{h}+):\s+(#{h}{2}) (#{h}{2}) (#{h}{2}) (#{h}{2})\s+(.+)/.match(line)
+        if match
+          @assembly << Instruction.new(match[1], [ match[2], match[3], match[4], match[5] ], match[6])
+        end
+      end
+      $stderr.puts "Disassembly complete." if verbose
     end
     
     def write(file)
+      $stderr.puts "Writing assembly..." if verbose
       f = File.new(file,"w")
       header = "\# ecutools v#{ECUTools::VERSION}\n"
       header << "\# Generated assembly, ROM ID #{rom_id}\n"
@@ -24,39 +43,7 @@ module ECUTools
       @assembly.each do |instruction|
         f.write("#{instruction}\n")
       end
+      $stderr.puts "Done." if verbose
     end
-    
-    private
-    
-    def load(file)
-      h = '[\d|[a-f]|[A-F]]'
-      assembly = []
-      io = IO.popen("gobjdump -b binary --architecture=m32r --disassemble-all --disassemble-zeroes -EB #{file}")
-      while line = io.gets
-        match = /\s+(#{h}+):\s+(#{h}{2}) (#{h}{2}) (#{h}{2}) (#{h}{2})\s+(.+)/.match(line)
-        if match
-          assembly << Instruction.new(match[1], [ match[2], match[3], match[4], match[5] ], match[6])
-        end
-      end
-      
-      assembly
-    end
-    
-    def rom_id
-      "0"
-    end
-    
-    def base_address
-      @assembly.each_with_index do |instruction,i|
-        if instruction.assembly == "st r3,@r0 \|\| nop"
-          match = /ld24 fp,(0x\w+)/.match(@assembly[i+1].assembly)
-          return match[1] if match
-        end
-      end
-      
-      "unknown" 
-    end
-    
-    
   end
 end

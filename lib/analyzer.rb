@@ -1,5 +1,16 @@
+require 'nokogiri'
+
 module ECUTools
-  module Analyzer
+  class Analyzer
+    
+    def initialize(disassembler)
+      @disassembler = disassembler
+      
+      
+      
+    end
+    
+    
     
   end
 end
