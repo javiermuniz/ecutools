@@ -57,22 +57,30 @@ module ECUTools
     def address_descriptions
       return @address_descriptions if @address_descriptions
       @address_descriptions = {}
-      xml = Nokogiri::XML(File.open(File.dirname(__FILE__) + "/../xml/ram/#{rom_id}.xml"))
-      xml.xpath('/EvoScanDataLogger/vehicle/ecu/Mode2/DataListItem').each do |node|
-        @address_descriptions[node.attr('RequestID')[2..-1]] = node.attr('Display')
+      begin
+        xml = Nokogiri::XML(File.open(File.dirname(__FILE__) + "/../xml/ram/#{rom_id}.xml"))
+        xml.xpath('/EvoScanDataLogger/vehicle/ecu/Mode2/DataListItem').each do |node|
+          @address_descriptions[node.attr('RequestID')[2..-1]] = node.attr('Display')
+        end
+      rescue
+        $stderr.puts "No RAM map found for this rom, skipping subroutine identification." if verbose
       end
-
+      
       @address_descriptions
     end
 
     def subroutine_descriptions
       return @subroutine_descriptions if @subroutine_descriptions
       @subroutine_descriptions = {}
-      xml = Nokogiri::XML(File.open(File.dirname(__FILE__) + "/../xml/code/#{rom_id}.xml"))
-      xml.xpath('/rom/routine').each do |node|
-        @subroutine_descriptions[node.attr('address')] = node.attr('name')
+      begin
+        xml = Nokogiri::XML(File.open(File.dirname(__FILE__) + "/../xml/code/#{rom_id}.xml"))
+        xml.xpath('/rom/routine').each do |node|
+          @subroutine_descriptions[node.attr('address')] = node.attr('name')
+        end
+      rescue
+        $stderr.puts "No subroutine map found for this rom, skipping subroutine identification." if verbose
       end
-
+      
       @subroutine_descriptions
     end
 
