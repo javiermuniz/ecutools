@@ -97,8 +97,8 @@ module ECUTools
 
       load_rom.xpath('/rom/include').each do |include_tag|
 
-        include_rom = Nokogiri::XML(File.open(File.dirname(__FILE__) + "/../xml/rom/#{include_tag.text}.xml"))
-
+        include_rom = load_rom_xml(include_tag.text)
+        
         # import scalings
         include_rom.xpath('/rom/scaling').each do |scaling|
           if load_rom.xpath("/rom/scaling[@name='#{scaling.attr('name')}']").count == 0
