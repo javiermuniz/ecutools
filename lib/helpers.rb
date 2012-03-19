@@ -5,7 +5,7 @@ module ECUTools
       $stderr.puts "Getting ROM ID..." if verbose
       @rom_id = read_bytes("5002a", 4).join
     end
-    
+
     def read_bytes(address, number)
       bytes = []
       start = from_hex address
@@ -15,7 +15,7 @@ module ECUTools
       end
       bytes
     end
-    
+
     def instruction_at(address, strict = false)
       address = from_hex address
       if strict and (address % 4) > 0 
@@ -23,7 +23,7 @@ module ECUTools
       end
       @assembly[(address - (address % 4)) / 4]
     end
-    
+
     def from_hex(address)
       if address.is_a? String
         address.to_i(16)
@@ -31,7 +31,7 @@ module ECUTools
         address.to_i
       end
     end
-    
+
     def base_address
       return @base_address if @base_address
       $stderr.puts "Getting base address..." if verbose
@@ -45,15 +45,15 @@ module ECUTools
           end
         end
       end
-      
+
       $stderr.puts "WARNING: Base address unknown! Setting to 0 (THIS IS WRONG!)" if verbose
       @base_address = 0 
     end
-    
+
     def absolute_address(relative_address)
       (base_address.to_i(16) + relative_address).to_s(16)
     end
-    
+
     def address_descriptions
       return @address_descriptions if @address_descriptions
       @address_descriptions = {}
@@ -61,10 +61,10 @@ module ECUTools
       xml.xpath('/EvoScanDataLogger/vehicle/ecu/Mode2/DataListItem').each do |node|
         @address_descriptions[node.attr('RequestID')[2..-1]] = node.attr('Display')
       end
-      
+
       @address_descriptions
     end
-    
+
     def subroutine_descriptions
       return @subroutine_descriptions if @subroutine_descriptions
       @subroutine_descriptions = {}
@@ -72,13 +72,42 @@ module ECUTools
       xml.xpath('/rom/routine').each do |node|
         @subroutine_descriptions[node.attr('address')] = node.attr('name')
       end
-      
+
       @subroutine_descriptions
     end
-    
+
     def rom_xml
       return @rom_xml if @rom_xml
-      @rom_xml = Nokogiri::XML(File.open(File.dirname(__FILE__) + "/../xml/rom/#{rom_id}.xml"))
+      @rom_xml = load_rom_xml(rom_id)
+
+      @rom_xml
+    end
+
+    def load_rom_xml(rom_number)
+
+      load_rom = Nokogiri::XML(File.open(File.dirname(__FILE__) + "/../xml/rom/#{rom_number}.xml"))
+
+      load_rom.xpath('/rom/include').each do |include_tag|
+
+        include_rom = Nokogiri::XML(File.open(File.dirname(__FILE__) + "/../xml/rom/#{include_tag.text}.xml"))
+
+        # import scalings
+        include_rom.xpath('/rom/scaling').each do |scaling|
+          if load_rom.xpath("/rom/scaling[@name='#{scaling.attr('name')}']").count == 0
+            load_rom.xpath('/rom')[0].add_child(scaling)
+          end
+        end
+
+        #import tables
+        include_rom.xpath('/rom/table').each do |table|
+          if load_rom.xpath("/rom/table[@name='#{table.attr('name')}']").count == 0
+            load_rom.xpath('/rom')[0].add_child(table)
+          end
+        end
+
+      end
+
+      load_rom
     end
   end
 end
