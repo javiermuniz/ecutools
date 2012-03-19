@@ -62,7 +62,12 @@ module ECUTools
       count = 0
       tables.each do |table|
         elements = 1 # all tables start with one element
-        element_size = rom_xml.xpath("/rom/scaling[@name='#{table.attr('scaling')}']").attr('storagetype').value().gsub(/[^\d]+/,'').to_i / 8
+        scaling = rom_xml.xpath("/rom/scaling[@name='#{table.attr('scaling')}']")
+        if scaling.count == 0
+          $stderr.puts "WARNING: Failed to find scaling: #{table.attr('scaling')}, skipping table #{table.attr('name')}" if verbose
+          next
+        end
+        element_size = scaling.attr('storagetype').value().gsub(/[^\d]+/,'').to_i / 8
         address = from_hex table.attr('address')
         is_data = false
 
