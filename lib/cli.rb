@@ -23,6 +23,6 @@ module ECUTools
       dasm.analyze
       dasm.write(outfile)
     end
-
+    
   end
 end

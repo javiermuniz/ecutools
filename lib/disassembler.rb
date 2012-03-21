@@ -9,7 +9,8 @@ module ECUTools
 
     def initialize(input = nil, options = {})
       @options = options
-      @reference_addresses = {}
+      @table_addresses = {}
+      @scale_addresses = {}
       if(!input.nil?)
         open input
       end
@@ -50,10 +51,59 @@ module ECUTools
 
     def analyze
       $stderr.puts "Analyzing assembly..." if verbose
+      annotate_scales
       annotate_tables
-      annotate_subroutines
       annotate_code
       $stderr.puts "Analyzation complete." if verbose
+    end
+
+    def annotate_scales
+      $stderr.puts "Annotating scales..." if verbose
+      scales = rom_xml.xpath('/rom/table/table')
+      count = 0
+      injected_scales = []
+      scales.each do |scale|
+        next if scale.attr('address').nil? # skip scales without an address, they won't be in the ROM!
+        next if injected_scales.include? scale.attr('address')
+        injected_scales << scale.attr('address')
+
+        elements = scale.attr('elements').to_i
+        scaling = rom_xml.xpath("/rom/scaling[@name='#{scale.attr('scaling')}']")
+        if scaling.count == 0
+          $stderr.puts "WARNING: Failed to find scaling: #{scale.attr('scaling')}, skipping scale #{scale.attr('name')}" if verbose
+          next
+        end
+        element_size = scaling.attr('storagetype').value().gsub(/[^\d]+/,'').to_i / 8
+        storage_size = element_size * elements
+        scale_label = "#{scale.attr('name')}, #{elements} elements"
+        address = from_hex scale.attr('address')
+
+        possible_offsets = [ 2,6 ]
+
+        # read in the header of the scale, could fail for "headless" scales but that's ok
+        header = read_scale_header(address - 6)
+        if header[:entries] != elements  and verbose
+          $stderr.puts "Header/XML Mismatch for Scale #{scale.attr('name')} @ #{scale.attr('address')}. XML: #{elements}, Header: #{header[:entries]}. Could be bad XML or a headless scale." if verbose
+        else
+          src_label = address_descriptions[header[:src]].nil? ? nil : " (#{address_descriptions[header[:src]]})"
+          dest_label = address_descriptions[header[:dest]].nil? ? nil : " (#{address_descriptions[header[:dest]]})"
+          scale_label << ", S = 0x#{header[:src]}#{src_label}, D = 0x#{header[:dest]}#{dest_label}"
+        end
+
+        possible_offsets.each do |offset|
+          offset_hex = (address - offset).to_s(16)
+          @scale_addresses[offset_hex] = scale_label if !@scale_addresses.include? offset_hex
+        end
+
+        storage_size.times do |n|
+          instruction = instruction_at(address + n)
+          instruction.data = true
+          instruction.comment(address + n, "Scale #{scale_label}, 0x#{scale.attr('address')} -> 0x#{(address + storage_size - 1).to_s(16)}")
+        end
+
+        count = count + 1
+      end
+      $stderr.puts "#{count} scales annotated." if verbose
     end
 
     def annotate_tables
@@ -61,61 +111,83 @@ module ECUTools
       tables = rom_xml.xpath('/rom/table')
       count = 0
       tables.each do |table|
+        next if table.attr('address').nil? # skip scales without an address, they won't be in the ROM!
+        
         elements = 1 # all tables start with one element
+        is_data = false
+        header = nil
+        possible_offsets = []
+        
         scaling = rom_xml.xpath("/rom/scaling[@name='#{table.attr('scaling')}']")
         if scaling.count == 0
           $stderr.puts "WARNING: Failed to find scaling: #{table.attr('scaling')}, skipping table #{table.attr('name')}" if verbose
           next
         end
-        element_size = scaling.attr('storagetype').value().gsub(/[^\d]+/,'').to_i / 8
-        address = from_hex table.attr('address')
-        is_data = false
 
         table.xpath('table').each do |subtable|
           elements = elements * subtable.attr('elements').to_i
           is_data = true
         end
-
-        possible_offsets = []
-
-        case elements
-        when 1,4
-          possible_offsets << 0
-        when 3..20
-          possible_offsets << 4
-          possible_offsets << 6
-        when 44
-          possible_offsets << 28  # wtf? maf scaling
+        address = from_hex table.attr('address')
+        element_size = scaling.attr('storagetype').value().gsub(/[^\d]+/,'').to_i / 8
+        
+        if elements == 1 
+          possible_offsets << 0 # straight values
         else
-          possible_offsets << 7
-          possible_offsets << 10
-          possible_offsets << 16
+          case element_size
+          when 1
+            case table.attr('type')
+            when "2D"
+              possible_offsets << 4 # 8bit 2D
+              header = read_8bit_header(address - 4)
+            when "3D"
+              possible_offsets << 7 # 8bit 3D
+              possible_offsets << 8 # oddball tables, 8bit 3D, attached to headless scales
+              header = read_8bit_header(address - 7)
+            else
+              $stderr.puts "ERROR: Bad table definition for #{table.attr('name')}, not 2D or 3D, skipping table."
+              next
+            end
+          when 2
+            case table.attr('type')
+            when "2D"
+              possible_offsets << 6 # 16bit 2D
+              header = read_16bit_header(address - 6)
+            when "3D"
+              possible_offsets << 10 # 16bit 3D
+              header = read_16bit_header(address - 10)
+            else
+              $stderr.puts "ERROR: Bad table definition for #{table.attr('name')}, not 2D or 3D, skipping table."
+              next
+            end
+          else
+            $stderr.puts "ERROR: Bad table definition for #{table.attr('name')}, not 8bit or 16bit, skipping table."
+            next
+          end
         end
-
+        
+        if header.nil?
+          table_label = "#{table.attr('name')} (#{elements} elements, headless)"
+        else
+          table_label = "#{table.attr('name')} (#{elements} elements, X = 0x#{header[:x_address]}, Y = #{header[:y_address]})"
+        end
+      
         possible_offsets.each do |offset|
           offset_hex = (address - offset).to_s(16)
-          if verbose and @reference_addresses.include? offset_hex
-            $stderr.puts "WARNING: Reference hunt collision at 0x#{offset_hex} (#{@reference_addresses[offset_hex]} vs #{table.attr('name')})! Check code carefully!" 
-          end
-          @reference_addresses[offset_hex] = table.attr('name')
+          @table_addresses[offset_hex] = table_label if !@table_addresses.include? offset_hex
         end
 
         storage_size = element_size * elements
 
         storage_size.times do |n|
           instruction = instruction_at(address + n)
-          instruction.comments[0] = table.attr('name') + "(0x#{table.attr('address')} -> 0x#{(address + storage_size - 1).to_s(16)}, #{storage_size} bytes)"
           instruction.data = is_data
+          instruction.comment(address + n, table.attr('name') + "(0x#{table.attr('address')} -> 0x#{(address + storage_size - 1).to_s(16)}, #{storage_size} bytes, #{elements} values)")
         end
 
-        $stderr.puts "Annotated: #{table.attr('name')}" if verbose
         count = count + 1
       end
       $stderr.puts "#{count} tables annotated." if verbose
-    end
-
-    def annotate_subroutines
-
     end
 
     def annotate_code
@@ -125,49 +197,54 @@ module ECUTools
       found_ram_addresses = {}
       @assembly.each do |instruction|
         # annotate subroute prologue/epilogue
-        if instruction.assembly =~ /push lr/
-          c = 'begin subroutine'
-          c << " #{subroutine_descriptions[instruction.address]}" if subroutine_descriptions.include? instruction.address
-          instruction.comments << c
-        end
         if instruction.assembly =~ /jmp lr/ 
-          instruction.comments << 'return'
+          instruction.comment instruction.address, 'return'
+          next_instruction = instruction_at instruction.address.to_i(16) + 4
+          next_instruction.comment next_instruction.address, 'likely subroutine address'
         end
+        
+        if subroutine_descriptions.include? instruction.address
+          instruction.comment instruction.address, "begin subroutine #{subroutine_descriptions[instruction.address]}" 
+        end
+        
+        subroutine_descriptions
 
         # annotate subroutine calls
         match = /bl 0x(\w+)/.match(instruction.assembly)
         if match
           address = match[1]
           if subroutine_descriptions.include? address
-            instruction.comments << "Call #{subroutine_descriptions[address]}"
+            instruction.comment instruction.address.to_i(16) + 2, "Call #{subroutine_descriptions[address]}"
           end
-        end
-        
+        end 
+
         # annotate table address references
         address = /0x([\d|[a-f]|[A-F]]+)/.match(instruction.assembly)
-        if address and @reference_addresses.include? address[1]
-          instruction.comments << "contains possible reference to '#{@reference_addresses[address[1]]}'"
-          $stderr.puts "Annotated reference to: #{@reference_addresses[address[1]]} at #{instruction.address}" if verbose
+        if address and @table_addresses.include? address[1]
+          instruction.comment instruction.address, "Get table #{@table_addresses[address[1]]}"
           count = count + 1
-          found_rom_addresses[@reference_addresses[address[1]]] = true 
+          found_rom_addresses[@table_addresses[address[1]]] = true 
         end
-        
+
+        # annotate scale address references
+        if address and @scale_addresses.include? address[1]
+          instruction.comment instruction.address, "Get scale #{@scale_addresses[address[1]]}"
+          count = count + 1
+        end
+
         # annotate absolute RAM addressing ld24 r4,0x800700
         match = /(\w+)\s+\w\w,0x(8\w\w\w\w\w)/.match(instruction.assembly)
         if match
           address = match[2]
           display = address_descriptions[address]
-          
+
           if match[1] == "ld24"
             op = "Assign pointer to"
           else
             op = "Unknown op on"
           end
-            
-          if !display.nil? and verbose
-            $stderr.puts "Found reference to absolute RAM address #{address} (#{display})"
-          end
-          instruction.comments << "#{op} RAM address 0x#{address}" + (display.nil? ? '' : " (#{display})")
+
+          instruction.comment instruction.address, "#{op} RAM address 0x#{address}" + (display.nil? ? '' : " (#{display})")
           found_ram_addresses[display] = true if !display.nil?
           count = count + 1
         end
@@ -198,24 +275,18 @@ module ECUTools
           else
             op = "Unknown op on"
           end
-          if !display.nil? and verbose
-            $stderr.puts "Found reference to relative RAM address #{address} (#{display})"
-          end
-          instruction.comments << "#{op} RAM address 0x#{address}" + (display.nil? ? '' : " (#{display})")
+          instruction.comment instruction.address, "#{op} RAM address 0x#{address}" + (display.nil? ? '' : " (#{display})")
           found_ram_addresses[display] = true if !display.nil?
           count = count + 1
         end
-      
+
       end
 
       $stderr.puts "#{count} lines of code annotated." if verbose
       if verbose
-        @reference_addresses.each_key do |key|
-          $stderr.puts "Unable to find any reference to table #{@reference_addresses[key]}" if !found_rom_addresses.include? @reference_addresses[key]
-          found_rom_addresses[@reference_addresses[key]] = true # stop multiple reports
-        end
-        address_descriptions.each_key do |key|
-          $stderr.puts "Unable to find any reference to RAM address #{address_descriptions[key]} (#{key})" if !found_ram_addresses.include? address_descriptions[key]
+        @table_addresses.each_key do |key|
+          $stderr.puts "Unable to find any reference to table #{@table_addresses[key]}" if !found_rom_addresses.include? @table_addresses[key]
+          found_rom_addresses[@table_addresses[key]] = true # stop multiple reports
         end
       end
     end

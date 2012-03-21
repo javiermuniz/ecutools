@@ -1,0 +1,182 @@
+<?xml version="1.0"?>
+<EvoScanDataLogger>
+  <vehicle name="EcuTools Mitsubishi RA" LastUpdated="28th May 2011" LastAuthor="Hamish Ahern" LastAuthorContact="http://www.evoscan.com/help-and-support">
+    <ecu name="53610010">
+      <Mode2 name="Mode2" type="Data List Items">
+        <DataListItem DataLog="Y" Color="#0c00ff" Display="Timing Advance" LogReference="TimingAdv" RequestID="23808A07" Eval="x-20" Unit="deg" MetricEval="" MetricUnit="" ResponseBytes="1" GaugeMin="0" GaugeMax="255" ChartMin="0" ChartMax="255" ScalingFactor="1" Notes=" " Priority="1" Visible="False" />
+
+        <DataListItem DataLog="N" Color="" Display="LoadTiming" LogReference="LoadTiming" RequestID="23808a04" Eval="x*10/32" Unit="load" MetricEval="" MetricUnit="" ResponseBytes="2" GaugeMin="0" GaugeMax="340" ChartMin="0" ChartMax="34" ScalingFactor="0.1" Notes=" " Priority="1" Visible="False" />
+
+        <DataListItem DataLog="Y" Color="#ff0012" Display="Knock Sum" LogReference="KnockSum" RequestID="23808A4B" Eval="x" Unit="count" MetricEval="" MetricUnit="" ResponseBytes="1" GaugeMin="0" GaugeMax="36" ChartMin="0" ChartMax="36" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="Y" Color="#ff00ea" Display="RPM" LogReference="RPM" RequestID="2380874F" Eval="31.25*x" Unit="rpm" MetricEval="" MetricUnit="" ResponseBytes="1" GaugeMin="0" GaugeMax="8000" ChartMin="0" ChartMax="8000" ScalingFactor="0.01" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="Y" Color="" Display="Load" LogReference="Load" RequestID="2380876e" Eval="x*10/32" Unit="load" MetricEval="" MetricUnit="" ResponseBytes="2" GaugeMin="0" GaugeMax="340" ChartMin="0" ChartMax="34" ScalingFactor="0.1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="N" Color="" Display="AFRMAP" LogReference="AFRMAP" RequestID="238088F5" Eval="14.7*128/x" Unit="a/f ratio" MetricEval="14.7*128/x" MetricUnit="a/f ratio" ResponseBytes="1" GaugeMin="10" GaugeMax="15" ChartMin="10" ChartMax="15" ScalingFactor="1" Notes=" " Priority="1" Visible="False" />
+
+        <DataListItem DataLog="Y" Color="#fcff00" Display="Speed" LogReference="Speed" RequestID="238087E7" Eval="x*2" Unit="kph" MetricEval="" MetricUnit="" ResponseBytes="1" GaugeMin="0" GaugeMax="255" ChartMin="0" ChartMax="255" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="N" Color="" Display="SST Temp Reading" LogReference="SST Reading" RequestID="23808742" Eval="x" Unit="Unknown" MetricEval="" MetricUnit="" ResponseBytes="2" GaugeMin="0" GaugeMax="255" ChartMin="0" ChartMax="255" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="N" Color="" Display="Baro" LogReference="Baro" RequestID="2380A929" Eval="x*0.07251887" Unit="psi" MetricEval="" MetricUnit="" ResponseBytes="1" GaugeMin="0" GaugeMax="255" ChartMin="0" ChartMax="255" ScalingFactor="1" Notes="" Priority="30" Visible="False" />
+
+        <DataListItem DataLog="Y" Color="#ff9300" Display="Boost" LogReference="Boost" RequestID="2380871A" Eval="(x/4*0.19347)-[Baro]" Unit="PSIG" MetricEval="(x/4*0.19347)-14.5" MetricUnit="PSIG" ResponseBytes="2" GaugeMin="0" GaugeMax="30" ChartMin="0" ChartMax="30" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="N" Color="" Display="Engine Torque" LogReference="EngineTorque" RequestID="238093ba" Eval="x" Unit="unit" MetricEval="" MetricUnit="" ResponseBytes="2" GaugeMin="0" GaugeMax="255" ChartMin="0" ChartMax="255" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="Y" Color="#8a00ff" Display="Throttle Position (TPS)" LogReference="TPS" RequestID="238086F9" Eval="x*100/255" Unit="%" MetricEval="" MetricUnit="" ResponseBytes="1" GaugeMin="0" GaugeMax="255" ChartMin="0" ChartMax="255" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="N" Color="" Display="SST Transmission Temp2" LogReference="SST_Temp2" RequestID="23808744" Eval="x" Unit="Unknown" MetricEval="x" MetricUnit="Unknown" ResponseBytes="2" GaugeMin="0" GaugeMax="200" ChartMin="0" ChartMax="200" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="N" Color="" Display="EngineTQTransmitted" LogReference="EngineTQTransmitted" RequestID="238095e0" Eval="x" Unit="Nm" MetricEval="" MetricUnit="" ResponseBytes="2" GaugeMin="0" GaugeMax="512" ChartMin="0" ChartMax="512" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="N" Color="" Display="downshift_interim_calc" LogReference="downshift_interim_calc" RequestID="238095d6" Eval="x" Unit="unit" MetricEval="" MetricUnit="" ResponseBytes="2" GaugeMin="0" GaugeMax="255" ChartMin="0" ChartMax="255" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="N" Color="" Display="downshift_final_calc" LogReference="DownshiftCalc" RequestID="238095e4" Eval="x" Unit="unit" MetricEval="" MetricUnit="" ResponseBytes="2" GaugeMin="0" GaugeMax="2000" ChartMin="0" ChartMax="2000" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="N" Color="" Display="cpru_a_offset_calc4" LogReference="cpru_a_offset_calc4" RequestID="238093cd" Eval="x" Unit="unit" MetricEval="" MetricUnit="" ResponseBytes="1" GaugeMin="0" GaugeMax="255" ChartMin="0" ChartMax="255" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="Y" Color="" Display="Active WasteGateDuty (WGDC)" LogReference="ActiveWGDC" RequestID="23808B53" Eval="x/2" Unit="%" MetricEval="" MetricUnit="" ResponseBytes="1" GaugeMin="0" GaugeMax="255" ChartMin="0" ChartMax="255" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="N" Color="" Display="BWGDC Correction" LogReference="BWGDC Correction" RequestID="23808b50" Eval="(x-128)/2" Unit="percent" MetricEval="" MetricUnit="" ResponseBytes="2" GaugeMin="0" GaugeMax="100" ChartMin="0" ChartMax="100" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="N" Color="" Display="Boost Target" LogReference="BoostTarget" RequestID="23808b5b" Eval="x*0.19347" Unit="unit" MetricEval="" MetricUnit="" ResponseBytes="1" GaugeMin="0" GaugeMax="255" ChartMin="0" ChartMax="255" ScalingFactor="1" Notes=" " Priority="1" Visible="False" />
+
+        <DataListItem DataLog="Y" Color="" Display="Fuel Trim Cruise (LTFT)" LogReference="LTFT_Cruise" RequestID="23804575" Eval="(0.1953125*x)-25" Unit="%" MetricEval="" MetricUnit="" ResponseBytes="1" GaugeMin="0" GaugeMax="255" ChartMin="0" ChartMax="255" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="Y" Color="" Display="Injector Pulse Width (IPW)" LogReference="IPW" RequestID="2380A964" Eval="x/1000" Unit="ms" MetricEval="" MetricUnit="" ResponseBytes="2" GaugeMin="0" GaugeMax="255" ChartMin="0" ChartMax="255" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="Y" Color="" Display="Injector Duty Cycle (IDC)" LogReference="IDC" RequestID="2380874F" Eval="[IPW]*31.25*x/1200" Unit="%" MetricEval="" MetricUnit="" ResponseBytes="1" GaugeMin="0" GaugeMax="100" ChartMin="0" ChartMax="100" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="Y" Color="#00f3ff" Display="Octane" LogReference="Octane" RequestID="2380459F" Eval="x*100/255" Unit="%" MetricEval="" MetricUnit="" ResponseBytes="1" GaugeMin="0" GaugeMax="255" ChartMin="0" ChartMax="255" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="Y" Color="#c6ff00" Display="Manifold Air Temp (MAT)" LogReference="MAT" RequestID="2380865F" Eval="x-40" Unit="Deg F" MetricEval="x-40" MetricUnit="Deg C" ResponseBytes="1" GaugeMin="-10" GaugeMax="130" ChartMin="-10" ChartMax="130" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="Y" Color="#ff0099" Display="Mass Air Flow (MAF)" LogReference="Airflow" RequestID="238087E0" Eval="x*2/100" Unit="g/s" MetricEval="" MetricUnit="" ResponseBytes="2" GaugeMin="0" GaugeMax="500" ChartMin="0" ChartMax="500" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        LogReference="STFT" RequestID="23808898" Eval="(0.1953125*x)-25" Unit="%" MetricEval="" MetricUnit="" ResponseBytes="1" GaugeMin="0" GaugeMax="255" ChartMin="0" ChartMax="255" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="Y" Color="" Display="Fuel Trim Idle (LTFT)" LogReference="LTFT_Idle" RequestID="23804573" Eval="(0.1953125*x)-25" Unit="%" MetricEval="" MetricUnit="" ResponseBytes="1" GaugeMin="0" GaugeMax="255" ChartMin="0" ChartMax="255" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="Y" Color="" Display="Engine Coolant Temp (ECT)" LogReference="ECT" RequestID="2380863f" Eval="x-40" Unit="Deg F" MetricEval="x-40" MetricUnit="Deg C" ResponseBytes="1" GaugeMin="0" GaugeMax="255" ChartMin="0" ChartMax="255" ScalingFactor="1" Notes="" Priority="48" Visible="False" />
+
+        <DataListItem DataLog="Y" Color="" Display="InVVT (actual)" LogReference="InVVTactual" RequestID="23809472" Eval="(x-4096)*-0.01953125" Unit="Deg" MetricEval="" MetricUnit="" ResponseBytes="2" GaugeMin="-40" GaugeMax="50" ChartMin="-40" ChartMax="50" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="Y" Color="" Display="ExVVT (actual)" LogReference="ExVVTactual" RequestID="2380947E" Eval="(x-4096)*-0.01953125" Unit="Deg" MetricEval="" MetricUnit="" ResponseBytes="2" GaugeMin="-40" GaugeMax="50" ChartMin="-40" ChartMax="50" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="N" Color="#00ff93" Display="Intake Air Temp" LogReference="IAT" RequestID="23808659" Eval="x-40" Unit="Deg F" MetricEval="x-40" MetricUnit="Deg C" ResponseBytes="1" GaugeMin="0" GaugeMax="255" ChartMin="0" ChartMax="255" ScalingFactor="1" Notes="" Priority="9" Visible="False" />
+
+        <DataListItem DataLog="N" Color="" Display="RearO2" LogReference="ReadO2" RequestID="23808680" Eval="x" Unit="AFR" MetricEval="x" MetricUnit="AFR" ResponseBytes="2" GaugeMin="9" GaugeMax="16" ChartMin="9" ChartMax="16" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="N" Color="" Display="Load (Baro)" LogReference="LoadB" RequestID="23808f7c" Eval="x*10/32" Unit="load" MetricEval="" MetricUnit="" ResponseBytes="2" GaugeMin="0" GaugeMax="340" ChartMin="0" ChartMax="34" ScalingFactor="0.1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="N" Color="" Display="Load Baro+Temp" LogReference="LoadBaroTemp" RequestID="23808774" Eval="x*10/32" Unit="load" MetricEval="" MetricUnit="" ResponseBytes="2" GaugeMin="0" GaugeMax="340" ChartMin="0" ChartMax="34" ScalingFactor="0.1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="N" Color="" Display="0x8095fe Spark LBM (Temp Adj)" LogReference="0x8095fe" RequestID="238095fe" Eval="x-20" Unit="unit" MetricEval="" MetricUnit="" ResponseBytes="2" GaugeMin="0" GaugeMax="255" ChartMin="0" ChartMax="255" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="N" Color="" Display="Timing LBM w/up" LogReference="TimingLBM" RequestID="238095fe" Eval="x" Unit="unit" MetricEval="" MetricUnit="" ResponseBytes="2" GaugeMin="0" GaugeMax="255" ChartMin="0" ChartMax="255" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="N" Color="" Display="TimingVar" LogReference="TimingVar" RequestID="2380a8e6" Eval="x" Unit="unit" MetricEval="" MetricUnit="" ResponseBytes="2" GaugeMin="0" GaugeMax="255" ChartMin="0" ChartMax="255" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="N" Color="" Display="TimingSubtractor" LogReference="TimingSub" RequestID="238095fc" Eval="x" Unit="unit" MetricEval="" MetricUnit="" ResponseBytes="2" GaugeMin="0" GaugeMax="255" ChartMin="0" ChartMax="255" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="N" Color="" Display="808746 RPM alt_scale" LogReference="808746" RequestID="23808746" Eval="31.25*x/8" Unit="unit" MetricEval="" MetricUnit="" ResponseBytes="2" GaugeMin="0" GaugeMax="255" ChartMin="0" ChartMax="255" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="N" Color="" Display="cpru_a_0_raw" LogReference="cpru_a_0_raw" RequestID="238093c4" Eval="x" Unit="unit" MetricEval="" MetricUnit="" ResponseBytes="2" GaugeMin="0" GaugeMax="255" ChartMin="0" ChartMax="255" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="N" Color="" Display="cpru_adj_offset_3d_ratio" LogReference="cpru_adj_offset_3d_ratio" RequestID="238045a1" Eval="(255-x)/255" Unit="unit" MetricEval="" MetricUnit="" ResponseBytes="1" GaugeMin="0" GaugeMax="255" ChartMin="0" ChartMax="255" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="N" Color="" Display="cpru_adj_offset_3d" LogReference="cpru_adj_offset_3d" RequestID="238093d1" Eval="x" Unit="unit" MetricEval="" MetricUnit="" ResponseBytes="1" GaugeMin="0" GaugeMax="255" ChartMin="0" ChartMax="255" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="N" Color="" Display="cpru_a_1_3d_adj" LogReference="cpru_a_1_3d_adj" RequestID="238093d2" Eval="x" Unit="unit" MetricEval="" MetricUnit="" ResponseBytes="2" GaugeMin="0" GaugeMax="255" ChartMin="0" ChartMax="255" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="N" Color="" Display="cpru_adj_offset_2d" LogReference="cpru_adj_offset_2d" RequestID="238093c9" Eval="x" Unit="unit" MetricEval="" MetricUnit="" ResponseBytes="1" GaugeMin="0" GaugeMax="255" ChartMin="0" ChartMax="255" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="N" Color="" Display="cpru_reduction_vs_cts" LogReference="cpru_reduction_vs_cts" RequestID="238093dd" Eval="x" Unit="unit" MetricEval="" MetricUnit="" ResponseBytes="1" GaugeMin="0" GaugeMax="255" ChartMin="0" ChartMax="255" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="N" Color="" Display="cpru_factor_x" LogReference="cpru_factor_x" RequestID="23808c1f" Eval="x" Unit="unit" MetricEval="" MetricUnit="" ResponseBytes="1" GaugeMin="0" GaugeMax="255" ChartMin="0" ChartMax="255" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="N" Color="" Display="cpru_adj_factor_x_result" LogReference="cpru_adj_factor_x_result" RequestID="238093df" Eval="x" Unit="unit" MetricEval="" MetricUnit="" ResponseBytes="1" GaugeMin="0" GaugeMax="255" ChartMin="0" ChartMax="255" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="N" Color="" Display="cpru_adj_offset_calc" LogReference="cpru_adj_offset_calc" RequestID="238093d7" Eval="x" Unit="unit" MetricEval="" MetricUnit="" ResponseBytes="1" GaugeMin="0" GaugeMax="255" ChartMin="0" ChartMax="255" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="N" Color="" Display="cpru_calc_item" LogReference="8093ca" RequestID="238093ca" Eval="x" Unit="unit" MetricEval="" MetricUnit="" ResponseBytes="2" GaugeMin="0" GaugeMax="255" ChartMin="0" ChartMax="255" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="N" Color="" Display="cpru_final_scaled" LogReference="8095e0" RequestID="238095e0" Eval="x" Unit="unit" MetricEval="" MetricUnit="" ResponseBytes="2" GaugeMin="0" GaugeMax="255" ChartMin="0" ChartMax="255" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="N" Color="" Display="cpru_comparator_scaled" LogReference="8095a6" RequestID="238095a6" Eval="x" Unit="unit" MetricEval="" MetricUnit="" ResponseBytes="2" GaugeMin="0" GaugeMax="255" ChartMin="0" ChartMax="255" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="N" Color="" Display="Raw BWGDC" LogReference="Raw BWGDC" RequestID="2380a94a" Eval="x/2" Unit="percent" MetricEval="" MetricUnit="" ResponseBytes="2" GaugeMin="0" GaugeMax="100" ChartMin="0" ChartMax="100" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="N" Color="" Display="IAT Adjusted BWGDC" LogReference="AdjustedBWGDC" RequestID="23808b56" Eval="x/2" Unit="percent" MetricEval="" MetricUnit="" ResponseBytes="2" GaugeMin="0" GaugeMax="100" ChartMin="0" ChartMax="100" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="N" Color="" Display="809608 Timing After LBM" LogReference="809608" RequestID="23809608" Eval="x" Unit="degrees" MetricEval="" MetricUnit="" ResponseBytes="2" GaugeMin="0" GaugeMax="255" ChartMin="0" ChartMax="255" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="N" Color="" Display="cpru_comparator_rescaled" LogReference="cpru_comparator_rescaled" RequestID="238095c2" Eval="x" Unit="unit" MetricEval="" MetricUnit="" ResponseBytes="2" GaugeMin="0" GaugeMax="255" ChartMin="0" ChartMax="255" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="N" Color="" Display="cpru_final" LogReference="cpru_final" RequestID="238093c6" Eval="x" Unit="unit" MetricEval="" MetricUnit="" ResponseBytes="2" GaugeMin="0" GaugeMax="255" ChartMin="0" ChartMax="255" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="N" Color="" Display="SST US Timing Retard Table" LogReference="SST_USTR_Table" RequestID="23809606" Eval="x" Unit="degrees" MetricEval="" MetricUnit="" ResponseBytes="2" GaugeMin="0" GaugeMax="255" ChartMin="0" ChartMax="255" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="N" Color="" Display="8095f2 CPRU Mult CP1" LogReference="8095f2" RequestID="238095f2" Eval="x" Unit="unit" MetricEval="" MetricUnit="" ResponseBytes="2" GaugeMin="0" GaugeMax="255" ChartMin="0" ChartMax="255" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="N" Color="" Display="SST Timing Reduction Base Table" LogReference="SST_TRB_Table" RequestID="238095f8" Eval="x" Unit="unit" MetricEval="" MetricUnit="" ResponseBytes="2" GaugeMin="0" GaugeMax="255" ChartMin="0" ChartMax="255" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="N" Color="" Display="8095fa Timing Checkpoint" LogReference="8095fa" RequestID="238095fa" Eval="x" Unit="degrees" MetricEval="" MetricUnit="" ResponseBytes="2" GaugeMin="0" GaugeMax="255" ChartMin="0" ChartMax="255" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="N" Color="" Display="8095fc Timing Subtractor" LogReference="8095fc" RequestID="238095fc" Eval="x" Unit="degrees" MetricEval="" MetricUnit="" ResponseBytes="2" GaugeMin="0" GaugeMax="255" ChartMin="0" ChartMax="255" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="N" Color="" Display="80960a Int Timing" LogReference="80960a" RequestID="2380960a" Eval="x" Unit="degrees" MetricEval="" MetricUnit="" ResponseBytes="2" GaugeMin="0" GaugeMax="255" ChartMin="0" ChartMax="255" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="N" Color="" Display="8095f6 CPRU Timing Mult" LogReference="8095f6" RequestID="238095f6" Eval="x" Unit="unit" MetricEval="" MetricUnit="" ResponseBytes="2" GaugeMin="0" GaugeMax="255" ChartMin="0" ChartMax="255" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="N" Color="" Display="809602 Int Timing Final" LogReference="809602" RequestID="23809602" Eval="x" Unit="degrees" MetricEval="" MetricUnit="" ResponseBytes="2" GaugeMin="0" GaugeMax="255" ChartMin="0" ChartMax="255" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="N" Color="" Display="BrakePedal" LogReference="BrakePedal" RequestID="23809613" Eval="x" Unit="flags" MetricEval="" MetricUnit="" ResponseBytes="1" GaugeMin="0" GaugeMax="255" ChartMin="0" ChartMax="255" ScalingFactor="1" Notes="" Priority="13" Visible="False" />
+
+        <DataListItem DataLog="N" Color="" Display="SSTMode" LogReference="SSTMode" RequestID="2380a680" Eval="x" Unit="flag" MetricEval="" MetricUnit="" ResponseBytes="1" GaugeMin="0" GaugeMax="255" ChartMin="0" ChartMax="255" ScalingFactor="1" Notes="" Priority="39" Visible="False" />
+
+        <DataListItem DataLog="N" Color="" Display="Accel_Enrich_Input_A" LogReference="Accel_Enrich_Input_A" RequestID="238088d4" Eval="x" Unit="unit" MetricEval="" MetricUnit="" ResponseBytes="2" GaugeMin="0" GaugeMax="255" ChartMin="0" ChartMax="255" ScalingFactor="1" Notes=" " Priority="1" Visible="False" />
+
+        <DataListItem DataLog="N" Color="" Display="Accel_Enrich_Calc" LogReference="Accel_Enrich_Calc" RequestID="23808948" Eval="x" Unit="unit" MetricEval="" MetricUnit="" ResponseBytes="2" GaugeMin="0" GaugeMax="255" ChartMin="0" ChartMax="255" ScalingFactor="1" Notes=" " Priority="1" Visible="False" />
+
+        <DataListItem DataLog="N" Color="" Display="8085fe_bitflags" LogReference="8085fe_bitflags" RequestID="238085fe" Eval="x" Unit="unit" MetricEval="" MetricUnit="" ResponseBytes="2" GaugeMin="0" GaugeMax="255" ChartMin="0" ChartMax="255" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="N" Color="" Display="80ae7d_bitflag" LogReference="80ae7d_bitflag" RequestID="2380ae7d" Eval="x" Unit="unit" MetricEval="" MetricUnit="" ResponseBytes="1" GaugeMin="0" GaugeMax="255" ChartMin="0" ChartMax="255" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="N" Color="" Display="808012_AccEn_200_Comparison" LogReference="808012" RequestID="23808012" Eval="x" Unit="unit" MetricEval="" MetricUnit="" ResponseBytes="2" GaugeMin="0" GaugeMax="255" ChartMin="0" ChartMax="255" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="N" Color="" Display="FlashingCounter" LogReference="FlashCount" RequestID="238040b0" Eval="x" Unit="unit" MetricEval="" MetricUnit="" ResponseBytes="1" GaugeMin="0" GaugeMax="255" ChartMin="0" ChartMax="255" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="N" Color="#00ff8a" Display="MAPCalcs" LogReference="MAPCalcs" RequestID="238087b6" Eval="x*0.006103516" Unit="load" MetricEval="" MetricUnit="" ResponseBytes="2" GaugeMin="0" GaugeMax="255" ChartMin="0" ChartMax="255" ScalingFactor="0.1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="N" Color="#99ff00" Display="MAFCalcs" LogReference="MAFCalcs" RequestID="23808f6c" Eval="x*0.006103516" Unit="load" MetricEval="" MetricUnit="" ResponseBytes="4" GaugeMin="0" GaugeMax="255" ChartMin="0" ChartMax="255" ScalingFactor="0.1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="N" Color="" Display="TRT Input 1" LogReference="TRTinput1" RequestID="2380959e" Eval="x" Unit="unit" MetricEval="" MetricUnit="" ResponseBytes="2" GaugeMin="0" GaugeMax="255" ChartMin="0" ChartMax="255" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="N" Color="" Display="TRT Result 1" LogReference="TRTresult1" RequestID="238093ba" Eval="x" Unit="unit" MetricEval="" MetricUnit="" ResponseBytes="2" GaugeMin="0" GaugeMax="255" ChartMin="0" ChartMax="255" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="N" Color="" Display="TRT Input 2" LogReference="TRTinput2" RequestID="23809578" Eval="x" Unit="unit" MetricEval="" MetricUnit="" ResponseBytes="2" GaugeMin="0" GaugeMax="255" ChartMin="0" ChartMax="255" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="N" Color="" Display="TRT Input 3a" LogReference="TRTinput3a" RequestID="2380a3fa" Eval="x" Unit="unit" MetricEval="" MetricUnit="" ResponseBytes="2" GaugeMin="0" GaugeMax="255" ChartMin="0" ChartMax="255" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="N" Color="" Display="TRT Input 3b" LogReference="TRTinputb" RequestID="23809582" Eval="x" Unit="unit" MetricEval="" MetricUnit="" ResponseBytes="2" GaugeMin="0" GaugeMax="255" ChartMin="0" ChartMax="255" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="N" Color="" Display="TRT Result 2" LogReference="TRTresult2" RequestID="238093bc" Eval="x" Unit="unit" MetricEval="" MetricUnit="" ResponseBytes="2" GaugeMin="0" GaugeMax="255" ChartMin="0" ChartMax="255" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="N" Color="" Display="TRT Result 3" LogReference="TRTresult3" RequestID="2380a514" Eval="x" Unit="unit" MetricEval="" MetricUnit="" ResponseBytes="2" GaugeMin="0" GaugeMax="255" ChartMin="0" ChartMax="255" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="N" Color="" Display="TRTbits1" LogReference="TRTbits1" RequestID="23809409" Eval="x" Unit="unit" MetricEval="" MetricUnit="" ResponseBytes="1" GaugeMin="0" GaugeMax="255" ChartMin="0" ChartMax="255" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="N" Color="" Display="TRTbits2" LogReference="TRTbits2" RequestID="23809405" Eval="x" Unit="unit" MetricEval="" MetricUnit="" ResponseBytes="1" GaugeMin="0" GaugeMax="255" ChartMin="0" ChartMax="255" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="N" Color="" Display="SST_TL_interp" LogReference="SST_TL_interp" RequestID="23809efc" Eval="x" Unit="unit" MetricEval="" MetricUnit="" ResponseBytes="2" GaugeMin="0" GaugeMax="255" ChartMin="0" ChartMax="255" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="N" Color="" Display="SST_TL_final" LogReference="SST_TL_final" RequestID="23809d0c" Eval="x" Unit="unit" MetricEval="" MetricUnit="" ResponseBytes="2" GaugeMin="0" GaugeMax="255" ChartMin="0" ChartMax="255" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+
+        <DataListItem DataLog="N" Color="" Display="TorqueLimitAxis" LogReference="TorqueLimitAxis" RequestID="23809ce4" Eval="x" Unit="unit" MetricEval="" MetricUnit="" ResponseBytes="2" GaugeMin="0" GaugeMax="255" ChartMin="0" ChartMax="255" ScalingFactor="1" Notes="" Priority="1" Visible="False" />
+      </Mode2>
+    </ecu>
+  </vehicle>
+</EvoScanDataLogger>

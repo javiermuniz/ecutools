@@ -629,12 +629,12 @@ donations at golden@goldenevo.com
   </table>
 
   <table name="SST Clutch Pressure Ramp Up - Map A" address="59101" category="SST" type="3D" level="3" swapxy="true" scaling="Torque Calculation FtLbs">
-    <table name="Load" address="61346" type="X Axis" elements="21" scaling="Throttle %"/>
+    <table name="Load" address="61348" type="X Axis" elements="21" scaling="Throttle %"/>
     <table name="RPM" address="63c7a" type="Y Axis" elements="16" scaling="RPM"/>
   </table>
 
   <table name="SST Clutch Pressure Ramp Up - Map B" address="6322b" category="SST" type="3D" level="3" swapxy="true" scaling="Torque Calculation FtLbs">
-    <table name="Load" address="61346" type="X Axis" elements="21" scaling="Throttle %"/>
+    <table name="Load" address="61348" type="X Axis" elements="21" scaling="Throttle %"/>
     <table name="RPM" address="63c7a" type="Y Axis" elements="16" scaling="RPM"/>
   </table>
 
@@ -644,7 +644,7 @@ donations at golden@goldenevo.com
   </table>
 
   <table name="SST Clutch Pressure - Unknown" address="50413" category="SST" type="3D" level="3" swapxy="true" scaling="Torque Calculation FtLbs">
-    <table name="Load" address="61346" type="X Axis" elements="21" scaling="Throttle %"/>
+    <table name="Load" address="61348" type="X Axis" elements="21" scaling="Throttle %"/>
     <table name="RPM" address="63c7a" type="Y Axis" elements="16" scaling="RPM"/>
   </table>
 
@@ -673,7 +673,7 @@ donations at golden@goldenevo.com
   </table>
 
   <table name="SST Throttle Requested Torque Subtractor Map Percent" address="60a72" category="SST" type="2D" level="3" swapxy="true" scaling="Percent255">
-    <table name="RPM" address="60f4e" type="Y Axis" elements="16" scaling="RPM"/>
+    <table name="RPM" address="61322" type="Y Axis" elements="16" scaling="RPM"/>
   </table>
 
   <table name="SST Throttle Requested Torque Ramp Rate - SST Normal Mode" address="5f4dd" category="SST" type="3D" level="3" swapxy="true" scaling="Percent255">
@@ -1147,10 +1147,62 @@ donations at golden@goldenevo.com
     </table>
   </table>
   
-  <table name="Unknown Map #1 vs RPM - Below SST Clutch Pressure" address="50568" category="EcuTools Research" type="2D" scaling="RPM8">
+  
+  <table name="Unknown Map #1 vs Unknown #1" address="55004" category="EcuTools Research" type="2D" scaling="uint8">
+    <table name="Unknown #1" address="6177c" type="Y Axis" elements="6" scaling="uint16"/>
+  </table>
+  
+  <table name="Unknown Map #2 vs RPM" address="55010" category="EcuTools Research" type="2D" scaling="uint8">
+    <table name="RPM" address="60ed6" type="Y Axis" elements="16" scaling="RPM"/>
+  </table>
+  
+  <table name="Unknown Map #3 vs Coolant Temp" address="574e2" category="EcuTools Research" type="2D" scaling="uint16">
+    <table name="Coolant Temperature" address="60ff0" type="Y Axis" elements="8" scaling="Temp"/>
+  </table>
+  
+  <table name="Unknown Map #4 vs Coolant Temp" address="574f8" category="EcuTools Research" type="2D" scaling="uint16">
+     <table name="Coolant Temperature" address="60ff0" type="Y Axis" elements="8" scaling="Temp"/>
+  </table>
+  
+  <table name="Unknown Map #5 vs Coolant Temp" address="5750e" category="EcuTools Research" type="2D" scaling="uint16">
+     <table name="Coolant Temperature" address="60ff0" type="Y Axis" elements="8" scaling="Temp"/>
+  </table>
+  
+  <table name="Unknown Map #6 vs Coolant Temp" address="57524" category="EcuTools Research" type="2D" scaling="uint16">
+     <table name="Coolant Temperature" address="60ff0" type="Y Axis" elements="8" scaling="Temp"/>
+  </table>
+  
+  <table name="Unknown 16bit Map #7 vs RPM" address="57644" category="EcuTools Research" type="2D" scaling="uint16">
+     <table name="RPM" address="616f4" type="X Axis" elements="23" scaling="RPM"/>
+  </table>
+  
+  <table name="Unknown 16bit Map #8 vs RPM" address="57678" category="EcuTools Research" type="2D" scaling="uint16">
+     <table name="RPM" address="60f42" type="Y Axis" elements="23" scaling="RPM"/>
+  </table>
+  
+  <table name="Unknown 8Bit Map #9 vs RPM" address="576aa" category="EcuTools Research" type="2D" scaling="uint8">
+     <table name="RPM" address="615b4" type="Y Axis" elements="24" scaling="RPM"/>
+  </table>
+  
+  <table name="Unknown 8Bit Map #10 vs RPM" address="576c6" category="EcuTools Research" type="2D" scaling="uint8">
+     <table name="RPM" address="6177c" type="Y Axis" elements="6" scaling="RPM"/>
+  </table>
+  
+  <table name="Unknown 8Bit 2D Map #11 vs RPM" address="50568" category="EcuTools Research" type="2D" scaling="uint8">
     <table name="RPM" address="63c7a" type="Y Axis" elements="16" scaling="RPM"/>
   </table>
-  <table name="Unknown Map #2 vs RPM - Below SST Clutch Pressure" address="5057c" category="EcuTools Research" type="2D" scaling="RPM8">
+  <table name="Unknown 8Bit 2D Map #12 vs RPM" address="5057c" category="EcuTools Research" type="2D" scaling="uint8">
     <table name="RPM" address="63c7a" type="Y Axis" elements="16" scaling="RPM"/>
   </table>
+  
+  <table name="Unknown Map #13 (Fuel Related)" address="5517f" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
+    <table name="Load" address="60efc" type="X Axis" elements="21" scaling="Load"/>
+    <table name="RPM" address="60ed6" type="Y Axis" elements="16" scaling="RPM"/>
+  </table>
+  
+  <table name="Unknown Map #14 (Fuel Related)" address="5542f" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
+    <table name="Load" address="60efc" type="X Axis" elements="21" scaling="Load"/>
+    <table name="RPM" address="60ed6" type="Y Axis" elements="16" scaling="RPM"/>
+  </table>
+  
 </rom>

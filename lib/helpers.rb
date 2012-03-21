@@ -51,6 +51,7 @@ module ECUTools
     end
 
     def absolute_address(relative_address)
+      rel = from_hex relative_address
       (base_address.to_i(16) + relative_address).to_s(16)
     end
 
@@ -60,13 +61,49 @@ module ECUTools
       begin
         xml = Nokogiri::XML(File.open(File.dirname(__FILE__) + "/../xml/ram/#{rom_id}.xml"))
         xml.xpath('/EvoScanDataLogger/vehicle/ecu/Mode2/DataListItem').each do |node|
-          @address_descriptions[node.attr('RequestID')[2..-1]] = node.attr('Display')
+          addr = node.attr('RequestID')[2..-1]
+          @address_descriptions[addr] = node.attr('Display') if !@address_descriptions.include? addr
         end
       rescue
         $stderr.puts "No RAM map found for this rom, skipping subroutine identification." if verbose
       end
       
       @address_descriptions
+    end
+    
+    def read_scale_header(address)
+      destination = from_table_ref read_bytes(address,2).join
+      source = from_table_ref read_bytes(address + 2,2).join
+      elements = read_bytes(address + 4,2).join.to_i(16)
+      { :dest => destination, :src => source, :entries => elements }
+    end
+    
+    def read_8bit_header(address)
+      header = {}
+      header[:dimensions] = read_bytes(address,1).join.to_i(16)
+      return nil if ![2,3].include? header[:dimensions] # return nil for "headless" tables
+      header[:value_offset] = read_bytes(address+1,1).join.to_i(16)
+      header[:x_address] = from_table_ref read_bytes(address+2,2).join
+      header[:y_address] = from_table_ref read_bytes(address+4,2).join if(header[:dimensions] == 3)
+      header[:rows] = read_bytes(address + 6 , 1).join.to_i(16) if(header[:dimensions] == 3)
+      header
+    end
+    
+    def read_16bit_header(address)
+      header = {}
+      header[:dimensions] = read_bytes(address,2).join.to_i(16)
+      return nil if ![2,3].include? header[:dimensions] # return nil for "headless" tables
+      header[:value_offset] = read_bytes(address+2,2).join.to_i(16)
+      header[:x_address] = from_table_ref read_bytes(address+4,2).join
+      header[:y_address] = from_table_ref read_bytes(address+6,2).join if(header[:dimensions] == 3)
+      header[:rows] = read_bytes(address + 8, 1).join.to_i(16) if(header[:dimensions] == 3)
+      header
+    end
+    
+    def from_table_ref(ref)
+      ref = ref.to_i(16) # convert ref to integer
+      relative_address = ref - '0x10000'.to_i(16)
+      absolute_address relative_address
     end
 
     def subroutine_descriptions

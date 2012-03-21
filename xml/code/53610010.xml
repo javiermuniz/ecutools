@@ -1,0 +1,29 @@
+<rom>
+  <romid>
+    <xmlid>53610010</xmlid>
+  </romid>
+  <routine address="418" name="subr_memcpy : r0=dest, r1=source, r2=length" />
+  <routine address="4db80" name="subr_r0_equals_r0_plus_r1" />
+  <routine address="4dc38" name="subr_r0_equals_middle_value_of_r0_r1_r2" />
+  <routine address="4dc84" name="subr_r0_equals_r0_x_r1_div_r2" />
+  <routine address="4dcf4" name="subr_r0_equals_r0_x_r1_div_r2_round_to_nearest" />
+  <routine address="4df48" name="subr_r0_rquals_r0_div_r1" />
+  <routine address="4df68" name="subr_r0_rquals_r0_div_r1 (another one)" />
+  <routine address="4df9c" name="subr_r0_equals_r0_div_r1_round_up" />
+  <routine address="4dff4" name="subr_r0_equals_r0_div_r1_mult_r1_rounded" />
+  <routine address="4e490" name="subr_r0_equals_r0_x_r1 (with upper bound sanity check)" />
+  <routine address="4e4a4" name="subr_r0_equals_r0_x_r1 (without upper bound sanity check!)" />
+  <routine address="4e500" name="subr_r0_equals_r0_minus_r1" />
+  <routine address="4dc14" name="subr_r0_if_r0_gt_0xff_set_to_0xff" />
+  <routine address="4dd6c" name="subr_r0_equals_r0_x_r1_div_128" />
+  <routine address="4ddbc" name="subr_r0_equals__r0_x_r1__plus_64__div_128" />
+  <routine address="4de60" name="subr_r0_equals_r0_x_r1_plus_128_div_256" />
+  <routine address="4e01c" name="subr_r0_equals_r1_plus__r0_minus_r1_x_r2_div_256" />
+  <routine address="4e0d4" name="subr_r0_equals_interpolation_between_r0_and_r1_by_r2" />
+  <routine address="4e1a8" name="subr_table_lookup_8bit" />
+  <routine address="4e278" name="subr_table_lookup_16bit" />
+  <routine address="4e330" name="subr_table_lookup_vector_array" />
+  <routine address="4e410" name="subr_scale_lookup_16bit" />
+  <routine address="4e700" name="subr_structured_scale_and_table_lookup" />
+  <routine address="6af14" name="subr_indirect_address_lookup" />
+</rom>
