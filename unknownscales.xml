@@ -1,0 +1,168 @@
+<table name="Unknown Scale #1" address="6106a" type="Y Axis" elements="9" scaling="uint16"/>
+<table name="Unknown Scale #2" address="6182e" type="Y Axis" elements="8" scaling="uint16"/>
+<table name="Unknown Scale #3 (Load (MIVEC) and (Timing if IAT GT 75F))" address="61d20" type="Y Axis" elements="8" scaling="uint16"/>
+<table name="Unknown Scale #4" address="61082" type="Y Axis" elements="9" scaling="uint16"/>
+<table name="Unknown Scale #5" address="61a96" type="Y Axis" elements="7" scaling="uint16"/>
+<table name="Unknown Scale #6" address="61844" type="Y Axis" elements="9" scaling="uint16"/>
+<table name="Unknown Scale #7 (RPM)" address="61ca8" type="Y Axis" elements="10" scaling="uint16"/>
+<table name="Unknown Scale #8 (RPM)" address="60d32" type="Y Axis" elements="16" scaling="uint16"/>
+<table name="Unknown Scale #9 (RPM)" address="60d58" type="Y Axis" elements="12" scaling="uint16"/>
+<table name="Unknown Scale #10" address="60de0" type="Y Axis" elements="21" scaling="uint16"/>
+<table name="Unknown Scale #11" address="61728" type="Y Axis" elements="23" scaling="uint16"/>
+<table name="Unknown Scale #12" address="6175c" type="Y Axis" elements="5" scaling="uint16"/>
+<table name="Unknown Scale #13" address="6176c" type="Y Axis" elements="5" scaling="uint16"/>
+<table name="Unknown Scale #14" address="6239a" type="Y Axis" elements="8" scaling="uint16"/>
+<table name="Unknown Scale #15 (RPM)" address="6237e" type="Y Axis" elements="11" scaling="uint16"/>
+<table name="Unknown Scale #16" address="626e6" type="Y Axis" elements="8" scaling="uint16"/>
+<table name="Unknown Scale #17" address="6272c" type="Y Axis" elements="32" scaling="uint16"/>
+<table name="Unknown Scale #18" address="61e98" type="Y Axis" elements="21" scaling="uint16"/>
+<table name="Unknown Scale #19" address="624e8" type="Y Axis" elements="6" scaling="uint16"/>
+<table name="Unknown Scale #20 (RPM)" address="61c0a" type="Y Axis" elements="19" scaling="uint16"/>
+<table name="Unknown Scale #21" address="62190" type="Y Axis" elements="8" scaling="uint16"/>
+<table name="Unknown Scale #22" address="621a6" type="Y Axis" elements="6" scaling="uint16"/>
+<table name="Unknown Scale #23" address="621b8" type="Y Axis" elements="7" scaling="uint16"/>
+<table name="Unknown Scale #24" address="622d6" type="Y Axis" elements="8" scaling="uint16"/>
+<table name="Unknown Scale #25 (Load (MIVEC) and (Timing if IAT GT 75F))" address="623b0" type="Y Axis" elements="13" scaling="uint16"/>
+<table name="Unknown Scale #26 (RPM)" address="623e8" type="Y Axis" elements="10" scaling="uint16"/>
+<table name="Unknown Scale #27 (Load (MIVEC) and (Timing if IAT GT 75F))" address="61378" type="Y Axis" elements="21" scaling="uint16"/>
+<table name="Unknown Scale #28" address="61438" type="Y Axis" elements="10" scaling="uint16"/>
+<table name="Unknown Scale #29" address="61e46" type="Y Axis" elements="9" scaling="uint16"/>
+<table name="Unknown Scale #30" address="5d354" type="Y Axis" elements="5" scaling="uint16"/>
+<table name="Unknown Scale #31 (RPM)" address="61958" type="Y Axis" elements="14" scaling="uint16"/>
+<table name="Unknown Scale #32" address="62366" type="Y Axis" elements="9" scaling="uint16"/>
+<table name="Unknown Scale #33" address="610c8" type="Y Axis" elements="9" scaling="uint16"/>
+<table name="Unknown Scale #34" address="60e46" type="Y Axis" elements="13" scaling="uint16"/>
+<table name="Unknown Scale #35" address="61e2e" type="Y Axis" elements="9" scaling="uint16"/>
+<table name="Unknown Scale #36 (RPM)" address="60eb0" type="Y Axis" elements="16" scaling="uint16"/>
+<table name="Unknown Scale #37" address="6268e" type="Y Axis" elements="9" scaling="uint16"/>
+<table name="Unknown Scale #38" address="60e22" type="Y Axis" elements="15" scaling="uint16"/>
+<table name="Unknown Scale #39" address="61c94" type="Y Axis" elements="7" scaling="uint16"/>
+<table name="Unknown Scale #40" address="612b8" type="Y Axis" elements="16" scaling="uint16"/>
+<table name="Unknown Scale #41 (RPM)" address="61b68" type="Y Axis" elements="14" scaling="uint16"/>
+<table name="Unknown Scale #42" address="61b8a" type="Y Axis" elements="12" scaling="uint16"/>
+<table name="Unknown Scale #43" address="6104e" type="Y Axis" elements="11" scaling="uint16"/>
+<table name="Unknown Scale #44" address="60dca" type="Y Axis" elements="8" scaling="uint16"/>
+<table name="Unknown Scale #45" address="60e66" type="Y Axis" elements="7" scaling="uint16"/>
+<table name="Unknown Scale #46 (RPM)" address="5d2a8" type="Y Axis" elements="16" scaling="uint16"/>
+<table name="Unknown Scale #47" address="61e5e" type="Y Axis" elements="11" scaling="uint16"/>
+<table name="Unknown Scale #48 (RPM)" address="61e7a" type="Y Axis" elements="12" scaling="uint16"/>
+<table name="Unknown Scale #49 (RPM)" address="62528" type="Y Axis" elements="16" scaling="uint16"/>
+<table name="Unknown Scale #50" address="60e10" type="Y Axis" elements="6" scaling="uint16"/>
+<table name="Unknown Scale #51" address="60ea2" type="Y Axis" elements="4" scaling="uint16"/>
+<table name="Unknown Scale #52" address="6232a" type="Y Axis" elements="9" scaling="uint16"/>
+<table name="Unknown Scale #53 (RPM)" address="611f0" type="Y Axis" elements="6" scaling="uint16"/>
+<table name="Unknown Scale #54" address="61202" type="Y Axis" elements="7" scaling="uint16"/>
+<table name="Unknown Scale #55" address="626a6" type="Y Axis" elements="29" scaling="uint16"/>
+<table name="Unknown Scale #56" address="629c6" type="Y Axis" elements="12" scaling="uint16"/>
+<table name="Unknown Scale #57" address="60e7a" type="Y Axis" elements="9" scaling="uint16"/>
+<table name="Unknown Scale #58 (RPM)" address="61a06" type="Y Axis" elements="15" scaling="uint16"/>
+<table name="Unknown Scale #59" address="61a2a" type="Y Axis" elements="9" scaling="uint16"/>
+<table name="Unknown Scale #60 (RPM)" address="61538" type="Y Axis" elements="5" scaling="uint16"/>
+<table name="Unknown Scale #61" address="61548" type="Y Axis" elements="6" scaling="uint16"/>
+<table name="Unknown Scale #62" address="625e0" type="Y Axis" elements="9" scaling="uint16"/>
+<table name="Unknown Scale #63" address="6109a" type="Y Axis" elements="8" scaling="uint16"/>
+<table name="Unknown Scale #64 (RPM)" address="61468" type="Y Axis" elements="10" scaling="uint16"/>
+<table name="Unknown Scale #65" address="61482" type="Y Axis" elements="9" scaling="uint16"/>
+<table name="Unknown Scale #66 (RPM)" address="60da4" type="Y Axis" elements="16" scaling="uint16"/>
+<table name="Unknown Scale #67" address="60fa8" type="Y Axis" elements="10" scaling="uint16"/>
+<table name="Unknown Scale #68" address="60fc2" type="Y Axis" elements="9" scaling="uint16"/>
+<table name="Unknown Scale #69" address="61ba8" type="Y Axis" elements="10" scaling="uint16"/>
+<table name="Unknown Scale #70" address="61abe" type="Y Axis" elements="7" scaling="uint16"/>
+<table name="Unknown Scale #71" address="61ad2" type="Y Axis" elements="8" scaling="uint16"/>
+<table name="Unknown Scale #72 (RPM)" address="6250a" type="Y Axis" elements="12" scaling="uint16"/>
+<table name="Unknown Scale #73" address="62178" type="Y Axis" elements="9" scaling="uint16"/>
+<table name="Unknown Scale #74" address="61d4c" type="Y Axis" elements="12" scaling="uint16"/>
+<table name="Unknown Scale #75" address="61bc2" type="Y Axis" elements="5" scaling="uint16"/>
+<table name="Unknown Scale #76" address="630b2" type="Y Axis" elements="9" scaling="uint16"/>
+<table name="Unknown Scale #77" address="612de" type="Y Axis" elements="5" scaling="uint16"/>
+<table name="Unknown Scale #78" address="61990" type="Y Axis" elements="8" scaling="uint16"/>
+<table name="Unknown Scale #79" address="6197a" type="Y Axis" elements="8" scaling="uint16"/>
+<table name="Unknown Scale #80" address="62120" type="Y Axis" elements="41" scaling="uint16"/>
+<table name="Unknown Scale #81 (RPM)" address="61be4" type="Y Axis" elements="16" scaling="uint16"/>
+<table name="Unknown Scale #82" address="620fe" type="Y Axis" elements="14" scaling="uint16"/>
+<table name="Unknown Scale #83 (RPM)" address="61f9e" type="Y Axis" elements="15" scaling="uint16"/>
+<table name="Unknown Scale #84" address="61fc2" type="Y Axis" elements="17" scaling="uint16"/>
+<table name="Unknown Scale #85" address="52b9a" type="Y Axis" elements="9" scaling="uint16"/>
+<table name="Unknown Scale #86 (RPM)" address="52bb2" type="Y Axis" elements="2" scaling="uint16"/>
+<table name="Unknown Scale #87" address="5d304" type="Y Axis" elements="13" scaling="uint16"/>
+<table name="Unknown Scale #88" address="5d324" type="Y Axis" elements="9" scaling="uint16"/>
+<table name="Unknown Scale #89" address="5d33c" type="Y Axis" elements="9" scaling="uint16"/>
+<table name="Unknown Scale #90" address="62458" type="Y Axis" elements="4" scaling="uint16"/>
+<table name="Unknown Scale #91" address="62436" type="Y Axis" elements="14" scaling="uint16"/>
+<table name="Unknown Scale #92 (RPM)" address="62996" type="Y Axis" elements="10" scaling="uint16"/>
+<table name="Unknown Scale #93" address="629b0" type="Y Axis" elements="8" scaling="uint16"/>
+<table name="Unknown Scale #94" address="6110a" type="Y Axis" elements="9" scaling="uint16"/>
+<table name="Unknown Scale #95" address="621de" type="Y Axis" elements="5" scaling="uint16"/>
+<table name="Unknown Scale #96" address="61e18" type="Y Axis" elements="8" scaling="uint16"/>
+<table name="Unknown Scale #97" address="61c36" type="Y Axis" elements="14" scaling="uint16"/>
+<table name="Unknown Scale #98" address="61c58" type="Y Axis" elements="10" scaling="uint16"/>
+<table name="Unknown Scale #99" address="61c72" type="Y Axis" elements="14" scaling="uint16"/>
+<table name="Unknown Scale #100 (RPM)" address="61b0e" type="Y Axis" elements="29" scaling="uint16"/>
+<table name="Unknown Scale #101 (RPM)" address="62982" type="Y Axis" elements="7" scaling="uint16"/>
+<table name="Unknown Scale #102" address="61874" type="Y Axis" elements="27" scaling="uint16"/>
+<table name="Unknown Scale #103 (RPM)" address="618ec" type="Y Axis" elements="12" scaling="uint16"/>
+<table name="Unknown Scale #104" address="618b0" type="Y Axis" elements="27" scaling="uint16"/>
+<table name="Unknown Scale #105" address="61ec8" type="Y Axis" elements="16" scaling="uint16"/>
+<table name="Unknown Scale #106" address="61eee" type="Y Axis" elements="21" scaling="uint16"/>
+<table name="Unknown Scale #107" address="61f1e" type="Y Axis" elements="15" scaling="uint16"/>
+<table name="Unknown Scale #108" address="6207e" type="Y Axis" elements="19" scaling="uint16"/>
+<table name="Unknown Scale #109" address="61f42" type="Y Axis" elements="15" scaling="uint16"/>
+<table name="Unknown Scale #110" address="620aa" type="Y Axis" elements="19" scaling="uint16"/>
+<table name="Unknown Scale #111" address="620d6" type="Y Axis" elements="17" scaling="uint16"/>
+<table name="Unknown Scale #112 (RPM)" address="61f66" type="Y Axis" elements="13" scaling="uint16"/>
+<table name="Unknown Scale #113" address="61f86" type="Y Axis" elements="9" scaling="uint16"/>
+<table name="Unknown Scale #114 (RPM)" address="62036" type="Y Axis" elements="15" scaling="uint16"/>
+<table name="Unknown Scale #115" address="6205a" type="Y Axis" elements="15" scaling="uint16"/>
+<table name="Unknown Scale #116 (RPM)" address="61fea" type="Y Axis" elements="15" scaling="uint16"/>
+<table name="Unknown Scale #117" address="6200e" type="Y Axis" elements="17" scaling="uint16"/>
+<table name="Unknown Scale #118 (RPM)" address="61156" type="Y Axis" elements="14" scaling="uint16"/>
+<table name="Unknown Scale #119 (Load (MIVEC) and (Timing if IAT GT 75F))" address="611b0" type="Y Axis" elements="16" scaling="uint16"/>
+<table name="Unknown Scale #120 (RPM)" address="61194" type="Y Axis" elements="11" scaling="uint16"/>
+<table name="Unknown Scale #121 (RPM)" address="61178" type="Y Axis" elements="11" scaling="uint16"/>
+<table name="Unknown Scale #122 (RPM)" address="6113a" type="Y Axis" elements="11" scaling="uint16"/>
+<table name="Unknown Scale #123" address="6574a" type="Y Axis" elements="4" scaling="uint16"/>
+<table name="Unknown Scale #124" address="61452" type="Y Axis" elements="8" scaling="uint16"/>
+<table name="Unknown Scale #125" address="612ee" type="Y Axis" elements="4" scaling="uint16"/>
+<table name="Unknown Scale #126" address="61572" type="Y Axis" elements="6" scaling="uint16"/>
+<table name="Unknown Scale #127 (RPM)" address="6126c" type="Y Axis" elements="9" scaling="uint16"/>
+<table name="Unknown Scale #128" address="628ea" type="Y Axis" elements="73" scaling="uint16"/>
+<table name="Unknown Scale #129" address="63ca0" type="Y Axis" elements="6" scaling="uint16"/>
+<table name="Unknown Scale #130" address="63cb2" type="Y Axis" elements="7" scaling="uint16"/>
+<table name="Unknown Scale #131" address="63e3e" type="Y Axis" elements="9" scaling="uint16"/>
+<table name="Unknown Scale #132" address="63d44" type="Y Axis" elements="17" scaling="uint16"/>
+<table name="Unknown Scale #133" address="63d6c" type="Y Axis" elements="14" scaling="uint16"/>
+<table name="Unknown Scale #134" address="63d8e" type="Y Axis" elements="16" scaling="uint16"/>
+<table name="Unknown Scale #135" address="63e2c" type="Y Axis" elements="6" scaling="uint16"/>
+<table name="Unknown Scale #136" address="63db4" type="Y Axis" elements="27" scaling="uint16"/>
+<table name="Unknown Scale #137" address="63df0" type="Y Axis" elements="27" scaling="uint16"/>
+<table name="Unknown Scale #138" address="651e6" type="Y Axis" elements="6" scaling="uint16"/>
+<table name="Unknown Scale #139" address="651f8" type="Y Axis" elements="7" scaling="uint16"/>
+<table name="Unknown Scale #140" address="651c0" type="Y Axis" elements="16" scaling="uint16"/>
+<table name="Unknown Scale #141" address="6520c" type="Y Axis" elements="17" scaling="uint16"/>
+<table name="Unknown Scale #142" address="65234" type="Y Axis" elements="14" scaling="uint16"/>
+<table name="Unknown Scale #143" address="65256" type="Y Axis" elements="16" scaling="uint16"/>
+<table name="Unknown Scale #144" address="6527c" type="Y Axis" elements="6" scaling="uint16"/>
+<table name="Unknown Scale #145" address="65184" type="Y Axis" elements="27" scaling="uint16"/>
+<table name="Unknown Scale #146" address="62342" type="Y Axis" elements="15" scaling="uint16"/>
+<table name="Unknown Scale #147" address="62f98" type="Y Axis" elements="9" scaling="uint16"/>
+<table name="Unknown Scale #148" address="62f72" type="Y Axis" elements="7" scaling="uint16"/>
+<table name="Unknown Scale #149" address="62f86" type="Y Axis" elements="6" scaling="uint16"/>
+<table name="Unknown Scale #150" address="6307a" type="Y Axis" elements="9" scaling="uint16"/>
+<table name="Unknown Scale #151 (RPM)" address="63050" type="Y Axis" elements="18" scaling="uint16"/>
+<table name="Unknown Scale #152" address="62f20" type="Y Axis" elements="7" scaling="uint16"/>
+<table name="Unknown Scale #153 (RPM)" address="62f34" type="Y Axis" elements="9" scaling="uint16"/>
+<table name="Unknown Scale #154 (Load (MIVEC) and (Timing if IAT GT 75F))" address="62f4c" type="Y Axis" elements="16" scaling="uint16"/>
+<table name="Unknown Scale #155" address="628b6" type="Y Axis" elements="11" scaling="uint16"/>
+<table name="Unknown Scale #156 (RPM)" address="62772" type="Y Axis" elements="12" scaling="uint16"/>
+<table name="Unknown Scale #157 (RPM)" address="6193e" type="Y Axis" elements="10" scaling="uint16"/>
+<table name="Unknown Scale #158 (RPM)" address="6190a" type="Y Axis" elements="10" scaling="uint16"/>
+<table name="Unknown Scale #159" address="61a42" type="Y Axis" elements="11" scaling="uint16"/>
+<table name="Unknown Scale #160" address="628d2" type="Y Axis" elements="9" scaling="uint16"/>
+<table name="Unknown Scale #161" address="5d2ee" type="Y Axis" elements="8" scaling="uint16"/>
+<table name="Unknown Scale #162 (RPM)" address="61122" type="Y Axis" elements="9" scaling="uint16"/>
+<table name="Unknown Scale #163 (RPM)" address="6129e" type="Y Axis" elements="10" scaling="uint16"/>
+<table name="Unknown Scale #164" address="61b4e" type="Y Axis" elements="10" scaling="uint16"/>
+<table name="Unknown Scale #165 (RPM)" address="61258" type="Y Axis" elements="7" scaling="uint16"/>
+<table name="Unknown Scale #166" address="6149a" type="Y Axis" elements="9" scaling="uint16"/>
+<table name="Unknown Scale #167 (RPM)" address="61242" type="Y Axis" elements="8" scaling="uint16"/>
+<table name="Unknown Scale #168" address="61284" type="Y Axis" elements="10" scaling="uint16"/>

@@ -193,6 +193,8 @@ module ECUTools
     def annotate_code
       $stderr.puts "Annotating code..." if verbose
       count = 0
+      unknown_scale_count = 0
+      injected_scales = []
       found_rom_addresses = {}
       found_ram_addresses = {}
       @assembly.each do |instruction|
@@ -232,7 +234,7 @@ module ECUTools
           count = count + 1
         end
 
-        # annotate absolute RAM addressing ld24 r4,0x800700
+        # annotate absolute RAM addressing
         match = /(\w+)\s+\w\w,0x(8\w\w\w\w\w)/.match(instruction.assembly)
         if match
           address = match[2]
@@ -279,7 +281,25 @@ module ECUTools
           found_ram_addresses[display] = true if !display.nil?
           count = count + 1
         end
-
+        
+        # annotate scales
+        # ld24 r0,0x5f51a
+        match = /ld24 r0,0x(\w{1,5})/.match(instruction.assembly)
+        if match and match[1].to_i(16) > "0x40000".to_i(16) and instruction.comments.length == 0 and !injected_scales.include?(match[1])
+          address = match[1].to_i(16)
+          header = read_scale_header(address)
+          if header[:dest] =~ /8\w\w\w\w\w/ && header[:src] =~ /8\w\w\w\w\w/ && header[:entries] < 100
+            injected_scales << match[1]
+            # we have a valid scale header
+            unknown_scale_count = unknown_scale_count + 1
+            src_label = address_descriptions[header[:src]].nil? ? nil : " (#{address_descriptions[header[:src]]})"
+            dest_label = address_descriptions[header[:dest]].nil? ? nil : " (#{address_descriptions[header[:dest]]})"
+            elements = header[:entries]
+            instruction.comment instruction.address, "Reference to unknown scale: #{elements} elements, S = #{header[:src]}#{src_label}, D = #{header[:dest]}#{dest_label}"
+            #scale_inst = instruction_at address + 6
+            puts "<table name=\"Unknown Scale \##{unknown_scale_count}#{src_label}\" address=\"#{(address + 6).to_s(16)}\" type=\"Y Axis\" elements=\"#{elements}\" scaling=\"uint16\"/>"
+          end
+        end
       end
 
       $stderr.puts "#{count} lines of code annotated." if verbose
