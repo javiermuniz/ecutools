@@ -10,7 +10,7 @@ module ECUTools
     def initialize(input = nil, options = {})
       @options = options
       @table_addresses = {}
-      @scale_addresses = {}
+      @registered_scales = {}
       if(!input.nil?)
         open input
       end
@@ -92,7 +92,7 @@ module ECUTools
 
         possible_offsets.each do |offset|
           offset_hex = (address - offset).to_s(16)
-          @scale_addresses[offset_hex] = scale_label if !@scale_addresses.include? offset_hex
+          @registered_scales[offset_hex] = {:label => scale_label, :name => scale.attr('name') } if !@registered_scales.include? offset_hex
         end
 
         storage_size.times do |n|
@@ -231,8 +231,8 @@ module ECUTools
         end
 
         # annotate scale address references
-        if address and @scale_addresses.include? address[1]
-          instruction.comment instruction.address, "Get scale #{@scale_addresses[address[1]]}"
+        if address and @registered_scales.include? address[1]
+          instruction.comment instruction.address, "Get scale #{@registered_scales[address[1]][:label]}"
           count = count + 1
         end
 
@@ -297,18 +297,17 @@ module ECUTools
             elements = header[:entries]
             
             # register our new scale as if it were known (if it's not)
-            if @scale_addresses[match[1]].nil?
+            if @registered_scales[match[1]].nil?
               src_label = address_descriptions[header[:src]].nil? ? nil : " (#{address_descriptions[header[:src]]})"
               dest_label = address_descriptions[header[:dest]].nil? ? nil : " (#{address_descriptions[header[:dest]]})"
               scale_label = "Unknown \##{unknown_scale_count}, #{elements} elements, S = 0x#{header[:src]}#{src_label}, D = 0x#{header[:dest]}#{dest_label}"
-              puts "<table name=\"Unknown Scale \##{unknown_scale_count}#{src_label}\" address=\"#{(address + 6).to_s(16)}\" type=\"Y Axis\" elements=\"#{elements}\" scaling=\"uint16\"/>"
-              @scale_addresses[match[1]] = scale_label
+              @registered_scales[match[1]] = { :label => scale_label, :name => "Unknown \##{unknown_scale_count}" }
               unknown_scale_count = unknown_scale_count + 1
             end
             
             # annotate the calling line if there isn't a comment already
             if instruction.comments.length == 0 
-              instruction.comment instruction.address, "Get scale #{@scale_addresses[match[1]]}"
+              instruction.comment instruction.address, "Get scale #{@registered_scales[match[1]][:label]}"
             end
             
             # set the memory address so that we can use it in table discovery, we do this for *all* scale loads
@@ -326,14 +325,14 @@ module ECUTools
               x_elements = table_address_map[header[:x_address]][:elements]
               y_elements = 1 # we set this to one for 2D tables so our elements calculation doesn't zero out
               puts "<table name=\"Unknown Map \##{unknown_table_count}\" address=\"#{match[1]}\" category=\"EcuTools Research\" type=\"#{header[:dimensions]}D\" swapxy=\"true\" scaling=\"uint8\">"
-              puts "  <table name=\"Y Axis\" address=\"#{x_scale}\" type=\"Y Axis\" elements=\"#{x_elements}\" scaling=\"uint16\"/>"
+              puts "  <table name=\"#{@registered_scales[x_scale][:name]}\" address=\"#{x_scale}\" type=\"Y Axis\" elements=\"#{x_elements}\" scaling=\"uint16\"/>"
               if header[:dimensions] == 3
                 if table_address_map[header[:y_address]].nil?
                   puts "  <table name=\"X Axis\" address=\"0x#{header[:y_address]}\" type=\"X Axis\" elements=\"FromRAM!\" scaling=\"uint16\"/>"
                 else 
                   y_scale = table_address_map[header[:y_address]][:address]
                   y_elements = table_address_map[header[:y_address]][:elements]
-                  puts "  <table name=\"X Axis\" address=\"#{y_scale}\" type=\"X Axis\" elements=\"#{y_elements}\" scaling=\"uint16\"/>"
+                  puts "  <table name=\"#{@registered_scales[y_scale][:name]}\" address=\"#{y_scale}\" type=\"X Axis\" elements=\"#{y_elements}\" scaling=\"uint16\"/>"
                 end
               end
               puts "</table>"
