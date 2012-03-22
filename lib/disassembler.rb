@@ -169,7 +169,7 @@ module ECUTools
         if header.nil?
           table_label = "#{table.attr('name')} (#{elements} elements, headless)"
         else
-          table_label = "#{table.attr('name')} (#{elements} elements, X = 0x#{header[:x_address]}, Y = #{header[:y_address]})"
+          table_label = "#{table.attr('name')} (#{elements} elements, X = 0x#{header[:x_address]}, Y = 0x#{header[:y_address]})"
         end
       
         possible_offsets.each do |offset|
@@ -194,7 +194,9 @@ module ECUTools
       $stderr.puts "Annotating code..." if verbose
       count = 0
       unknown_scale_count = 0
-      injected_scales = []
+      unknown_table_count = 0
+      injected_address_objects = []
+      table_address_map = {}
       found_rom_addresses = {}
       found_ram_addresses = {}
       @assembly.each do |instruction|
@@ -282,22 +284,69 @@ module ECUTools
           count = count + 1
         end
         
-        # annotate scales
-        # ld24 r0,0x5f51a
+        # annotate unknown address references (scale/table discovery)
         match = /ld24 r0,0x(\w{1,5})/.match(instruction.assembly)
-        if match and match[1].to_i(16) > "0x40000".to_i(16) and instruction.comments.length == 0 and !injected_scales.include?(match[1])
+        if match and match[1].to_i(16) > "0x40000".to_i(16)
+          
           address = match[1].to_i(16)
+          
+          # detect unknown scales
           header = read_scale_header(address)
-          if header[:dest] =~ /8\w\w\w\w\w/ && header[:src] =~ /8\w\w\w\w\w/ && header[:entries] < 100
-            injected_scales << match[1]
+          if header[:dest] =~ /8[01]\w\w\w\w/ && header[:src] =~ /8[01]\w\w\w\w/ && header[:entries] < 100
             # we have a valid scale header
-            unknown_scale_count = unknown_scale_count + 1
-            src_label = address_descriptions[header[:src]].nil? ? nil : " (#{address_descriptions[header[:src]]})"
-            dest_label = address_descriptions[header[:dest]].nil? ? nil : " (#{address_descriptions[header[:dest]]})"
             elements = header[:entries]
-            instruction.comment instruction.address, "Reference to unknown scale: #{elements} elements, S = #{header[:src]}#{src_label}, D = #{header[:dest]}#{dest_label}"
-            #scale_inst = instruction_at address + 6
-            puts "<table name=\"Unknown Scale \##{unknown_scale_count}#{src_label}\" address=\"#{(address + 6).to_s(16)}\" type=\"Y Axis\" elements=\"#{elements}\" scaling=\"uint16\"/>"
+            
+            # register our new scale as if it were known (if it's not)
+            if @scale_addresses[match[1]].nil?
+              src_label = address_descriptions[header[:src]].nil? ? nil : " (#{address_descriptions[header[:src]]})"
+              dest_label = address_descriptions[header[:dest]].nil? ? nil : " (#{address_descriptions[header[:dest]]})"
+              scale_label = "Unknown \##{unknown_scale_count}, #{elements} elements, S = 0x#{header[:src]}#{src_label}, D = 0x#{header[:dest]}#{dest_label}"
+              puts "<table name=\"Unknown Scale \##{unknown_scale_count}#{src_label}\" address=\"#{(address + 6).to_s(16)}\" type=\"Y Axis\" elements=\"#{elements}\" scaling=\"uint16\"/>"
+              @scale_addresses[match[1]] = scale_label
+              unknown_scale_count = unknown_scale_count + 1
+            end
+            
+            # annotate the calling line if there isn't a comment already
+            if instruction.comments.length == 0 
+              instruction.comment instruction.address, "Get scale #{@scale_addresses[match[1]]}"
+            end
+            
+            # set the memory address so that we can use it in table discovery, we do this for *all* scale loads
+            table_address_map[header[:dest]] = { :elements => elements, :address => match[1] }
+          end
+          
+          # detect unknown 8bit tables
+          header = read_8bit_header(address)
+          if !header.nil? && header[:x_address] =~ /8[01]\w\w\w\w/ && (header[:dimensions] == 2 || header[:y_address] =~ /8[01]\w\w\w\w/)
+            # we have a valid scale header
+            
+            # register our new table as if it were known (if it's not)
+            if @table_addresses[match[1]].nil?
+              x_scale = table_address_map[header[:x_address]][:address]
+              x_elements = table_address_map[header[:x_address]][:elements]
+              y_elements = 1 # we set this to one for 2D tables so our elements calculation doesn't zero out
+              puts "<table name=\"Unknown Map \##{unknown_table_count}\" address=\"#{match[1]}\" category=\"EcuTools Research\" type=\"#{header[:dimensions]}D\" swapxy=\"true\" scaling=\"uint8\">"
+              puts "  <table name=\"Y Axis\" address=\"#{x_scale}\" type=\"Y Axis\" elements=\"#{x_elements}\" scaling=\"uint16\"/>"
+              if header[:dimensions] == 3
+                if table_address_map[header[:y_address]].nil?
+                  puts "  <table name=\"X Axis\" address=\"0x#{header[:y_address]}\" type=\"X Axis\" elements=\"FromRAM!\" scaling=\"uint16\"/>"
+                else 
+                  y_scale = table_address_map[header[:y_address]][:address]
+                  y_elements = table_address_map[header[:y_address]][:elements]
+                  puts "  <table name=\"X Axis\" address=\"#{y_scale}\" type=\"X Axis\" elements=\"#{y_elements}\" scaling=\"uint16\"/>"
+                end
+              end
+              puts "</table>"
+              table_label = "Unknown Map \##{unknown_table_count} (#{x_elements * y_elements} elements, X = 0x#{header[:x_address]}, Y = 0x#{header[:y_address]})"
+              @table_addresses[match[1]] = table_label
+              found_rom_addresses[@table_addresses[match[1]] ] = true
+              unknown_table_count = unknown_table_count + 1
+            end
+            
+            # annotate the calling line if there isn't a comment already
+            if instruction.comments.length == 0 
+              instruction.comment instruction.address, "Get table #{@table_addresses[match[1]]}"
+            end
           end
         end
       end
