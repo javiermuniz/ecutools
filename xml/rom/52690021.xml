@@ -690,7 +690,19 @@
       <table name="VehicleSpeed" address="622ec" type="X Axis" elements="6" scaling="VehicleSpeed"/>
       <table name="RevPerMPH" address="62678" type="Y Axis" elements="8" scaling="RPMPerMPH"/>
     </table>
-
+    <table name="SST Throttle Requested Torque Ramp Rate - Unknown Mode" address="5f435" category="EcuTools Research" type="3D" swapxy="true" scaling="Percent255">
+      <table name="VehicleSpeed" address="622ec" type="X Axis" elements="6" scaling="VehicleSpeed"/>
+      <table name="RevPerMPH" address="62678" type="Y Axis" elements="8" scaling="RPMPerMPH"/>
+    </table>
+    <table name="SST Throttle Requested Torque Ramp Rate - Unknown Comparison Map - Base" address="5f426" category="EcuTools Research" type="2D"  scaling="uint8">
+      <table name="RevPerMPH" address="62678" type="Y Axis" elements="8" scaling="RPMPerMPH"/>
+    </table>
+    <table name="SST Throttle Requested Torque Ramp Rate - Unknown Comparison Map - Adder" address="5f41a" category="EcuTools Research" type="2D"  scaling="uint8">
+      <table name="RevPerMPH" address="62678" type="Y Axis" elements="8" scaling="RPMPerMPH"/>
+    </table>
+    <table name="SST Torque gearratio based adder" address="5f512" category="EcuTools Research" type="2D"  scaling="uint8">
+      <table name="RevPerMPH" address="62678" type="Y Axis" elements="8" scaling="RPMPerMPH"/>
+    </table>
     <table name="SST Torque Limit #1 - Error" address="63383" category="SST" type="3D" level="3" swapxy="true" scaling="Torque Calculation FtLbs">
       <table name="Throttle" address="63cf6" type="X Axis" elements="17" scaling="AcceleratorPedal %"/>
       <table name="RPM" address="63c7a" type="Y Axis" elements="16" scaling="RPM"/>
@@ -1146,1011 +1158,1345 @@
         <data>Catalyst</data> 
       </table>
     </table>
-    <table name="Unknown Map #0" address="5c90e" category="EcuTools Research" type="2D"  scaling="uint8">
+    <table name="Unknown Map #0" address="5e91c" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Unknown #1" address="6182e" type="Y Axis" elements="8" scaling="uint16"/>
+</table>
+<table name="Unknown Map #1" address="5c90e" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Unknown #2" address="61d20" type="Y Axis" elements="8" scaling="uint16"/>
 </table>
-<table name="Unknown Map #1" address="5e3d2" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #2" address="5e3d2" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Unknown #3" address="61082" type="Y Axis" elements="9" scaling="uint16"/>
 </table>
-<table name="Unknown Map #2" address="5f644" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #3" address="5f644" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Unknown #4" address="61a96" type="Y Axis" elements="7" scaling="uint16"/>
 </table>
-<table name="Unknown Map #3" address="556a4" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #4" address="556a4" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="IAT" address="610f6" type="Y Axis" elements="7" scaling="Temp"/>
 </table>
-<table name="Unknown Map #4" address="503f0" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #5" address="503f0" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="IAT" address="610f6" type="Y Axis" elements="7" scaling="Temp"/>
 </table>
-<table name="Unknown Map #5" address="5ab11" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
+<table name="Unknown Map #6" address="5ab11" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
   <table name="Load" address="617d6" type="X Axis" elements="41" scaling="Load"/>
   <table name="Coolant Temperature" address="6101e" type="Y Axis" elements="9" scaling="Temp"/>
 </table>
-<table name="Unknown Map #6" address="5ac89" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
+<table name="Unknown Map #7" address="5ac89" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
   <table name="Load" address="617d6" type="X Axis" elements="41" scaling="Load"/>
   <table name="Coolant Temperature" address="6101e" type="Y Axis" elements="9" scaling="Temp"/>
 </table>
-<table name="Unknown Map #7" address="570da" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #8" address="570da" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Unknown #6" address="61ca8" type="Y Axis" elements="10" scaling="uint16"/>
 </table>
-<table name="Unknown Map #8" address="576aa" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #9" address="57644" category="EcuTools Research" type="2D"  scaling="uint16">
   <table name="Unknown #10" address="616f4" type="Y Axis" elements="23" scaling="uint16"/>
 </table>
-<table name="Unknown Map #9" address="5e4d3" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
+<table name="Unknown Map #10" address="576aa" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #10" address="616f4" type="Y Axis" elements="23" scaling="uint16"/>
+</table>
+<table name="Unknown Map #11" address="5e3e6" category="EcuTools Research" type="3D" swapxy="true" scaling="uint16">
+  <table name="Unknown #12" address="6175c" type="X Axis" elements="5" scaling="uint16"/>
+  <table name="Unknown #11" address="61728" type="Y Axis" elements="23" scaling="uint16"/>
+</table>
+<table name="Unknown Map #12" address="5e4d3" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
   <table name="Unknown #13" address="6176c" type="X Axis" elements="5" scaling="uint16"/>
   <table name="Unknown #11" address="61728" type="Y Axis" elements="23" scaling="uint16"/>
 </table>
-<table name="Unknown Map #10" address="55010" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #13" address="55010" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="IAT" address="610f6" type="Y Axis" elements="7" scaling="Temp"/>
 </table>
-<table name="Unknown Map #11" address="55004" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #14" address="55004" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Coolant Temp" address="60fda" type="Y Axis" elements="8" scaling="Temp"/>
 </table>
-<table name="Unknown Map #12" address="576c6" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #15" address="576c6" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Unknown #14" address="6177c" type="Y Axis" elements="6" scaling="uint16"/>
 </table>
-<table name="Unknown Map #13" address="60d26" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #16" address="60d26" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Unknown #14" address="6177c" type="Y Axis" elements="6" scaling="uint16"/>
 </table>
-<table name="Unknown Map #14" address="5d3ad" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
+<table name="Unknown Map #17" address="60b9a" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="RPM" address="62a02" type="Y Axis" elements="19" scaling="RPM"/>
+</table>
+<table name="Unknown Map #18" address="5d3ad" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
   <table name="Unknown #15" address="6239a" type="X Axis" elements="8" scaling="uint16"/>
   <table name="Unknown #16" address="6237e" type="Y Axis" elements="11" scaling="uint16"/>
 </table>
-<table name="Unknown Map #15" address="5d40d" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
+<table name="Unknown Map #19" address="5d40d" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
   <table name="Unknown #15" address="6239a" type="X Axis" elements="8" scaling="uint16"/>
   <table name="Unknown #16" address="6237e" type="Y Axis" elements="11" scaling="uint16"/>
 </table>
-<table name="Unknown Map #16" address="5beba" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #20" address="5fcda" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Unknown #17" address="626e6" type="Y Axis" elements="8" scaling="uint16"/>
+</table>
+<table name="Unknown Map #21" address="5f5aa" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Unknown #18" address="6272c" type="Y Axis" elements="32" scaling="uint16"/>
+</table>
+<table name="Unknown Map #22" address="5f5f0" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Unknown #18" address="6272c" type="Y Axis" elements="32" scaling="uint16"/>
+</table>
+<table name="Unknown Map #23" address="5beba" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Unknown #19" address="61e98" type="Y Axis" elements="21" scaling="uint16"/>
 </table>
-<table name="Unknown Map #17" address="5bed4" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #24" address="5bed4" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Unknown #19" address="61e98" type="Y Axis" elements="21" scaling="uint16"/>
 </table>
-<table name="Unknown Map #18" address="5beee" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #25" address="5beee" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Unknown #19" address="61e98" type="Y Axis" elements="21" scaling="uint16"/>
 </table>
-<table name="Unknown Map #19" address="5c020" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #26" address="5c020" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Unknown #19" address="61e98" type="Y Axis" elements="21" scaling="uint16"/>
 </table>
-<table name="Unknown Map #20" address="58fa9" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
+<table name="Unknown Map #27" address="58fa9" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
   <table name="Load" address="61348" type="X Axis" elements="21" scaling="Load"/>
   <table name="RPM" address="612fc" type="Y Axis" elements="16" scaling="RPM"/>
 </table>
-<table name="Unknown Map #21" address="503e6" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #28" address="503e6" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Unknown #20" address="624e8" type="Y Axis" elements="6" scaling="uint16"/>
 </table>
-<table name="Unknown Map #22" address="5eca4" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #29" address="5eca4" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="RPM" address="612fc" type="Y Axis" elements="16" scaling="RPM"/>
 </table>
-<table name="Unknown Map #23" address="5a98e" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #30" address="5a98e" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Unknown #21" address="61c0a" type="Y Axis" elements="19" scaling="uint16"/>
 </table>
-<table name="Unknown Map #24" address="52a37" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
+<table name="Unknown Map #31" address="52a37" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
   <table name="Load" address="61348" type="X Axis" elements="21" scaling="Load"/>
   <table name="RPM" address="612fc" type="Y Axis" elements="16" scaling="RPM"/>
 </table>
-<table name="Unknown Map #25" address="50568" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #32" address="50568" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="RPM" address="612fc" type="Y Axis" elements="16" scaling="RPM"/>
 </table>
-<table name="Unknown Map #26" address="5057c" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #33" address="5057c" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="RPM" address="612fc" type="Y Axis" elements="16" scaling="RPM"/>
 </table>
-<table name="Unknown Map #27" address="5c9b3" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
+<table name="Unknown Map #34" address="5c9b3" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
   <table name="Unknown #23" address="621a6" type="X Axis" elements="6" scaling="uint16"/>
   <table name="Unknown #22" address="62190" type="Y Axis" elements="8" scaling="uint16"/>
 </table>
-<table name="Unknown Map #28" address="5c9e8" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #35" address="5c9e8" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Unknown #24" address="621b8" type="Y Axis" elements="7" scaling="uint16"/>
 </table>
-<table name="Unknown Map #29" address="5cfa2" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #36" address="5cfa2" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Unknown #25" address="622d6" type="Y Axis" elements="8" scaling="uint16"/>
 </table>
-<table name="Unknown Map #30" address="5cf96" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #37" address="5cf96" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Unknown #25" address="622d6" type="Y Axis" elements="8" scaling="uint16"/>
 </table>
-<table name="Unknown Map #31" address="5cf8a" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #38" address="5cf8a" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Unknown #25" address="622d6" type="Y Axis" elements="8" scaling="uint16"/>
 </table>
-<table name="Unknown Map #32" address="5d02a" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #39" address="5d02a" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Unknown #25" address="622d6" type="Y Axis" elements="8" scaling="uint16"/>
 </table>
-<table name="Unknown Map #33" address="5d01e" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #40" address="5d01e" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Unknown #25" address="622d6" type="Y Axis" elements="8" scaling="uint16"/>
 </table>
-<table name="Unknown Map #34" address="5cfe9" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
+<table name="Unknown Map #41" address="5cfe9" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
   <table name="VehicleSpeed" address="622ec" type="X Axis" elements="6" scaling="VehicleSpeed"/>
   <table name="Unknown #25" address="622d6" type="Y Axis" elements="8" scaling="uint16"/>
 </table>
-<table name="Unknown Map #35" address="5cfb1" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
+<table name="Unknown Map #42" address="5cfb1" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
   <table name="VehicleSpeed" address="622ec" type="X Axis" elements="6" scaling="VehicleSpeed"/>
   <table name="Unknown #25" address="622d6" type="Y Axis" elements="8" scaling="uint16"/>
 </table>
-<table name="Unknown Map #36" address="5f426" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="RevPerMPH" address="62678" type="Y Axis" elements="8" scaling="RPMPerMPH"/>
+<table name="Unknown Map #43" address="5d46c" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Unknown #26" address="623b0" type="Y Axis" elements="13" scaling="uint16"/>
 </table>
-<table name="Unknown Map #37" address="5f41a" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="RevPerMPH" address="62678" type="Y Axis" elements="8" scaling="RPMPerMPH"/>
+<table name="Unknown Map #44" address="5d4ac" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Unknown #26" address="623b0" type="Y Axis" elements="13" scaling="uint16"/>
 </table>
-<table name="Unknown Map #38" address="5f512" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="RevPerMPH" address="62678" type="Y Axis" elements="8" scaling="RPMPerMPH"/>
+<table name="Unknown Map #45" address="5d48c" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Unknown #26" address="623b0" type="Y Axis" elements="13" scaling="uint16"/>
 </table>
-<table name="Unknown Map #39" address="5f435" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
-  <table name="VehicleSpeed" address="622ec" type="X Axis" elements="6" scaling="VehicleSpeed"/>
-  <table name="RevPerMPH" address="62678" type="Y Axis" elements="8" scaling="RPMPerMPH"/>
+<table name="Unknown Map #46" address="5d4cc" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Unknown #26" address="623b0" type="Y Axis" elements="13" scaling="uint16"/>
 </table>
-<table name="Unknown Map #40" address="5ec28" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #47" address="5d4f0" category="EcuTools Research" type="3D" swapxy="true" scaling="uint16">
+  <table name="Unknown #26" address="623b0" type="X Axis" elements="13" scaling="uint16"/>
+  <table name="Coolant Temperature" address="6101e" type="Y Axis" elements="9" scaling="Temp"/>
+</table>
+<table name="Unknown Map #48" address="5d6d8" category="EcuTools Research" type="3D" swapxy="true" scaling="uint16">
+  <table name="Unknown #26" address="623b0" type="X Axis" elements="13" scaling="uint16"/>
+  <table name="Coolant Temperature" address="6101e" type="Y Axis" elements="9" scaling="Temp"/>
+</table>
+<table name="Unknown Map #49" address="5d5e4" category="EcuTools Research" type="3D" swapxy="true" scaling="uint16">
+  <table name="Unknown #26" address="623b0" type="X Axis" elements="13" scaling="uint16"/>
+  <table name="Coolant Temperature" address="6101e" type="Y Axis" elements="9" scaling="Temp"/>
+</table>
+<table name="Unknown Map #50" address="5d7cc" category="EcuTools Research" type="3D" swapxy="true" scaling="uint16">
+  <table name="Unknown #26" address="623b0" type="X Axis" elements="13" scaling="uint16"/>
+  <table name="Coolant Temperature" address="6101e" type="Y Axis" elements="9" scaling="Temp"/>
+</table>
+<table name="Unknown Map #51" address="5d8bc" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Unknown #27" address="623e8" type="Y Axis" elements="10" scaling="uint16"/>
+</table>
+<table name="Unknown Map #52" address="5d8d6" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Unknown #27" address="623e8" type="Y Axis" elements="10" scaling="uint16"/>
+</table>
+<table name="Unknown Map #53" address="5ec28" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Unknown #7" address="60d32" type="Y Axis" elements="16" scaling="uint16"/>
 </table>
-<table name="Unknown Map #41" address="5e930" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #54" address="5e930" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Unknown #20" address="624e8" type="Y Axis" elements="6" scaling="uint16"/>
 </table>
-<table name="Unknown Map #42" address="5e93a" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #55" address="5e93a" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="IAT" address="610f6" type="Y Axis" elements="7" scaling="Temp"/>
 </table>
-<table name="Unknown Map #43" address="5fc6c" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #56" address="5fc6c" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Unknown #7" address="60d32" type="Y Axis" elements="16" scaling="uint16"/>
 </table>
-<table name="Unknown Map #44" address="597c8" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #57" address="597c8" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Coolant Temp" address="61216" type="Y Axis" elements="8" scaling="Temp"/>
 </table>
-<table name="Unknown Map #45" address="50593" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
-  <table name="Unknown #29" address="61438" type="X Axis" elements="10" scaling="uint16"/>
+<table name="Unknown Map #58" address="50593" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
+  <table name="Unknown #28" address="61438" type="X Axis" elements="10" scaling="uint16"/>
   <table name="RPM" address="61322" type="Y Axis" elements="16" scaling="RPM"/>
 </table>
-<table name="Unknown Map #46" address="5f6a6" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #59" address="5f6a6" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Unknown #8" address="60d58" type="Y Axis" elements="12" scaling="uint16"/>
 </table>
-<table name="Unknown Map #47" address="5f40c" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #30" address="61e46" type="Y Axis" elements="9" scaling="uint16"/>
+<table name="Unknown Map #60" address="5f40c" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #29" address="61e46" type="Y Axis" elements="9" scaling="uint16"/>
 </table>
-<table name="Unknown Map #48" address="5558c" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #61" address="5558c" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Coolant Temp" address="60fda" type="Y Axis" elements="8" scaling="Temp"/>
 </table>
-<table name="Unknown Map #49" address="5a344" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #31" address="5d354" type="Y Axis" elements="5" scaling="uint16"/>
+<table name="Unknown Map #62" address="5a344" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #30" address="5d354" type="Y Axis" elements="5" scaling="uint16"/>
 </table>
-<table name="Unknown Map #50" address="5d362" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #32" address="61958" type="Y Axis" elements="14" scaling="uint16"/>
+<table name="Unknown Map #63" address="5d362" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #31" address="61958" type="Y Axis" elements="14" scaling="uint16"/>
 </table>
-<table name="Unknown Map #51" address="5d374" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #32" address="61958" type="Y Axis" elements="14" scaling="uint16"/>
+<table name="Unknown Map #64" address="5d374" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #31" address="61958" type="Y Axis" elements="14" scaling="uint16"/>
 </table>
-<table name="Unknown Map #52" address="5d386" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #32" address="61958" type="Y Axis" elements="14" scaling="uint16"/>
+<table name="Unknown Map #65" address="5d386" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #31" address="61958" type="Y Axis" elements="14" scaling="uint16"/>
 </table>
-<table name="Unknown Map #53" address="57d10" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #32" address="61958" type="Y Axis" elements="14" scaling="uint16"/>
+<table name="Unknown Map #66" address="57d10" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #31" address="61958" type="Y Axis" elements="14" scaling="uint16"/>
 </table>
-<table name="Unknown Map #54" address="57d22" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #32" address="61958" type="Y Axis" elements="14" scaling="uint16"/>
+<table name="Unknown Map #67" address="57d22" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #31" address="61958" type="Y Axis" elements="14" scaling="uint16"/>
 </table>
-<table name="Unknown Map #55" address="5d398" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #32" address="61958" type="Y Axis" elements="14" scaling="uint16"/>
+<table name="Unknown Map #68" address="5d398" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #31" address="61958" type="Y Axis" elements="14" scaling="uint16"/>
 </table>
-<table name="Unknown Map #56" address="5f2e4" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #69" address="5f2e4" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="RPM" address="60d76" type="Y Axis" elements="20" scaling="RPM"/>
 </table>
-<table name="Unknown Map #57" address="555f2" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #70" address="5563c" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Unknown #32" address="62366" type="Y Axis" elements="9" scaling="uint16"/>
+</table>
+<table name="Unknown Map #71" address="55624" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Unknown #32" address="62366" type="Y Axis" elements="9" scaling="uint16"/>
+</table>
+<table name="Unknown Map #72" address="555f2" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="RPM" address="60d76" type="Y Axis" elements="20" scaling="RPM"/>
 </table>
-<table name="Unknown Map #58" address="5560a" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #73" address="5560a" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="RPM" address="60d76" type="Y Axis" elements="20" scaling="RPM"/>
 </table>
-<table name="Unknown Map #59" address="5b87a" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #34" address="610c8" type="Y Axis" elements="9" scaling="uint16"/>
+<table name="Unknown Map #74" address="5b87a" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #33" address="610c8" type="Y Axis" elements="9" scaling="uint16"/>
 </table>
-<table name="Unknown Map #60" address="5b888" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #34" address="610c8" type="Y Axis" elements="9" scaling="uint16"/>
+<table name="Unknown Map #75" address="57d94" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Unknown #35" address="61e2e" type="Y Axis" elements="9" scaling="uint16"/>
 </table>
-<table name="Unknown Map #61" address="558c0" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #37" address="60eb0" type="Y Axis" elements="16" scaling="uint16"/>
+<table name="Unknown Map #76" address="5b888" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #33" address="610c8" type="Y Axis" elements="9" scaling="uint16"/>
 </table>
-<table name="Unknown Map #62" address="5bca6" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #77" address="558c0" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #36" address="60eb0" type="Y Axis" elements="16" scaling="uint16"/>
+</table>
+<table name="Unknown Map #78" address="5bca6" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Coolant Temperature" address="6101e" type="Y Axis" elements="9" scaling="Temp"/>
 </table>
-<table name="Unknown Map #63" address="556be" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #79" address="556be" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Coolant Temperature" address="6101e" type="Y Axis" elements="9" scaling="Temp"/>
 </table>
-<table name="Unknown Map #64" address="57134" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #80" address="57134" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Coolant Temperature" address="6101e" type="Y Axis" elements="9" scaling="Temp"/>
 </table>
-<table name="Unknown Map #65" address="5715c" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #81" address="5715c" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Coolant Temperature" address="6101e" type="Y Axis" elements="9" scaling="Temp"/>
 </table>
-<table name="Unknown Map #66" address="57142" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #82" address="57142" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Coolant Temperature" address="6101e" type="Y Axis" elements="9" scaling="Temp"/>
 </table>
-<table name="Unknown Map #67" address="5bcc2" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #83" address="5bcc2" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Coolant Temperature" address="6101e" type="Y Axis" elements="9" scaling="Temp"/>
 </table>
-<table name="Unknown Map #68" address="5bcde" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #84" address="5bcde" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Coolant Temperature" address="6101e" type="Y Axis" elements="9" scaling="Temp"/>
 </table>
-<table name="Unknown Map #69" address="5bcb4" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #85" address="5bcb4" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Coolant Temperature" address="6101e" type="Y Axis" elements="9" scaling="Temp"/>
 </table>
-<table name="Unknown Map #70" address="5bad8" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #86" address="5bad8" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Coolant Temperature" address="6101e" type="Y Axis" elements="9" scaling="Temp"/>
 </table>
-<table name="Unknown Map #71" address="5bae6" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #87" address="5bae6" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Coolant Temperature" address="6101e" type="Y Axis" elements="9" scaling="Temp"/>
 </table>
-<table name="Unknown Map #72" address="5baf4" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #88" address="5baf4" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Coolant Temperature" address="6101e" type="Y Axis" elements="9" scaling="Temp"/>
 </table>
-<table name="Unknown Map #73" address="5bb02" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #89" address="5bb02" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Coolant Temperature" address="6101e" type="Y Axis" elements="9" scaling="Temp"/>
 </table>
-<table name="Unknown Map #74" address="5bcd0" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #90" address="5bcd0" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Coolant Temperature" address="6101e" type="Y Axis" elements="9" scaling="Temp"/>
 </table>
-<table name="Unknown Map #75" address="5bcec" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #91" address="5bcec" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Coolant Temperature" address="6101e" type="Y Axis" elements="9" scaling="Temp"/>
 </table>
-<table name="Unknown Map #76" address="556b0" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #92" address="556b0" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Coolant Temperature" address="6101e" type="Y Axis" elements="9" scaling="Temp"/>
 </table>
-<table name="Unknown Map #77" address="57126" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #93" address="57126" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Coolant Temperature" address="6101e" type="Y Axis" elements="9" scaling="Temp"/>
 </table>
-<table name="Unknown Map #78" address="5babc" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #94" address="5babc" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Coolant Temperature" address="6101e" type="Y Axis" elements="9" scaling="Temp"/>
 </table>
-<table name="Unknown Map #79" address="5baca" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #95" address="5baca" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Coolant Temperature" address="6101e" type="Y Axis" elements="9" scaling="Temp"/>
 </table>
-<table name="Unknown Map #80" address="59c1c" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #38" address="6268e" type="Y Axis" elements="9" scaling="uint16"/>
+<table name="Unknown Map #96" address="59c1c" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #37" address="6268e" type="Y Axis" elements="9" scaling="uint16"/>
 </table>
-<table name="Unknown Map #81" address="59c2a" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #38" address="6268e" type="Y Axis" elements="9" scaling="uint16"/>
+<table name="Unknown Map #97" address="59c2a" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #37" address="6268e" type="Y Axis" elements="9" scaling="uint16"/>
 </table>
-<table name="Unknown Map #82" address="5bcfa" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #38" address="6268e" type="Y Axis" elements="9" scaling="uint16"/>
+<table name="Unknown Map #98" address="5bcfa" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #37" address="6268e" type="Y Axis" elements="9" scaling="uint16"/>
 </table>
-<table name="Unknown Map #83" address="5bd24" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #38" address="6268e" type="Y Axis" elements="9" scaling="uint16"/>
+<table name="Unknown Map #99" address="5bd24" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #37" address="6268e" type="Y Axis" elements="9" scaling="uint16"/>
 </table>
-<table name="Unknown Map #84" address="5bd08" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #38" address="6268e" type="Y Axis" elements="9" scaling="uint16"/>
+<table name="Unknown Map #100" address="5bd08" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #37" address="6268e" type="Y Axis" elements="9" scaling="uint16"/>
 </table>
-<table name="Unknown Map #85" address="5bd32" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #38" address="6268e" type="Y Axis" elements="9" scaling="uint16"/>
+<table name="Unknown Map #101" address="5bd32" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #37" address="6268e" type="Y Axis" elements="9" scaling="uint16"/>
 </table>
-<table name="Unknown Map #86" address="5bd16" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #38" address="6268e" type="Y Axis" elements="9" scaling="uint16"/>
+<table name="Unknown Map #102" address="5bd16" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #37" address="6268e" type="Y Axis" elements="9" scaling="uint16"/>
 </table>
-<table name="Unknown Map #87" address="5bd40" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #38" address="6268e" type="Y Axis" elements="9" scaling="uint16"/>
+<table name="Unknown Map #103" address="5bd40" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #37" address="6268e" type="Y Axis" elements="9" scaling="uint16"/>
 </table>
-<table name="Unknown Map #88" address="57112" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #39" address="60e22" type="Y Axis" elements="15" scaling="uint16"/>
+<table name="Unknown Map #104" address="57112" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #38" address="60e22" type="Y Axis" elements="15" scaling="uint16"/>
 </table>
-<table name="Unknown Map #89" address="5aaea" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #40" address="61c94" type="Y Axis" elements="7" scaling="uint16"/>
+<table name="Unknown Map #105" address="5aaea" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #39" address="61c94" type="Y Axis" elements="7" scaling="uint16"/>
 </table>
-<table name="Unknown Map #90" address="5aace" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #106" address="5aace" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Coolant Temperature" address="6101e" type="Y Axis" elements="9" scaling="Temp"/>
 </table>
-<table name="Unknown Map #91" address="5aadc" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #107" address="5aadc" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Coolant Temperature" address="6101e" type="Y Axis" elements="9" scaling="Temp"/>
 </table>
-<table name="Unknown Map #92" address="570b0" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #41" address="612b8" type="Y Axis" elements="16" scaling="uint16"/>
+<table name="Unknown Map #108" address="570b0" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #40" address="612b8" type="Y Axis" elements="16" scaling="uint16"/>
 </table>
-<table name="Unknown Map #93" address="570c4" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #41" address="612b8" type="Y Axis" elements="16" scaling="uint16"/>
+<table name="Unknown Map #109" address="570c4" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #40" address="612b8" type="Y Axis" elements="16" scaling="uint16"/>
 </table>
-<table name="Unknown Map #94" address="56fea" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #110" address="56fea" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Coolant Temp" address="60fda" type="Y Axis" elements="8" scaling="Temp"/>
 </table>
-<table name="Unknown Map #95" address="56fde" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #111" address="56fde" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Coolant Temp" address="60fda" type="Y Axis" elements="8" scaling="Temp"/>
 </table>
-<table name="Unknown Map #96" address="5a351" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
-  <table name="Unknown #43" address="61b8a" type="X Axis" elements="12" scaling="uint16"/>
-  <table name="Unknown #42" address="61b68" type="Y Axis" elements="14" scaling="uint16"/>
+<table name="Unknown Map #112" address="5a351" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
+  <table name="Unknown #42" address="61b8a" type="X Axis" elements="12" scaling="uint16"/>
+  <table name="Unknown #41" address="61b68" type="Y Axis" elements="14" scaling="uint16"/>
 </table>
-<table name="Unknown Map #97" address="57b96" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #44" address="6104e" type="Y Axis" elements="11" scaling="uint16"/>
+<table name="Unknown Map #113" address="57b96" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #43" address="6104e" type="Y Axis" elements="11" scaling="uint16"/>
 </table>
-<table name="Unknown Map #98" address="5571a" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #45" address="60dca" type="Y Axis" elements="8" scaling="uint16"/>
+<table name="Unknown Map #114" address="5571a" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #44" address="60dca" type="Y Axis" elements="8" scaling="uint16"/>
 </table>
-<table name="Unknown Map #99" address="55786" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #115" address="55786" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Coolant Temp" address="60fda" type="Y Axis" elements="8" scaling="Temp"/>
 </table>
-<table name="Unknown Map #100" address="55832" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #116" address="55832" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Coolant Temp" address="60fda" type="Y Axis" elements="8" scaling="Temp"/>
 </table>
-<table name="Unknown Map #101" address="57150" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #117" address="57150" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Coolant Temp" address="60fda" type="Y Axis" elements="8" scaling="Temp"/>
 </table>
-<table name="Unknown Map #102" address="5a19e" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #47" address="5d2a8" type="Y Axis" elements="16" scaling="uint16"/>
+<table name="Unknown Map #118" address="5a19e" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #46" address="5d2a8" type="Y Axis" elements="16" scaling="uint16"/>
 </table>
-<table name="Unknown Map #103" address="5579e" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #119" address="5579e" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Coolant Temp" address="60fda" type="Y Axis" elements="8" scaling="Temp"/>
 </table>
-<table name="Unknown Map #104" address="5583e" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #120" address="5583e" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Unknown #7" address="60d32" type="Y Axis" elements="16" scaling="uint16"/>
 </table>
-<table name="Unknown Map #105" address="5585e" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #121" address="5585e" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Unknown #7" address="60d32" type="Y Axis" elements="16" scaling="uint16"/>
 </table>
-<table name="Unknown Map #106" address="55872" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #122" address="55872" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Unknown #9" address="60de0" type="Y Axis" elements="21" scaling="uint16"/>
 </table>
-<table name="Unknown Map #107" address="55852" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #123" address="55852" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Coolant Temp" address="60fda" type="Y Axis" elements="8" scaling="Temp"/>
 </table>
-<table name="Unknown Map #108" address="5588c" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #124" address="5588c" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Unknown #9" address="60de0" type="Y Axis" elements="21" scaling="uint16"/>
 </table>
-<table name="Unknown Map #109" address="557aa" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #125" address="557aa" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Unknown #9" address="60de0" type="Y Axis" elements="21" scaling="uint16"/>
 </table>
-<table name="Unknown Map #110" address="557c4" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #126" address="557c4" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Unknown #9" address="60de0" type="Y Axis" elements="21" scaling="uint16"/>
 </table>
-<table name="Unknown Map #111" address="558a6" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #127" address="558a6" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Unknown #9" address="60de0" type="Y Axis" elements="21" scaling="uint16"/>
 </table>
-<table name="Unknown Map #112" address="55814" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #128" address="55814" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Coolant Temp" address="60fda" type="Y Axis" elements="8" scaling="Temp"/>
 </table>
-<table name="Unknown Map #113" address="5a1b2" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #47" address="5d2a8" type="Y Axis" elements="16" scaling="uint16"/>
+<table name="Unknown Map #129" address="5a1b2" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #46" address="5d2a8" type="Y Axis" elements="16" scaling="uint16"/>
 </table>
-<table name="Unknown Map #114" address="55800" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #130" address="55800" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Unknown #7" address="60d32" type="Y Axis" elements="16" scaling="uint16"/>
 </table>
-<table name="Unknown Map #115" address="57b88" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #131" address="56aa4" category="EcuTools Research" type="2D"  scaling="uint16">
   <table name="Coolant Temperature" address="6101e" type="Y Axis" elements="9" scaling="Temp"/>
 </table>
-<table name="Unknown Map #116" address="5bb4c" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #132" address="5bb1e" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Unknown #35" address="61e2e" type="Y Axis" elements="9" scaling="uint16"/>
+</table>
+<table name="Unknown Map #133" address="5bb36" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Unknown #35" address="61e2e" type="Y Axis" elements="9" scaling="uint16"/>
+</table>
+<table name="Unknown Map #134" address="57b88" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Coolant Temperature" address="6101e" type="Y Axis" elements="9" scaling="Temp"/>
+</table>
+<table name="Unknown Map #135" address="5bb4c" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Coolant Temp" address="60fda" type="Y Axis" elements="8" scaling="Temp"/>
 </table>
-<table name="Unknown Map #117" address="5bb64" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #136" address="5bb64" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Coolant Temp" address="60fda" type="Y Axis" elements="8" scaling="Temp"/>
 </table>
-<table name="Unknown Map #118" address="5bb70" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #137" address="5bb70" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Unknown #1" address="6182e" type="Y Axis" elements="8" scaling="uint16"/>
 </table>
-<table name="Unknown Map #119" address="5bb58" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #138" address="5bb58" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Unknown #1" address="6182e" type="Y Axis" elements="8" scaling="uint16"/>
 </table>
-<table name="Unknown Map #120" address="5bb7c" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #48" address="61e5e" type="Y Axis" elements="11" scaling="uint16"/>
+<table name="Unknown Map #139" address="5bb7c" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #47" address="61e5e" type="Y Axis" elements="11" scaling="uint16"/>
 </table>
-<table name="Unknown Map #121" address="5bb8c" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #140" address="5bb8c" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Coolant Temp" address="60fda" type="Y Axis" elements="8" scaling="Temp"/>
 </table>
-<table name="Unknown Map #122" address="5bba4" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #48" address="61e5e" type="Y Axis" elements="11" scaling="uint16"/>
+<table name="Unknown Map #141" address="5bba4" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #47" address="61e5e" type="Y Axis" elements="11" scaling="uint16"/>
 </table>
-<table name="Unknown Map #123" address="5bb98" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #142" address="5bb98" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Coolant Temp" address="60fda" type="Y Axis" elements="8" scaling="Temp"/>
 </table>
-<table name="Unknown Map #124" address="5bbb7" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
+<table name="Unknown Map #143" address="5bbb7" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
   <table name="Coolant Temp" address="60fda" type="X Axis" elements="8" scaling="Temp"/>
-  <table name="Unknown #49" address="61e7a" type="Y Axis" elements="12" scaling="uint16"/>
+  <table name="Unknown #48" address="61e7a" type="Y Axis" elements="12" scaling="uint16"/>
 </table>
-<table name="Unknown Map #125" address="5bc1f" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
+<table name="Unknown Map #144" address="5bc1f" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
   <table name="Coolant Temp" address="60fda" type="X Axis" elements="8" scaling="Temp"/>
-  <table name="Unknown #49" address="61e7a" type="Y Axis" elements="12" scaling="uint16"/>
+  <table name="Unknown #48" address="61e7a" type="Y Axis" elements="12" scaling="uint16"/>
 </table>
-<table name="Unknown Map #126" address="5bc9a" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #145" address="5bc9a" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Coolant Temp" address="60fda" type="Y Axis" elements="8" scaling="Temp"/>
 </table>
-<table name="Unknown Map #127" address="5b67b" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
+<table name="Unknown Map #146" address="5b67b" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
   <table name="Load" address="60f76" type="X Axis" elements="22" scaling="Load"/>
   <table name="RPM" address="60f42" type="Y Axis" elements="23" scaling="RPM"/>
 </table>
-<table name="Unknown Map #128" address="5aaf6" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #147" address="5aaf6" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Unknown #1" address="6182e" type="Y Axis" elements="8" scaling="uint16"/>
 </table>
-<table name="Unknown Map #129" address="59dbc" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #50" address="62528" type="Y Axis" elements="16" scaling="uint16"/>
+<table name="Unknown Map #148" address="59dbc" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #49" address="62528" type="Y Axis" elements="16" scaling="uint16"/>
 </table>
-<table name="Unknown Map #130" address="561b4" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #149" address="561b4" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="RPM" address="62890" type="Y Axis" elements="16" scaling="RPM"/>
 </table>
-<table name="Unknown Map #131" address="561c8" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #51" address="60e10" type="Y Axis" elements="6" scaling="uint16"/>
+<table name="Unknown Map #150" address="561c8" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #50" address="60e10" type="Y Axis" elements="6" scaling="uint16"/>
 </table>
-<table name="Unknown Map #132" address="561d2" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #52" address="60ea2" type="Y Axis" elements="4" scaling="uint16"/>
+<table name="Unknown Map #151" address="561d2" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #51" address="60ea2" type="Y Axis" elements="4" scaling="uint16"/>
 </table>
-<table name="Unknown Map #133" address="561da" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #152" address="561da" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="IAT" address="610f6" type="Y Axis" elements="7" scaling="Temp"/>
 </table>
-<table name="Unknown Map #134" address="5d0bd" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
-  <table name="Unknown #53" address="6232a" type="X Axis" elements="9" scaling="uint16"/>
+<table name="Unknown Map #153" address="5d0bd" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
+  <table name="Unknown #52" address="6232a" type="X Axis" elements="9" scaling="uint16"/>
   <table name="RPM" address="60f42" type="Y Axis" elements="23" scaling="RPM"/>
 </table>
-<table name="Unknown Map #135" address="5ab02" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #154" address="5ab02" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Coolant Temp" address="60fda" type="Y Axis" elements="8" scaling="Temp"/>
 </table>
-<table name="Unknown Map #136" address="56abd" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
-  <table name="Unknown #55" address="61202" type="X Axis" elements="7" scaling="uint16"/>
-  <table name="Unknown #54" address="611f0" type="Y Axis" elements="6" scaling="uint16"/>
+<table name="Unknown Map #155" address="56abd" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
+  <table name="Unknown #54" address="61202" type="X Axis" elements="7" scaling="uint16"/>
+  <table name="Unknown #53" address="611f0" type="Y Axis" elements="6" scaling="uint16"/>
 </table>
-<table name="Unknown Map #137" address="56110" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #156" address="56110" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Unknown #7" address="60d32" type="Y Axis" elements="16" scaling="uint16"/>
 </table>
-<table name="Unknown Map #138" address="57314" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #157" address="5617e" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Engine Temp" address="610e0" type="Y Axis" elements="8" scaling="Temp"/>
+</table>
+<table name="Unknown Map #158" address="57314" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Coolant Temp" address="60fda" type="Y Axis" elements="8" scaling="Temp"/>
 </table>
-<table name="Unknown Map #139" address="5614e" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #159" address="5614e" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Unknown #7" address="60d32" type="Y Axis" elements="16" scaling="uint16"/>
 </table>
-<table name="Unknown Map #140" address="5f51e" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #56" address="626a6" type="Y Axis" elements="29" scaling="uint16"/>
+<table name="Unknown Map #160" address="5f51e" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #55" address="626a6" type="Y Axis" elements="29" scaling="uint16"/>
 </table>
-<table name="Unknown Map #141" address="5f540" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #56" address="626a6" type="Y Axis" elements="29" scaling="uint16"/>
+<table name="Unknown Map #161" address="5f540" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #55" address="626a6" type="Y Axis" elements="29" scaling="uint16"/>
 </table>
-<table name="Unknown Map #142" address="5f562" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #56" address="626a6" type="Y Axis" elements="29" scaling="uint16"/>
+<table name="Unknown Map #162" address="5f562" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #55" address="626a6" type="Y Axis" elements="29" scaling="uint16"/>
 </table>
-<table name="Unknown Map #143" address="5f584" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #56" address="626a6" type="Y Axis" elements="29" scaling="uint16"/>
+<table name="Unknown Map #163" address="5f584" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #55" address="626a6" type="Y Axis" elements="29" scaling="uint16"/>
 </table>
-<table name="Unknown Map #144" address="60a62" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #57" address="629c6" type="Y Axis" elements="12" scaling="uint16"/>
+<table name="Unknown Map #164" address="60a62" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #56" address="629c6" type="Y Axis" elements="12" scaling="uint16"/>
 </table>
-<table name="Unknown Map #145" address="60a52" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #57" address="629c6" type="Y Axis" elements="12" scaling="uint16"/>
+<table name="Unknown Map #165" address="60a52" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #56" address="629c6" type="Y Axis" elements="12" scaling="uint16"/>
 </table>
-<table name="Unknown Map #146" address="56192" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #58" address="60e7a" type="Y Axis" elements="9" scaling="uint16"/>
+<table name="Unknown Map #166" address="56192" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #57" address="60e7a" type="Y Axis" elements="9" scaling="uint16"/>
 </table>
-<table name="Unknown Map #147" address="58555" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
-  <table name="Unknown #60" address="61a2a" type="X Axis" elements="9" scaling="uint16"/>
-  <table name="Unknown #59" address="61a06" type="Y Axis" elements="15" scaling="uint16"/>
+<table name="Unknown Map #167" address="58555" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
+  <table name="Unknown #59" address="61a2a" type="X Axis" elements="9" scaling="uint16"/>
+  <table name="Unknown #58" address="61a06" type="Y Axis" elements="15" scaling="uint16"/>
 </table>
-<table name="Unknown Map #148" address="5aa1b" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
-  <table name="Unknown #62" address="61548" type="X Axis" elements="6" scaling="uint16"/>
-  <table name="Unknown #61" address="61538" type="Y Axis" elements="5" scaling="uint16"/>
+<table name="Unknown Map #168" address="5aa1b" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
+  <table name="Unknown #61" address="61548" type="X Axis" elements="6" scaling="uint16"/>
+  <table name="Unknown #60" address="61538" type="Y Axis" elements="5" scaling="uint16"/>
 </table>
-<table name="Unknown Map #149" address="5ae73" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
+<table name="Unknown Map #169" address="5ae73" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
   <table name="Load" address="60f76" type="X Axis" elements="22" scaling="Load"/>
   <table name="RPM" address="60f42" type="Y Axis" elements="23" scaling="RPM"/>
 </table>
-<table name="Unknown Map #150" address="5b075" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
+<table name="Unknown Map #170" address="5b075" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
   <table name="Load" address="60f76" type="X Axis" elements="22" scaling="Load"/>
   <table name="RPM" address="60f42" type="Y Axis" elements="23" scaling="RPM"/>
 </table>
-<table name="Unknown Map #151" address="5b277" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
+<table name="Unknown Map #171" address="5b277" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
   <table name="Load" address="60f76" type="X Axis" elements="22" scaling="Load"/>
   <table name="RPM" address="60f42" type="Y Axis" elements="23" scaling="RPM"/>
 </table>
-<table name="Unknown Map #152" address="5b479" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
+<table name="Unknown Map #172" address="5b479" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
   <table name="Load" address="60f76" type="X Axis" elements="22" scaling="Load"/>
   <table name="RPM" address="60f42" type="Y Axis" elements="23" scaling="RPM"/>
 </table>
-<table name="Unknown Map #153" address="57c54" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #51" address="60e10" type="Y Axis" elements="6" scaling="uint16"/>
+<table name="Unknown Map #173" address="57c54" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #50" address="60e10" type="Y Axis" elements="6" scaling="uint16"/>
 </table>
-<table name="Unknown Map #154" address="58c70" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #63" address="625e0" type="Y Axis" elements="9" scaling="uint16"/>
+<table name="Unknown Map #174" address="58c70" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #62" address="625e0" type="Y Axis" elements="9" scaling="uint16"/>
 </table>
-<table name="Unknown Map #155" address="5b896" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #64" address="6109a" type="Y Axis" elements="8" scaling="uint16"/>
+<table name="Unknown Map #175" address="5b896" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #63" address="6109a" type="Y Axis" elements="8" scaling="uint16"/>
 </table>
-<table name="Unknown Map #156" address="5d1f2" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #65" address="61468" type="Y Axis" elements="10" scaling="uint16"/>
+<table name="Unknown Map #176" address="5d1f2" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #64" address="61468" type="Y Axis" elements="10" scaling="uint16"/>
 </table>
-<table name="Unknown Map #157" address="5d200" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #65" address="61468" type="Y Axis" elements="10" scaling="uint16"/>
+<table name="Unknown Map #177" address="5d200" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #64" address="61468" type="Y Axis" elements="10" scaling="uint16"/>
 </table>
-<table name="Unknown Map #158" address="5d193" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
-  <table name="Unknown #66" address="61482" type="X Axis" elements="9" scaling="uint16"/>
-  <table name="Unknown #65" address="61468" type="Y Axis" elements="10" scaling="uint16"/>
+<table name="Unknown Map #178" address="5d193" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
+  <table name="Unknown #65" address="61482" type="X Axis" elements="9" scaling="uint16"/>
+  <table name="Unknown #64" address="61468" type="Y Axis" elements="10" scaling="uint16"/>
 </table>
-<table name="Unknown Map #159" address="6077e" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #179" address="6077e" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Unknown #1" address="6182e" type="Y Axis" elements="8" scaling="uint16"/>
 </table>
-<table name="Unknown Map #160" address="563dd" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
-  <table name="Unknown #69" address="60fc2" type="X Axis" elements="9" scaling="uint16"/>
-  <table name="Unknown #68" address="60fa8" type="Y Axis" elements="10" scaling="uint16"/>
+<table name="Unknown Map #180" address="562a2" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Unknown #66" address="60da4" type="Y Axis" elements="16" scaling="uint16"/>
 </table>
-<table name="Unknown Map #161" address="56302" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #181" address="562c8" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Unknown #66" address="60da4" type="Y Axis" elements="16" scaling="uint16"/>
+</table>
+<table name="Unknown Map #182" address="563dd" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
+  <table name="Unknown #68" address="60fc2" type="X Axis" elements="9" scaling="uint16"/>
+  <table name="Unknown #67" address="60fa8" type="Y Axis" elements="10" scaling="uint16"/>
+</table>
+<table name="Unknown Map #183" address="562ee" category="EcuTools Research" type="2D"  scaling="uint16">
   <table name="Coolant Temp" address="60fda" type="Y Axis" elements="8" scaling="Temp"/>
 </table>
-<table name="Unknown Map #162" address="5630e" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #184" address="56302" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Coolant Temp" address="60fda" type="Y Axis" elements="8" scaling="Temp"/>
+</table>
+<table name="Unknown Map #185" address="5a400" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Unknown #69" address="61ba8" type="Y Axis" elements="10" scaling="uint16"/>
+</table>
+<table name="Unknown Map #186" address="56aee" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Coolant Temp" address="60fda" type="Y Axis" elements="8" scaling="Temp"/>
+</table>
+<table name="Unknown Map #187" address="5ece2" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Unknown #72" address="6250a" type="Y Axis" elements="12" scaling="uint16"/>
+</table>
+<table name="Unknown Map #188" address="5ed00" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Unknown #72" address="6250a" type="Y Axis" elements="12" scaling="uint16"/>
+</table>
+<table name="Unknown Map #189" address="5ed1e" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Unknown #72" address="6250a" type="Y Axis" elements="12" scaling="uint16"/>
+</table>
+<table name="Unknown Map #190" address="5ed3c" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Unknown #72" address="6250a" type="Y Axis" elements="12" scaling="uint16"/>
+</table>
+<table name="Unknown Map #191" address="5630e" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Baro" address="60e92" type="Y Axis" elements="5" scaling="Baro16"/>
 </table>
-<table name="Unknown Map #163" address="5c980" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #192" address="5c980" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="IAT" address="610f6" type="Y Axis" elements="7" scaling="Temp"/>
 </table>
-<table name="Unknown Map #164" address="5c972" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #74" address="62178" type="Y Axis" elements="9" scaling="uint16"/>
+<table name="Unknown Map #193" address="5c972" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #73" address="62178" type="Y Axis" elements="9" scaling="uint16"/>
 </table>
-<table name="Unknown Map #165" address="5c6f6" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #75" address="61d4c" type="Y Axis" elements="12" scaling="uint16"/>
+<table name="Unknown Map #194" address="5c6f6" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #74" address="61d4c" type="Y Axis" elements="12" scaling="uint16"/>
 </table>
-<table name="Unknown Map #166" address="5a840" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #82" address="61be4" type="Y Axis" elements="16" scaling="uint16"/>
-</table>
-<table name="Unknown Map #167" address="5a818" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #82" address="61be4" type="Y Axis" elements="16" scaling="uint16"/>
-</table>
-<table name="Unknown Map #168" address="5a854" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #82" address="61be4" type="Y Axis" elements="16" scaling="uint16"/>
-</table>
-<table name="Unknown Map #169" address="5a82c" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #82" address="61be4" type="Y Axis" elements="16" scaling="uint16"/>
-</table>
-<table name="Unknown Map #170" address="5c08a" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #83" address="620fe" type="Y Axis" elements="14" scaling="uint16"/>
-</table>
-<table name="Unknown Map #171" address="5a7fc" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #195" address="5628c" category="EcuTools Research" type="2D"  scaling="uint16">
   <table name="Coolant Temp" address="60fda" type="Y Axis" elements="8" scaling="Temp"/>
 </table>
-<table name="Unknown Map #172" address="5c9a0" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #196" address="5a80a" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Unknown #75" address="61bc2" type="Y Axis" elements="5" scaling="uint16"/>
+</table>
+<table name="Unknown Map #197" address="5f3f6" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Unknown #76" address="630b2" type="Y Axis" elements="9" scaling="uint16"/>
+</table>
+<table name="Unknown Map #198" address="5f32c" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Coolant Temperature" address="60ff0" type="Y Axis" elements="8" scaling="Temp"/>
+</table>
+<table name="Unknown Map #199" address="5f316" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Coolant Temperature" address="60ff0" type="Y Axis" elements="8" scaling="Temp"/>
+</table>
+<table name="Unknown Map #200" address="5a882" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Coolant Temperature" address="60ff0" type="Y Axis" elements="8" scaling="Temp"/>
+</table>
+<table name="Unknown Map #201" address="574e2" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Coolant Temperature" address="6122c" type="Y Axis" elements="8" scaling="Temp"/>
+</table>
+<table name="Unknown Map #202" address="574f8" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Coolant Temperature" address="60ff0" type="Y Axis" elements="8" scaling="Temp"/>
+</table>
+<table name="Unknown Map #203" address="609aa" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Coolant Temperature" address="61006" type="Y Axis" elements="9" scaling="Temp"/>
+</table>
+<table name="Unknown Map #204" address="609c2" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Coolant Temperature" address="61006" type="Y Axis" elements="9" scaling="Temp"/>
+</table>
+<table name="Unknown Map #205" address="5a8c6" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Coolant Temperature" address="60ff0" type="Y Axis" elements="8" scaling="Temp"/>
+</table>
+<table name="Unknown Map #206" address="5a8b0" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Coolant Temperature" address="60ff0" type="Y Axis" elements="8" scaling="Temp"/>
+</table>
+<table name="Unknown Map #207" address="59e14" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Coolant Temperature" address="60ff0" type="Y Axis" elements="8" scaling="Temp"/>
+</table>
+<table name="Unknown Map #208" address="59dfe" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Coolant Temperature" address="60ff0" type="Y Axis" elements="8" scaling="Temp"/>
+</table>
+<table name="Unknown Map #209" address="60c04" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Coolant Temperature" address="60ff0" type="Y Axis" elements="8" scaling="Temp"/>
+</table>
+<table name="Unknown Map #210" address="60bd8" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Coolant Temperature" address="6122c" type="Y Axis" elements="8" scaling="Temp"/>
+</table>
+<table name="Unknown Map #211" address="60bee" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Coolant Temperature" address="60ff0" type="Y Axis" elements="8" scaling="Temp"/>
+</table>
+<table name="Unknown Map #212" address="5f3a0" category="EcuTools Research" type="3D" swapxy="true" scaling="uint16">
+  <table name="Unknown #79" address="6197a" type="X Axis" elements="8" scaling="uint16"/>
+  <table name="Unknown #77" address="612de" type="Y Axis" elements="5" scaling="uint16"/>
+</table>
+<table name="Unknown Map #213" address="5f346" category="EcuTools Research" type="3D" swapxy="true" scaling="uint16">
+  <table name="Unknown #79" address="6197a" type="X Axis" elements="8" scaling="uint16"/>
+  <table name="Unknown #77" address="612de" type="Y Axis" elements="5" scaling="uint16"/>
+</table>
+<table name="Unknown Map #214" address="5624a" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Coolant Temperature" address="6122c" type="Y Axis" elements="8" scaling="Temp"/>
+</table>
+<table name="Unknown Map #215" address="56276" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Coolant Temperature" address="60ff0" type="Y Axis" elements="8" scaling="Temp"/>
+</table>
+<table name="Unknown Map #216" address="56234" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Coolant Temperature" address="6122c" type="Y Axis" elements="8" scaling="Temp"/>
+</table>
+<table name="Unknown Map #217" address="56260" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Coolant Temperature" address="60ff0" type="Y Axis" elements="8" scaling="Temp"/>
+</table>
+<table name="Unknown Map #218" address="5750e" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Coolant Temperature" address="6122c" type="Y Axis" elements="8" scaling="Temp"/>
+</table>
+<table name="Unknown Map #219" address="57524" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Coolant Temperature" address="60ff0" type="Y Axis" elements="8" scaling="Temp"/>
+</table>
+<table name="Unknown Map #220" address="609da" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Coolant Temperature" address="61006" type="Y Axis" elements="9" scaling="Temp"/>
+</table>
+<table name="Unknown Map #221" address="609f2" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Coolant Temperature" address="61006" type="Y Axis" elements="9" scaling="Temp"/>
+</table>
+<table name="Unknown Map #222" address="60a0a" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Coolant Temperature" address="61006" type="Y Axis" elements="9" scaling="Temp"/>
+</table>
+<table name="Unknown Map #223" address="60a22" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Coolant Temperature" address="61006" type="Y Axis" elements="9" scaling="Temp"/>
+</table>
+<table name="Unknown Map #224" address="5a93a" category="EcuTools Research" type="3D" swapxy="true" scaling="uint16">
+  <table name="Unknown #79" address="6197a" type="X Axis" elements="8" scaling="uint16"/>
+  <table name="Unknown #77" address="612de" type="Y Axis" elements="5" scaling="uint16"/>
+</table>
+<table name="Unknown Map #225" address="5a8e0" category="EcuTools Research" type="3D" swapxy="true" scaling="uint16">
+  <table name="Unknown #79" address="6197a" type="X Axis" elements="8" scaling="uint16"/>
+  <table name="Unknown #77" address="612de" type="Y Axis" elements="5" scaling="uint16"/>
+</table>
+<table name="Unknown Map #226" address="59e88" category="EcuTools Research" type="3D" swapxy="true" scaling="uint16">
+  <table name="Unknown #79" address="6197a" type="X Axis" elements="8" scaling="uint16"/>
+  <table name="Unknown #77" address="612de" type="Y Axis" elements="5" scaling="uint16"/>
+</table>
+<table name="Unknown Map #227" address="59e2e" category="EcuTools Research" type="3D" swapxy="true" scaling="uint16">
+  <table name="Unknown #79" address="6197a" type="X Axis" elements="8" scaling="uint16"/>
+  <table name="Unknown #77" address="612de" type="Y Axis" elements="5" scaling="uint16"/>
+</table>
+<table name="Unknown Map #228" address="5fc98" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Unknown #79" address="6197a" type="Y Axis" elements="8" scaling="uint16"/>
+</table>
+<table name="Unknown Map #229" address="5fc82" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Unknown #79" address="6197a" type="Y Axis" elements="8" scaling="uint16"/>
+</table>
+<table name="Unknown Map #230" address="5fcc4" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Unknown #79" address="6197a" type="Y Axis" elements="8" scaling="uint16"/>
+</table>
+<table name="Unknown Map #231" address="5fcae" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Unknown #79" address="6197a" type="Y Axis" elements="8" scaling="uint16"/>
+</table>
+<table name="Unknown Map #232" address="60cd2" category="EcuTools Research" type="3D" swapxy="true" scaling="uint16">
+  <table name="Unknown #79" address="6197a" type="X Axis" elements="8" scaling="uint16"/>
+  <table name="Unknown #77" address="612de" type="Y Axis" elements="5" scaling="uint16"/>
+</table>
+<table name="Unknown Map #233" address="60c1e" category="EcuTools Research" type="3D" swapxy="true" scaling="uint16">
+  <table name="Unknown #79" address="6197a" type="X Axis" elements="8" scaling="uint16"/>
+  <table name="Unknown #77" address="612de" type="Y Axis" elements="5" scaling="uint16"/>
+</table>
+<table name="Unknown Map #234" address="60c78" category="EcuTools Research" type="3D" swapxy="true" scaling="uint16">
+  <table name="Unknown #79" address="6197a" type="X Axis" elements="8" scaling="uint16"/>
+  <table name="Unknown #77" address="612de" type="Y Axis" elements="5" scaling="uint16"/>
+</table>
+<table name="Unknown Map #235" address="5f652" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Baro" address="60e92" type="Y Axis" elements="5" scaling="Baro16"/>
+</table>
+<table name="Unknown Map #236" address="5f662" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="IAT" address="610f6" type="Y Axis" elements="7" scaling="Temp"/>
+</table>
+<table name="Unknown Map #237" address="5c91c" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Unknown #80" address="62120" type="Y Axis" elements="41" scaling="uint16"/>
+</table>
+<table name="Unknown Map #238" address="5a840" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #81" address="61be4" type="Y Axis" elements="16" scaling="uint16"/>
+</table>
+<table name="Unknown Map #239" address="5a818" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #81" address="61be4" type="Y Axis" elements="16" scaling="uint16"/>
+</table>
+<table name="Unknown Map #240" address="5a854" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #81" address="61be4" type="Y Axis" elements="16" scaling="uint16"/>
+</table>
+<table name="Unknown Map #241" address="5a82c" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #81" address="61be4" type="Y Axis" elements="16" scaling="uint16"/>
+</table>
+<table name="Unknown Map #242" address="5c08a" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #82" address="620fe" type="Y Axis" elements="14" scaling="uint16"/>
+</table>
+<table name="Unknown Map #243" address="5c0a2" category="EcuTools Research" type="3D" swapxy="true" scaling="uint16">
+  <table name="Unknown #84" address="61fc2" type="X Axis" elements="17" scaling="uint16"/>
+  <table name="Unknown #83" address="61f9e" type="Y Axis" elements="15" scaling="uint16"/>
+</table>
+<table name="Unknown Map #244" address="5a7fc" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Coolant Temp" address="60fda" type="Y Axis" elements="8" scaling="Temp"/>
+</table>
+<table name="Unknown Map #245" address="5c9a0" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Unknown #8" address="60d58" type="Y Axis" elements="12" scaling="uint16"/>
 </table>
-<table name="Unknown Map #173" address="60a38" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #246" address="60a38" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="IAT" address="610f6" type="Y Axis" elements="7" scaling="Temp"/>
 </table>
-<table name="Unknown Map #174" address="60a44" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #74" address="62178" type="Y Axis" elements="9" scaling="uint16"/>
+<table name="Unknown Map #247" address="60a44" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #73" address="62178" type="Y Axis" elements="9" scaling="uint16"/>
 </table>
-<table name="Unknown Map #175" address="5c98c" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #248" address="5c98c" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Unknown #7" address="60d32" type="Y Axis" elements="16" scaling="uint16"/>
 </table>
-<table name="Unknown Map #176" address="508eb" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
-  <table name="Unknown #87" address="52bb2" type="X Axis" elements="2" scaling="uint16"/>
-  <table name="Unknown #86" address="52b9a" type="Y Axis" elements="9" scaling="uint16"/>
+<table name="Unknown Map #249" address="508eb" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
+  <table name="Unknown #86" address="52bb2" type="X Axis" elements="2" scaling="uint16"/>
+  <table name="Unknown #85" address="52b9a" type="Y Axis" elements="9" scaling="uint16"/>
 </table>
-<table name="Unknown Map #177" address="50905" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
-  <table name="Unknown #87" address="52bb2" type="X Axis" elements="2" scaling="uint16"/>
-  <table name="Unknown #86" address="52b9a" type="Y Axis" elements="9" scaling="uint16"/>
+<table name="Unknown Map #250" address="50905" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
+  <table name="Unknown #86" address="52bb2" type="X Axis" elements="2" scaling="uint16"/>
+  <table name="Unknown #85" address="52b9a" type="Y Axis" elements="9" scaling="uint16"/>
 </table>
-<table name="Unknown Map #178" address="50b4e" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #251" address="50922" category="EcuTools Research" type="3D" swapxy="true" scaling="uint16">
+  <table name="Coolant Temp" address="60fda" type="X Axis" elements="8" scaling="Temp"/>
+  <table name="Unknown #87" address="5d304" type="Y Axis" elements="13" scaling="uint16"/>
+</table>
+<table name="Unknown Map #252" address="509fc" category="EcuTools Research" type="3D" swapxy="true" scaling="uint16">
+  <table name="Unknown #89" address="5d33c" type="X Axis" elements="9" scaling="uint16"/>
+  <table name="Unknown #88" address="5d324" type="Y Axis" elements="9" scaling="uint16"/>
+</table>
+<table name="Unknown Map #253" address="50aa8" category="EcuTools Research" type="3D" swapxy="true" scaling="uint16">
+  <table name="Unknown #89" address="5d33c" type="X Axis" elements="9" scaling="uint16"/>
+  <table name="Unknown #88" address="5d324" type="Y Axis" elements="9" scaling="uint16"/>
+</table>
+<table name="Unknown Map #254" address="50b4e" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Unknown #7" address="60d32" type="Y Axis" elements="16" scaling="uint16"/>
 </table>
-<table name="Unknown Map #179" address="5fe52" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #255" address="5e5ca" category="EcuTools Research" type="3D" swapxy="true" scaling="uint16">
+  <table name="Unknown #90" address="62458" type="X Axis" elements="4" scaling="uint16"/>
+  <table name="Unknown #91" address="62436" type="Y Axis" elements="14" scaling="uint16"/>
+</table>
+<table name="Unknown Map #256" address="5e6be" category="EcuTools Research" type="3D" swapxy="true" scaling="uint16">
+  <table name="Unknown #90" address="62458" type="X Axis" elements="4" scaling="uint16"/>
+  <table name="Unknown #91" address="62436" type="Y Axis" elements="14" scaling="uint16"/>
+</table>
+<table name="Unknown Map #257" address="5e550" category="EcuTools Research" type="3D" swapxy="true" scaling="uint16">
+  <table name="Unknown #90" address="62458" type="X Axis" elements="4" scaling="uint16"/>
+  <table name="Unknown #91" address="62436" type="Y Axis" elements="14" scaling="uint16"/>
+</table>
+<table name="Unknown Map #258" address="5e644" category="EcuTools Research" type="3D" swapxy="true" scaling="uint16">
+  <table name="Unknown #90" address="62458" type="X Axis" elements="4" scaling="uint16"/>
+  <table name="Unknown #91" address="62436" type="Y Axis" elements="14" scaling="uint16"/>
+</table>
+<table name="Unknown Map #259" address="5e7b2" category="EcuTools Research" type="3D" swapxy="true" scaling="uint16">
+  <table name="Unknown #90" address="62458" type="X Axis" elements="4" scaling="uint16"/>
+  <table name="Unknown #91" address="62436" type="Y Axis" elements="14" scaling="uint16"/>
+</table>
+<table name="Unknown Map #260" address="5e8a6" category="EcuTools Research" type="3D" swapxy="true" scaling="uint16">
+  <table name="Unknown #90" address="62458" type="X Axis" elements="4" scaling="uint16"/>
+  <table name="Unknown #91" address="62436" type="Y Axis" elements="14" scaling="uint16"/>
+</table>
+<table name="Unknown Map #261" address="5e738" category="EcuTools Research" type="3D" swapxy="true" scaling="uint16">
+  <table name="Unknown #90" address="62458" type="X Axis" elements="4" scaling="uint16"/>
+  <table name="Unknown #91" address="62436" type="Y Axis" elements="14" scaling="uint16"/>
+</table>
+<table name="Unknown Map #262" address="5e82c" category="EcuTools Research" type="3D" swapxy="true" scaling="uint16">
+  <table name="Unknown #90" address="62458" type="X Axis" elements="4" scaling="uint16"/>
+  <table name="Unknown #91" address="62436" type="Y Axis" elements="14" scaling="uint16"/>
+</table>
+<table name="Unknown Map #263" address="5fe52" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Coolant Temp" address="60fda" type="Y Axis" elements="8" scaling="Temp"/>
 </table>
-<table name="Unknown Map #180" address="5fdfd" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
-  <table name="Unknown #94" address="629b0" type="X Axis" elements="8" scaling="uint16"/>
-  <table name="Unknown #93" address="62996" type="Y Axis" elements="10" scaling="uint16"/>
+<table name="Unknown Map #264" address="5fdfd" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
+  <table name="Unknown #93" address="629b0" type="X Axis" elements="8" scaling="uint16"/>
+  <table name="Unknown #92" address="62996" type="Y Axis" elements="10" scaling="uint16"/>
 </table>
-<table name="Unknown Map #181" address="56318" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #95" address="6110a" type="Y Axis" elements="9" scaling="uint16"/>
+<table name="Unknown Map #265" address="56318" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #94" address="6110a" type="Y Axis" elements="9" scaling="uint16"/>
 </table>
-<table name="Unknown Map #182" address="5ca78" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #67" address="60da4" type="Y Axis" elements="16" scaling="uint16"/>
+<table name="Unknown Map #266" address="5ca78" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #66" address="60da4" type="Y Axis" elements="16" scaling="uint16"/>
 </table>
-<table name="Unknown Map #183" address="5ca8c" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #67" address="60da4" type="Y Axis" elements="16" scaling="uint16"/>
+<table name="Unknown Map #267" address="5ca8c" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #66" address="60da4" type="Y Axis" elements="16" scaling="uint16"/>
 </table>
-<table name="Unknown Map #184" address="56468" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #67" address="60da4" type="Y Axis" elements="16" scaling="uint16"/>
+<table name="Unknown Map #268" address="56468" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #66" address="60da4" type="Y Axis" elements="16" scaling="uint16"/>
 </table>
-<table name="Unknown Map #185" address="5bb10" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #97" address="61e18" type="Y Axis" elements="8" scaling="uint16"/>
+<table name="Unknown Map #269" address="5bb10" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #96" address="61e18" type="Y Axis" elements="8" scaling="uint16"/>
 </table>
-<table name="Unknown Map #186" address="57238" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #97" address="61e18" type="Y Axis" elements="8" scaling="uint16"/>
+<table name="Unknown Map #270" address="57238" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #96" address="61e18" type="Y Axis" elements="8" scaling="uint16"/>
 </table>
-<table name="Unknown Map #187" address="57cf0" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #103" address="61874" type="Y Axis" elements="27" scaling="uint16"/>
+<table name="Unknown Map #271" address="5a9bc" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Unknown #97" address="61c36" type="Y Axis" elements="14" scaling="uint16"/>
 </table>
-<table name="Unknown Map #188" address="5a41b" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
-  <table name="Unknown #104" address="618ec" type="X Axis" elements="12" scaling="uint16"/>
-  <table name="Unknown #103" address="61874" type="Y Axis" elements="27" scaling="uint16"/>
+<table name="Unknown Map #272" address="5a9de" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Unknown #98" address="61c58" type="Y Axis" elements="10" scaling="uint16"/>
 </table>
-<table name="Unknown Map #189" address="585e3" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
-  <table name="Unknown #104" address="618ec" type="X Axis" elements="12" scaling="uint16"/>
-  <table name="Unknown #103" address="61874" type="Y Axis" elements="27" scaling="uint16"/>
+<table name="Unknown Map #273" address="5a9f8" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Unknown #99" address="61c72" type="Y Axis" elements="14" scaling="uint16"/>
 </table>
-<table name="Unknown Map #190" address="5872f" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
-  <table name="Unknown #104" address="618ec" type="X Axis" elements="12" scaling="uint16"/>
-  <table name="Unknown #103" address="61874" type="Y Axis" elements="27" scaling="uint16"/>
+<table name="Unknown Map #274" address="5ae14" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Unknown #97" address="61c36" type="Y Axis" elements="14" scaling="uint16"/>
 </table>
-<table name="Unknown Map #191" address="5887b" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
-  <table name="Unknown #104" address="618ec" type="X Axis" elements="12" scaling="uint16"/>
-  <table name="Unknown #103" address="61874" type="Y Axis" elements="27" scaling="uint16"/>
+<table name="Unknown Map #275" address="5ae36" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Unknown #98" address="61c58" type="Y Axis" elements="10" scaling="uint16"/>
 </table>
-<table name="Unknown Map #192" address="5a6b3" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
-  <table name="Unknown #104" address="618ec" type="X Axis" elements="12" scaling="uint16"/>
-  <table name="Unknown #105" address="618b0" type="Y Axis" elements="27" scaling="uint16"/>
+<table name="Unknown Map #276" address="5ae50" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Unknown #99" address="61c72" type="Y Axis" elements="14" scaling="uint16"/>
 </table>
-<table name="Unknown Map #193" address="58b13" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
-  <table name="Unknown #104" address="618ec" type="X Axis" elements="12" scaling="uint16"/>
-  <table name="Unknown #105" address="618b0" type="Y Axis" elements="27" scaling="uint16"/>
+<table name="Unknown Map #277" address="59ede" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Unknown #100" address="61b0e" type="Y Axis" elements="29" scaling="uint16"/>
 </table>
-<table name="Unknown Map #194" address="5bd51" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
-  <table name="Unknown #107" address="61eee" type="X Axis" elements="21" scaling="uint16"/>
-  <table name="Unknown #106" address="61ec8" type="Y Axis" elements="16" scaling="uint16"/>
+<table name="Unknown Map #278" address="59f1e" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Unknown #100" address="61b0e" type="Y Axis" elements="29" scaling="uint16"/>
 </table>
-<table name="Unknown Map #195" address="5bea6" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #108" address="61f1e" type="Y Axis" elements="15" scaling="uint16"/>
+<table name="Unknown Map #279" address="5fde8" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Unknown #101" address="62982" type="Y Axis" elements="7" scaling="uint16"/>
 </table>
-<table name="Unknown Map #196" address="5c594" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #109" address="6207e" type="Y Axis" elements="19" scaling="uint16"/>
+<table name="Unknown Map #280" address="5fdd4" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Unknown #101" address="62982" type="Y Axis" elements="7" scaling="uint16"/>
 </table>
-<table name="Unknown Map #197" address="5c5af" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
-  <table name="Unknown #112" address="620d6" type="X Axis" elements="17" scaling="uint16"/>
-  <table name="Unknown #111" address="620aa" type="Y Axis" elements="19" scaling="uint16"/>
+<table name="Unknown Map #281" address="57cf0" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #102" address="61874" type="Y Axis" elements="27" scaling="uint16"/>
 </table>
-<table name="Unknown Map #198" address="5c4af" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
-  <table name="Unknown #116" address="6205a" type="X Axis" elements="15" scaling="uint16"/>
-  <table name="Unknown #115" address="62036" type="Y Axis" elements="15" scaling="uint16"/>
+<table name="Unknown Map #282" address="5a41b" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
+  <table name="Unknown #103" address="618ec" type="X Axis" elements="12" scaling="uint16"/>
+  <table name="Unknown #102" address="61874" type="Y Axis" elements="27" scaling="uint16"/>
 </table>
-<table name="Unknown Map #199" address="5c03a" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #106" address="61ec8" type="Y Axis" elements="16" scaling="uint16"/>
+<table name="Unknown Map #283" address="585e3" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
+  <table name="Unknown #103" address="618ec" type="X Axis" elements="12" scaling="uint16"/>
+  <table name="Unknown #102" address="61874" type="Y Axis" elements="27" scaling="uint16"/>
 </table>
-<table name="Unknown Map #200" address="5c04e" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #106" address="61ec8" type="Y Axis" elements="16" scaling="uint16"/>
+<table name="Unknown Map #284" address="5872f" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
+  <table name="Unknown #103" address="618ec" type="X Axis" elements="12" scaling="uint16"/>
+  <table name="Unknown #102" address="61874" type="Y Axis" elements="27" scaling="uint16"/>
 </table>
-<table name="Unknown Map #201" address="5c062" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #106" address="61ec8" type="Y Axis" elements="16" scaling="uint16"/>
+<table name="Unknown Map #285" address="5887b" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
+  <table name="Unknown #103" address="618ec" type="X Axis" elements="12" scaling="uint16"/>
+  <table name="Unknown #102" address="61874" type="Y Axis" elements="27" scaling="uint16"/>
 </table>
-<table name="Unknown Map #202" address="5c076" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #106" address="61ec8" type="Y Axis" elements="16" scaling="uint16"/>
+<table name="Unknown Map #286" address="5a6b3" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
+  <table name="Unknown #103" address="618ec" type="X Axis" elements="12" scaling="uint16"/>
+  <table name="Unknown #104" address="618b0" type="Y Axis" elements="27" scaling="uint16"/>
 </table>
-<table name="Unknown Map #203" address="566ff" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
-  <table name="Unknown #120" address="611b0" type="X Axis" elements="16" scaling="uint16"/>
-  <table name="Unknown #121" address="61194" type="Y Axis" elements="11" scaling="uint16"/>
+<table name="Unknown Map #287" address="58b13" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
+  <table name="Unknown #103" address="618ec" type="X Axis" elements="12" scaling="uint16"/>
+  <table name="Unknown #104" address="618b0" type="Y Axis" elements="27" scaling="uint16"/>
 </table>
-<table name="Unknown Map #204" address="567b7" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
-  <table name="Unknown #120" address="611b0" type="X Axis" elements="16" scaling="uint16"/>
-  <table name="Unknown #121" address="61194" type="Y Axis" elements="11" scaling="uint16"/>
+<table name="Unknown Map #288" address="5bd51" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
+  <table name="Unknown #106" address="61eee" type="X Axis" elements="21" scaling="uint16"/>
+  <table name="Unknown #105" address="61ec8" type="Y Axis" elements="16" scaling="uint16"/>
 </table>
-<table name="Unknown Map #205" address="56927" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
-  <table name="Unknown #120" address="611b0" type="X Axis" elements="16" scaling="uint16"/>
-  <table name="Unknown #121" address="61194" type="Y Axis" elements="11" scaling="uint16"/>
+<table name="Unknown Map #289" address="5bea6" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #107" address="61f1e" type="Y Axis" elements="15" scaling="uint16"/>
 </table>
-<table name="Unknown Map #206" address="5686f" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
-  <table name="Unknown #120" address="611b0" type="X Axis" elements="16" scaling="uint16"/>
-  <table name="Unknown #121" address="61194" type="Y Axis" elements="11" scaling="uint16"/>
+<table name="Unknown Map #290" address="5c594" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #108" address="6207e" type="Y Axis" elements="19" scaling="uint16"/>
 </table>
-<table name="Unknown Map #207" address="569df" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
-  <table name="Unknown #120" address="611b0" type="X Axis" elements="16" scaling="uint16"/>
-  <table name="Unknown #121" address="61194" type="Y Axis" elements="11" scaling="uint16"/>
+<table name="Unknown Map #291" address="5bf0a" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Unknown #109" address="61f42" type="Y Axis" elements="15" scaling="uint16"/>
 </table>
-<table name="Unknown Map #208" address="56647" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
-  <table name="Unknown #120" address="611b0" type="X Axis" elements="16" scaling="uint16"/>
-  <table name="Unknown #121" address="61194" type="Y Axis" elements="11" scaling="uint16"/>
+<table name="Unknown Map #292" address="5c5af" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
+  <table name="Unknown #111" address="620d6" type="X Axis" elements="17" scaling="uint16"/>
+  <table name="Unknown #110" address="620aa" type="Y Axis" elements="19" scaling="uint16"/>
 </table>
-<table name="Unknown Map #209" address="56b81" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
-  <table name="Unknown #120" address="611b0" type="X Axis" elements="16" scaling="uint16"/>
-  <table name="Unknown #121" address="61194" type="Y Axis" elements="11" scaling="uint16"/>
+<table name="Unknown Map #293" address="5bf32" category="EcuTools Research" type="3D" swapxy="true" scaling="uint16">
+  <table name="Unknown #113" address="61f86" type="X Axis" elements="9" scaling="uint16"/>
+  <table name="Unknown #112" address="61f66" type="Y Axis" elements="13" scaling="uint16"/>
 </table>
-<table name="Unknown Map #210" address="56c39" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
-  <table name="Unknown #120" address="611b0" type="X Axis" elements="16" scaling="uint16"/>
-  <table name="Unknown #121" address="61194" type="Y Axis" elements="11" scaling="uint16"/>
+<table name="Unknown Map #294" address="5c4af" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
+  <table name="Unknown #115" address="6205a" type="X Axis" elements="15" scaling="uint16"/>
+  <table name="Unknown #114" address="62036" type="Y Axis" elements="15" scaling="uint16"/>
 </table>
-<table name="Unknown Map #211" address="56cf1" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
-  <table name="Unknown #120" address="611b0" type="X Axis" elements="16" scaling="uint16"/>
-  <table name="Unknown #121" address="61194" type="Y Axis" elements="11" scaling="uint16"/>
+<table name="Unknown Map #295" address="5c2aa" category="EcuTools Research" type="3D" swapxy="true" scaling="uint16">
+  <table name="Unknown #117" address="6200e" type="X Axis" elements="17" scaling="uint16"/>
+  <table name="Unknown #116" address="61fea" type="Y Axis" elements="15" scaling="uint16"/>
 </table>
-<table name="Unknown Map #212" address="56da9" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
-  <table name="Unknown #120" address="611b0" type="X Axis" elements="16" scaling="uint16"/>
-  <table name="Unknown #121" address="61194" type="Y Axis" elements="11" scaling="uint16"/>
+<table name="Unknown Map #296" address="5c03a" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #105" address="61ec8" type="Y Axis" elements="16" scaling="uint16"/>
 </table>
-<table name="Unknown Map #213" address="56e61" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
-  <table name="Unknown #120" address="611b0" type="X Axis" elements="16" scaling="uint16"/>
-  <table name="Unknown #121" address="61194" type="Y Axis" elements="11" scaling="uint16"/>
+<table name="Unknown Map #297" address="5c04e" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #105" address="61ec8" type="Y Axis" elements="16" scaling="uint16"/>
 </table>
-<table name="Unknown Map #214" address="56f19" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
-  <table name="Unknown #120" address="611b0" type="X Axis" elements="16" scaling="uint16"/>
-  <table name="Unknown #121" address="61194" type="Y Axis" elements="11" scaling="uint16"/>
+<table name="Unknown Map #298" address="5c062" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #105" address="61ec8" type="Y Axis" elements="16" scaling="uint16"/>
 </table>
-<table name="Unknown Map #215" address="56634" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #121" address="61194" type="Y Axis" elements="11" scaling="uint16"/>
+<table name="Unknown Map #299" address="5c076" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #105" address="61ec8" type="Y Axis" elements="16" scaling="uint16"/>
 </table>
-<table name="Unknown Map #216" address="565a4" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #121" address="61194" type="Y Axis" elements="11" scaling="uint16"/>
+<table name="Unknown Map #300" address="566ff" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
+  <table name="Unknown #119" address="611b0" type="X Axis" elements="16" scaling="uint16"/>
+  <table name="Unknown #120" address="61194" type="Y Axis" elements="11" scaling="uint16"/>
 </table>
-<table name="Unknown Map #217" address="56624" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #123" address="6113a" type="Y Axis" elements="11" scaling="uint16"/>
+<table name="Unknown Map #301" address="567b7" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
+  <table name="Unknown #119" address="611b0" type="X Axis" elements="16" scaling="uint16"/>
+  <table name="Unknown #120" address="61194" type="Y Axis" elements="11" scaling="uint16"/>
 </table>
-<table name="Unknown Map #218" address="56614" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #123" address="6113a" type="Y Axis" elements="11" scaling="uint16"/>
+<table name="Unknown Map #302" address="56927" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
+  <table name="Unknown #119" address="611b0" type="X Axis" elements="16" scaling="uint16"/>
+  <table name="Unknown #120" address="61194" type="Y Axis" elements="11" scaling="uint16"/>
 </table>
-<table name="Unknown Map #219" address="56604" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #123" address="6113a" type="Y Axis" elements="11" scaling="uint16"/>
+<table name="Unknown Map #303" address="5686f" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
+  <table name="Unknown #119" address="611b0" type="X Axis" elements="16" scaling="uint16"/>
+  <table name="Unknown #120" address="61194" type="Y Axis" elements="11" scaling="uint16"/>
 </table>
-<table name="Unknown Map #220" address="565f4" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #123" address="6113a" type="Y Axis" elements="11" scaling="uint16"/>
+<table name="Unknown Map #304" address="569df" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
+  <table name="Unknown #119" address="611b0" type="X Axis" elements="16" scaling="uint16"/>
+  <table name="Unknown #120" address="61194" type="Y Axis" elements="11" scaling="uint16"/>
 </table>
-<table name="Unknown Map #221" address="565e4" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #121" address="61194" type="Y Axis" elements="11" scaling="uint16"/>
+<table name="Unknown Map #305" address="56647" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
+  <table name="Unknown #119" address="611b0" type="X Axis" elements="16" scaling="uint16"/>
+  <table name="Unknown #120" address="61194" type="Y Axis" elements="11" scaling="uint16"/>
 </table>
-<table name="Unknown Map #222" address="565d4" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #121" address="61194" type="Y Axis" elements="11" scaling="uint16"/>
+<table name="Unknown Map #306" address="56b81" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
+  <table name="Unknown #119" address="611b0" type="X Axis" elements="16" scaling="uint16"/>
+  <table name="Unknown #120" address="61194" type="Y Axis" elements="11" scaling="uint16"/>
 </table>
-<table name="Unknown Map #223" address="565c4" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #121" address="61194" type="Y Axis" elements="11" scaling="uint16"/>
+<table name="Unknown Map #307" address="56c39" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
+  <table name="Unknown #119" address="611b0" type="X Axis" elements="16" scaling="uint16"/>
+  <table name="Unknown #120" address="61194" type="Y Axis" elements="11" scaling="uint16"/>
 </table>
-<table name="Unknown Map #224" address="565b4" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #121" address="61194" type="Y Axis" elements="11" scaling="uint16"/>
+<table name="Unknown Map #308" address="56cf1" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
+  <table name="Unknown #119" address="611b0" type="X Axis" elements="16" scaling="uint16"/>
+  <table name="Unknown #120" address="61194" type="Y Axis" elements="11" scaling="uint16"/>
 </table>
-<table name="Unknown Map #225" address="57222" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #52" address="60ea2" type="Y Axis" elements="4" scaling="uint16"/>
+<table name="Unknown Map #309" address="56da9" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
+  <table name="Unknown #119" address="611b0" type="X Axis" elements="16" scaling="uint16"/>
+  <table name="Unknown #120" address="61194" type="Y Axis" elements="11" scaling="uint16"/>
 </table>
-<table name="Unknown Map #226" address="57be8" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #52" address="60ea2" type="Y Axis" elements="4" scaling="uint16"/>
+<table name="Unknown Map #310" address="56e61" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
+  <table name="Unknown #119" address="611b0" type="X Axis" elements="16" scaling="uint16"/>
+  <table name="Unknown #120" address="61194" type="Y Axis" elements="11" scaling="uint16"/>
 </table>
-<table name="Unknown Map #227" address="571b6" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #125" address="61452" type="Y Axis" elements="8" scaling="uint16"/>
+<table name="Unknown Map #311" address="56f19" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
+  <table name="Unknown #119" address="611b0" type="X Axis" elements="16" scaling="uint16"/>
+  <table name="Unknown #120" address="61194" type="Y Axis" elements="11" scaling="uint16"/>
 </table>
-<table name="Unknown Map #228" address="571ea" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #312" address="56634" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #120" address="61194" type="Y Axis" elements="11" scaling="uint16"/>
+</table>
+<table name="Unknown Map #313" address="565a4" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #120" address="61194" type="Y Axis" elements="11" scaling="uint16"/>
+</table>
+<table name="Unknown Map #314" address="56624" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #122" address="6113a" type="Y Axis" elements="11" scaling="uint16"/>
+</table>
+<table name="Unknown Map #315" address="56614" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #122" address="6113a" type="Y Axis" elements="11" scaling="uint16"/>
+</table>
+<table name="Unknown Map #316" address="56604" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #122" address="6113a" type="Y Axis" elements="11" scaling="uint16"/>
+</table>
+<table name="Unknown Map #317" address="565f4" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #122" address="6113a" type="Y Axis" elements="11" scaling="uint16"/>
+</table>
+<table name="Unknown Map #318" address="565e4" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #120" address="61194" type="Y Axis" elements="11" scaling="uint16"/>
+</table>
+<table name="Unknown Map #319" address="565d4" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #120" address="61194" type="Y Axis" elements="11" scaling="uint16"/>
+</table>
+<table name="Unknown Map #320" address="565c4" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #120" address="61194" type="Y Axis" elements="11" scaling="uint16"/>
+</table>
+<table name="Unknown Map #321" address="565b4" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #120" address="61194" type="Y Axis" elements="11" scaling="uint16"/>
+</table>
+<table name="Unknown Map #322" address="656c2" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Unknown #123" address="6574a" type="Y Axis" elements="4" scaling="uint16"/>
+</table>
+<table name="Unknown Map #323" address="656d0" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Unknown #123" address="6574a" type="Y Axis" elements="4" scaling="uint16"/>
+</table>
+<table name="Unknown Map #324" address="57222" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #51" address="60ea2" type="Y Axis" elements="4" scaling="uint16"/>
+</table>
+<table name="Unknown Map #325" address="57be8" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #51" address="60ea2" type="Y Axis" elements="4" scaling="uint16"/>
+</table>
+<table name="Unknown Map #326" address="571b6" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #124" address="61452" type="Y Axis" elements="8" scaling="uint16"/>
+</table>
+<table name="Unknown Map #327" address="571ea" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="RPM" address="60d76" type="Y Axis" elements="20" scaling="RPM"/>
 </table>
-<table name="Unknown Map #229" address="571d2" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #328" address="571d2" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="RPM" address="60d76" type="Y Axis" elements="20" scaling="RPM"/>
 </table>
-<table name="Unknown Map #230" address="57c13" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
-  <table name="Unknown #127" address="61572" type="X Axis" elements="6" scaling="uint16"/>
-  <table name="Unknown #126" address="612ee" type="Y Axis" elements="4" scaling="uint16"/>
+<table name="Unknown Map #329" address="57c13" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
+  <table name="Unknown #126" address="61572" type="X Axis" elements="6" scaling="uint16"/>
+  <table name="Unknown #125" address="612ee" type="Y Axis" elements="4" scaling="uint16"/>
 </table>
-<table name="Unknown Map #231" address="5716d" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
-  <table name="Unknown #127" address="61572" type="X Axis" elements="6" scaling="uint16"/>
-  <table name="Unknown #126" address="612ee" type="Y Axis" elements="4" scaling="uint16"/>
+<table name="Unknown Map #330" address="5716d" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
+  <table name="Unknown #126" address="61572" type="X Axis" elements="6" scaling="uint16"/>
+  <table name="Unknown #125" address="612ee" type="Y Axis" elements="4" scaling="uint16"/>
 </table>
-<table name="Unknown Map #232" address="5718d" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
-  <table name="Unknown #127" address="61572" type="X Axis" elements="6" scaling="uint16"/>
-  <table name="Unknown #126" address="612ee" type="Y Axis" elements="4" scaling="uint16"/>
+<table name="Unknown Map #331" address="5718d" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
+  <table name="Unknown #126" address="61572" type="X Axis" elements="6" scaling="uint16"/>
+  <table name="Unknown #125" address="612ee" type="Y Axis" elements="4" scaling="uint16"/>
 </table>
-<table name="Unknown Map #233" address="57bf3" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
-  <table name="Unknown #127" address="61572" type="X Axis" elements="6" scaling="uint16"/>
-  <table name="Unknown #126" address="612ee" type="Y Axis" elements="4" scaling="uint16"/>
+<table name="Unknown Map #332" address="57bf3" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
+  <table name="Unknown #126" address="61572" type="X Axis" elements="6" scaling="uint16"/>
+  <table name="Unknown #125" address="612ee" type="Y Axis" elements="4" scaling="uint16"/>
 </table>
-<table name="Unknown Map #234" address="57205" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
-  <table name="Unknown #127" address="61572" type="X Axis" elements="6" scaling="uint16"/>
-  <table name="Unknown #126" address="612ee" type="Y Axis" elements="4" scaling="uint16"/>
+<table name="Unknown Map #333" address="57205" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
+  <table name="Unknown #126" address="61572" type="X Axis" elements="6" scaling="uint16"/>
+  <table name="Unknown #125" address="612ee" type="Y Axis" elements="4" scaling="uint16"/>
 </table>
-<table name="Unknown Map #235" address="57c30" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #334" address="57c30" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Coolant Temp" address="60fda" type="Y Axis" elements="8" scaling="Temp"/>
 </table>
-<table name="Unknown Map #236" address="57c3c" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #335" address="57c3c" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="IAT" address="610f6" type="Y Axis" elements="7" scaling="Temp"/>
 </table>
-<table name="Unknown Map #237" address="56b2e" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #336" address="56b2e" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Coolant Temp" address="60fda" type="Y Axis" elements="8" scaling="Temp"/>
 </table>
-<table name="Unknown Map #238" address="56b3a" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #337" address="56b3a" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="IAT" address="610f6" type="Y Axis" elements="7" scaling="Temp"/>
 </table>
-<table name="Unknown Map #239" address="56b16" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #338" address="56b16" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Coolant Temp" address="60fda" type="Y Axis" elements="8" scaling="Temp"/>
 </table>
-<table name="Unknown Map #240" address="56b22" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #339" address="56b22" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="IAT" address="610f6" type="Y Axis" elements="7" scaling="Temp"/>
 </table>
-<table name="Unknown Map #241" address="57c48" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #340" address="57c48" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Coolant Temp" address="60fda" type="Y Axis" elements="8" scaling="Temp"/>
 </table>
-<table name="Unknown Map #242" address="571aa" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #341" address="571aa" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Coolant Temp" address="60fda" type="Y Axis" elements="8" scaling="Temp"/>
 </table>
-<table name="Unknown Map #243" address="56b54" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #128" address="6126c" type="Y Axis" elements="9" scaling="uint16"/>
+<table name="Unknown Map #342" address="56b54" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #127" address="6126c" type="Y Axis" elements="9" scaling="uint16"/>
 </table>
-<table name="Unknown Map #244" address="56b70" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #128" address="6126c" type="Y Axis" elements="9" scaling="uint16"/>
+<table name="Unknown Map #343" address="56b70" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #127" address="6126c" type="Y Axis" elements="9" scaling="uint16"/>
 </table>
-<table name="Unknown Map #245" address="56b46" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #128" address="6126c" type="Y Axis" elements="9" scaling="uint16"/>
+<table name="Unknown Map #344" address="56b46" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #127" address="6126c" type="Y Axis" elements="9" scaling="uint16"/>
 </table>
-<table name="Unknown Map #246" address="56b62" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #128" address="6126c" type="Y Axis" elements="9" scaling="uint16"/>
+<table name="Unknown Map #345" address="56b62" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #127" address="6126c" type="Y Axis" elements="9" scaling="uint16"/>
 </table>
-<table name="Unknown Map #247" address="63212" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #130" address="63ca0" type="Y Axis" elements="6" scaling="uint16"/>
+<table name="Unknown Map #346" address="5fd2e" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Unknown #128" address="628ea" type="Y Axis" elements="73" scaling="uint16"/>
 </table>
-<table name="Unknown Map #248" address="6321c" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #131" address="63cb2" type="Y Axis" elements="7" scaling="uint16"/>
+<table name="Unknown Map #347" address="63212" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #129" address="63ca0" type="Y Axis" elements="6" scaling="uint16"/>
 </table>
-<table name="Unknown Map #249" address="63b92" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #132" address="63e3e" type="Y Axis" elements="9" scaling="uint16"/>
+<table name="Unknown Map #348" address="6321c" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #130" address="63cb2" type="Y Axis" elements="7" scaling="uint16"/>
 </table>
-<table name="Unknown Map #250" address="636c8" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #349" address="63b92" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #131" address="63e3e" type="Y Axis" elements="9" scaling="uint16"/>
+</table>
+<table name="Unknown Map #350" address="636c8" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="RPM" address="63c7a" type="Y Axis" elements="16" scaling="RPM"/>
 </table>
-<table name="Unknown Map #251" address="636df" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
+<table name="Unknown Map #351" address="636df" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
   <table name="Throttle" address="63cf6" type="X Axis" elements="17" scaling="AcceleratorPedal %"/>
   <table name="RPM" address="63c7a" type="Y Axis" elements="16" scaling="RPM"/>
 </table>
-<table name="Unknown Map #252" address="63ba0" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #352" address="63ba0" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="RPM" address="63d1e" type="Y Axis" elements="16" scaling="RPM"/>
 </table>
-<table name="Unknown Map #253" address="637f4" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #353" address="637f4" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="RPM" address="63d1e" type="Y Axis" elements="16" scaling="RPM"/>
 </table>
-<table name="Unknown Map #254" address="63b52" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #137" address="63db4" type="Y Axis" elements="27" scaling="uint16"/>
+<table name="Unknown Map #354" address="63b52" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #136" address="63db4" type="Y Axis" elements="27" scaling="uint16"/>
 </table>
-<table name="Unknown Map #255" address="63b72" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #138" address="63df0" type="Y Axis" elements="27" scaling="uint16"/>
+<table name="Unknown Map #355" address="63b72" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #137" address="63df0" type="Y Axis" elements="27" scaling="uint16"/>
 </table>
-<table name="Unknown Map #256" address="6437a" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #139" address="651e6" type="Y Axis" elements="6" scaling="uint16"/>
+<table name="Unknown Map #356" address="6437a" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #138" address="651e6" type="Y Axis" elements="6" scaling="uint16"/>
 </table>
-<table name="Unknown Map #257" address="64384" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #140" address="651f8" type="Y Axis" elements="7" scaling="uint16"/>
+<table name="Unknown Map #357" address="64384" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #139" address="651f8" type="Y Axis" elements="7" scaling="uint16"/>
 </table>
-<table name="Unknown Map #258" address="644ee" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #358" address="644ee" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="RPM" address="65106" type="Y Axis" elements="16" scaling="RPM"/>
 </table>
-<table name="Unknown Map #259" address="6421d" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
+<table name="Unknown Map #359" address="6421d" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
   <table name="Throttle" address="6515c" type="X Axis" elements="17" scaling="AcceleratorPedal %"/>
   <table name="RPM" address="65106" type="Y Axis" elements="16" scaling="RPM"/>
 </table>
-<table name="Unknown Map #260" address="64352" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #141" address="651c0" type="Y Axis" elements="16" scaling="uint16"/>
+<table name="Unknown Map #360" address="64352" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #140" address="651c0" type="Y Axis" elements="16" scaling="uint16"/>
 </table>
-<table name="Unknown Map #261" address="64393" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
-  <table name="Unknown #143" address="65234" type="X Axis" elements="14" scaling="uint16"/>
-  <table name="Unknown #142" address="6520c" type="Y Axis" elements="17" scaling="uint16"/>
+<table name="Unknown Map #361" address="64393" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
+  <table name="Unknown #142" address="65234" type="X Axis" elements="14" scaling="uint16"/>
+  <table name="Unknown #141" address="6520c" type="Y Axis" elements="17" scaling="uint16"/>
 </table>
-<table name="Unknown Map #262" address="64489" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
-  <table name="Unknown #145" address="6527c" type="X Axis" elements="6" scaling="uint16"/>
-  <table name="Unknown #144" address="65256" type="Y Axis" elements="16" scaling="uint16"/>
+<table name="Unknown Map #362" address="64489" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
+  <table name="Unknown #144" address="6527c" type="X Axis" elements="6" scaling="uint16"/>
+  <table name="Unknown #143" address="65256" type="Y Axis" elements="16" scaling="uint16"/>
 </table>
-<table name="Unknown Map #263" address="64332" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #146" address="65184" type="Y Axis" elements="27" scaling="uint16"/>
+<table name="Unknown Map #363" address="64332" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #145" address="65184" type="Y Axis" elements="27" scaling="uint16"/>
 </table>
-<table name="Unknown Map #264" address="5e356" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #364" address="5e356" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Coolant Temperature" address="6101e" type="Y Axis" elements="9" scaling="Temp"/>
 </table>
-<table name="Unknown Map #265" address="5e364" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #365" address="5e38c" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Unknown #0" address="6106a" type="Y Axis" elements="9" scaling="uint16"/>
+</table>
+<table name="Unknown Map #366" address="5e364" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Coolant Temperature" address="6101e" type="Y Axis" elements="9" scaling="Temp"/>
 </table>
-<table name="Unknown Map #266" address="5a13e" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #148" address="62f98" type="Y Axis" elements="9" scaling="uint16"/>
+<table name="Unknown Map #367" address="5e3bc" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Unknown #0" address="6106a" type="Y Axis" elements="9" scaling="uint16"/>
 </table>
-<table name="Unknown Map #267" address="5a0be" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #149" address="62f72" type="Y Axis" elements="7" scaling="uint16"/>
+<table name="Unknown Map #368" address="5d210" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Unknown #146" address="62342" type="Y Axis" elements="15" scaling="uint16"/>
 </table>
-<table name="Unknown Map #268" address="5a102" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #150" address="62f86" type="Y Axis" elements="6" scaling="uint16"/>
+<table name="Unknown Map #369" address="5d234" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Unknown #146" address="62342" type="Y Axis" elements="15" scaling="uint16"/>
 </table>
-<table name="Unknown Map #269" address="5a0d8" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #148" address="62f98" type="Y Axis" elements="9" scaling="uint16"/>
+<table name="Unknown Map #370" address="5a13e" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #147" address="62f98" type="Y Axis" elements="9" scaling="uint16"/>
 </table>
-<table name="Unknown Map #270" address="5a0e6" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #148" address="62f98" type="Y Axis" elements="9" scaling="uint16"/>
+<table name="Unknown Map #371" address="5a0be" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #148" address="62f72" type="Y Axis" elements="7" scaling="uint16"/>
 </table>
-<table name="Unknown Map #271" address="5a0f4" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #148" address="62f98" type="Y Axis" elements="9" scaling="uint16"/>
+<table name="Unknown Map #372" address="5a102" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #149" address="62f86" type="Y Axis" elements="6" scaling="uint16"/>
 </table>
-<table name="Unknown Map #272" address="5a0ca" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #148" address="62f98" type="Y Axis" elements="9" scaling="uint16"/>
+<table name="Unknown Map #373" address="5a0d8" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #147" address="62f98" type="Y Axis" elements="9" scaling="uint16"/>
 </table>
-<table name="Unknown Map #273" address="5a122" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #151" address="6307a" type="Y Axis" elements="9" scaling="uint16"/>
+<table name="Unknown Map #374" address="5a0e6" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #147" address="62f98" type="Y Axis" elements="9" scaling="uint16"/>
 </table>
-<table name="Unknown Map #274" address="5a130" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #151" address="6307a" type="Y Axis" elements="9" scaling="uint16"/>
+<table name="Unknown Map #375" address="5a0f4" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #147" address="62f98" type="Y Axis" elements="9" scaling="uint16"/>
 </table>
-<table name="Unknown Map #275" address="5a10c" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #152" address="63050" type="Y Axis" elements="18" scaling="uint16"/>
+<table name="Unknown Map #376" address="5a0ca" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #147" address="62f98" type="Y Axis" elements="9" scaling="uint16"/>
 </table>
-<table name="Unknown Map #276" address="5a021" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
-  <table name="Unknown #154" address="62f34" type="X Axis" elements="9" scaling="uint16"/>
-  <table name="Unknown #153" address="62f20" type="Y Axis" elements="7" scaling="uint16"/>
+<table name="Unknown Map #377" address="5a122" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #150" address="6307a" type="Y Axis" elements="9" scaling="uint16"/>
 </table>
-<table name="Unknown Map #277" address="5a067" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
-  <table name="Unknown #154" address="62f34" type="X Axis" elements="9" scaling="uint16"/>
-  <table name="Unknown #153" address="62f20" type="Y Axis" elements="7" scaling="uint16"/>
+<table name="Unknown Map #378" address="5a130" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #150" address="6307a" type="Y Axis" elements="9" scaling="uint16"/>
 </table>
-<table name="Unknown Map #278" address="5a0aa" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #155" address="62f4c" type="Y Axis" elements="16" scaling="uint16"/>
+<table name="Unknown Map #379" address="5a10c" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #151" address="63050" type="Y Axis" elements="18" scaling="uint16"/>
 </table>
-<table name="Unknown Map #279" address="5fcee" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #156" address="628b6" type="Y Axis" elements="11" scaling="uint16"/>
+<table name="Unknown Map #380" address="5a021" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
+  <table name="Unknown #153" address="62f34" type="X Axis" elements="9" scaling="uint16"/>
+  <table name="Unknown #152" address="62f20" type="Y Axis" elements="7" scaling="uint16"/>
 </table>
-<table name="Unknown Map #280" address="5fcfe" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #156" address="628b6" type="Y Axis" elements="11" scaling="uint16"/>
+<table name="Unknown Map #381" address="5a067" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
+  <table name="Unknown #153" address="62f34" type="X Axis" elements="9" scaling="uint16"/>
+  <table name="Unknown #152" address="62f20" type="Y Axis" elements="7" scaling="uint16"/>
 </table>
-<table name="Unknown Map #281" address="5fd0e" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #156" address="628b6" type="Y Axis" elements="11" scaling="uint16"/>
+<table name="Unknown Map #382" address="5a0aa" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #154" address="62f4c" type="Y Axis" elements="16" scaling="uint16"/>
 </table>
-<table name="Unknown Map #282" address="5f634" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #157" address="62772" type="Y Axis" elements="12" scaling="uint16"/>
+<table name="Unknown Map #383" address="5fcee" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #155" address="628b6" type="Y Axis" elements="11" scaling="uint16"/>
 </table>
-<table name="Unknown Map #283" address="59c0e" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #158" address="6193e" type="Y Axis" elements="10" scaling="uint16"/>
+<table name="Unknown Map #384" address="5fcfe" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #155" address="628b6" type="Y Axis" elements="11" scaling="uint16"/>
 </table>
-<table name="Unknown Map #284" address="56576" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #385" address="5fd0e" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #155" address="628b6" type="Y Axis" elements="11" scaling="uint16"/>
+</table>
+<table name="Unknown Map #386" address="5f634" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #156" address="62772" type="Y Axis" elements="12" scaling="uint16"/>
+</table>
+<table name="Unknown Map #387" address="59c0e" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #157" address="6193e" type="Y Axis" elements="10" scaling="uint16"/>
+</table>
+<table name="Unknown Map #388" address="56576" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Coolant Temp" address="60fda" type="Y Axis" elements="8" scaling="Temp"/>
 </table>
-<table name="Unknown Map #285" address="5658e" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #389" address="5658e" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Unknown #7" address="60d32" type="Y Axis" elements="16" scaling="uint16"/>
 </table>
-<table name="Unknown Map #286" address="5fd1e" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #161" address="628d2" type="Y Axis" elements="9" scaling="uint16"/>
+<table name="Unknown Map #390" address="5fd1e" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #160" address="628d2" type="Y Axis" elements="9" scaling="uint16"/>
 </table>
-<table name="Unknown Map #287" address="5a214" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #391" address="5643e" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Unknown #1" address="6182e" type="Y Axis" elements="8" scaling="uint16"/>
+</table>
+<table name="Unknown Map #392" address="56454" category="EcuTools Research" type="2D"  scaling="uint16">
+  <table name="Unknown #1" address="6182e" type="Y Axis" elements="8" scaling="uint16"/>
+</table>
+<table name="Unknown Map #393" address="5a214" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="RPM" address="60d76" type="Y Axis" elements="20" scaling="RPM"/>
 </table>
-<table name="Unknown Map #288" address="5a208" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #162" address="5d2ee" type="Y Axis" elements="8" scaling="uint16"/>
+<table name="Unknown Map #394" address="5a208" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #161" address="5d2ee" type="Y Axis" elements="8" scaling="uint16"/>
 </table>
-<table name="Unknown Map #289" address="5647c" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #163" address="61122" type="Y Axis" elements="9" scaling="uint16"/>
+<table name="Unknown Map #395" address="5647c" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #162" address="61122" type="Y Axis" elements="9" scaling="uint16"/>
 </table>
-<table name="Unknown Map #290" address="59fad" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
-  <table name="Unknown #165" address="61b4e" type="X Axis" elements="10" scaling="uint16"/>
-  <table name="RPM" address="6129e" type="Y Axis" elements="10" scaling="RPM"/>
+<table name="Unknown Map #396" address="59fad" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
+  <table name="Unknown #164" address="61b4e" type="X Axis" elements="10" scaling="uint16"/>
+  <table name="Unknown #163" address="6129e" type="Y Axis" elements="10" scaling="uint16"/>
 </table>
-<table name="Unknown Map #291" address="57047" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
-  <table name="Unknown #165" address="61b4e" type="X Axis" elements="10" scaling="uint16"/>
-  <table name="RPM" address="6129e" type="Y Axis" elements="10" scaling="RPM"/>
+<table name="Unknown Map #397" address="57047" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
+  <table name="Unknown #164" address="61b4e" type="X Axis" elements="10" scaling="uint16"/>
+  <table name="Unknown #163" address="6129e" type="Y Axis" elements="10" scaling="uint16"/>
 </table>
-<table name="Unknown Map #292" address="59f5f" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
-  <table name="Unknown #165" address="61b4e" type="X Axis" elements="10" scaling="uint16"/>
-  <table name="RPM" address="61258" type="Y Axis" elements="7" scaling="RPM"/>
+<table name="Unknown Map #398" address="59f5f" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
+  <table name="Unknown #164" address="61b4e" type="X Axis" elements="10" scaling="uint16"/>
+  <table name="Unknown #165" address="61258" type="Y Axis" elements="7" scaling="uint16"/>
 </table>
-<table name="Unknown Map #293" address="56ff9" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
-  <table name="Unknown #165" address="61b4e" type="X Axis" elements="10" scaling="uint16"/>
-  <table name="RPM" address="61258" type="Y Axis" elements="7" scaling="RPM"/>
+<table name="Unknown Map #399" address="56ff9" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
+  <table name="Unknown #164" address="61b4e" type="X Axis" elements="10" scaling="uint16"/>
+  <table name="Unknown #165" address="61258" type="Y Axis" elements="7" scaling="uint16"/>
 </table>
-<table name="Unknown Map #294" address="5722a" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Unknown #167" address="6149a" type="Y Axis" elements="9" scaling="uint16"/>
+<table name="Unknown Map #400" address="5722a" category="EcuTools Research" type="2D"  scaling="uint8">
+  <table name="Unknown #166" address="6149a" type="Y Axis" elements="9" scaling="uint16"/>
 </table>
-<table name="Unknown Map #295" address="58f92" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #401" address="58f92" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Unknown #7" address="60d32" type="Y Axis" elements="16" scaling="uint16"/>
 </table>
-<table name="Unknown Map #296" address="57b6e" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #402" address="57b6e" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Unknown #1" address="6182e" type="Y Axis" elements="8" scaling="uint16"/>
 </table>
-<table name="Unknown Map #297" address="5aab6" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #403" address="5aab6" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Unknown #1" address="6182e" type="Y Axis" elements="8" scaling="uint16"/>
 </table>
-<table name="Unknown Map #298" address="5aa7a" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #404" address="5aa7a" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Unknown #1" address="6182e" type="Y Axis" elements="8" scaling="uint16"/>
 </table>
-<table name="Unknown Map #299" address="5aa86" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #405" address="5aa86" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Unknown #1" address="6182e" type="Y Axis" elements="8" scaling="uint16"/>
 </table>
-<table name="Unknown Map #300" address="5aac2" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #406" address="5aac2" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Unknown #1" address="6182e" type="Y Axis" elements="8" scaling="uint16"/>
 </table>
-<table name="Unknown Map #301" address="5aa92" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #407" address="5aa92" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Unknown #1" address="6182e" type="Y Axis" elements="8" scaling="uint16"/>
 </table>
-<table name="Unknown Map #302" address="5aa9e" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #408" address="5aa9e" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Unknown #1" address="6182e" type="Y Axis" elements="8" scaling="uint16"/>
 </table>
-<table name="Unknown Map #303" address="5aaaa" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #409" address="5aaaa" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Unknown #1" address="6182e" type="Y Axis" elements="8" scaling="uint16"/>
 </table>
-<table name="Unknown Map #304" address="5aa3e" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #410" address="5aa3e" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Unknown #1" address="6182e" type="Y Axis" elements="8" scaling="uint16"/>
 </table>
-<table name="Unknown Map #305" address="5aa4a" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #411" address="5aa4a" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Unknown #1" address="6182e" type="Y Axis" elements="8" scaling="uint16"/>
 </table>
-<table name="Unknown Map #306" address="563c2" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #412" address="563c2" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="RPM" address="60d76" type="Y Axis" elements="20" scaling="RPM"/>
 </table>
-<table name="Unknown Map #307" address="5aa56" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #413" address="5aa56" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Unknown #1" address="6182e" type="Y Axis" elements="8" scaling="uint16"/>
 </table>
-<table name="Unknown Map #308" address="5aa62" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #414" address="5aa62" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Unknown #1" address="6182e" type="Y Axis" elements="8" scaling="uint16"/>
 </table>
-<table name="Unknown Map #309" address="5aa6e" category="EcuTools Research" type="2D"  scaling="uint8">
+<table name="Unknown Map #415" address="5aa6e" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Unknown #1" address="6182e" type="Y Axis" elements="8" scaling="uint16"/>
 </table>
-<table name="Unknown Map #310" address="5ca1d" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
-  <table name="Unknown #70" address="621cc" type="X Axis" elements="6" scaling="uint16"/>
-  <table name="Coolant Temp" address="60fda" type="Y Axis" elements="8" scaling="Temp"/>
-</table>
-<table name="Unknown Map #311" address="5c9f7" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
-  <table name="Unknown #70" address="621cc" type="X Axis" elements="6" scaling="uint16"/>
-  <table name="Unknown #28" address="621de" type="Y Axis" elements="5" scaling="uint16"/>
-</table>
-<table name="Unknown Map #312" address="5ca55" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
-  <table name="Unknown #70" address="621cc" type="X Axis" elements="6" scaling="uint16"/>
-  <table name="Unknown #28" address="621de" type="Y Axis" elements="5" scaling="uint16"/>
-</table>
+
 </rom>

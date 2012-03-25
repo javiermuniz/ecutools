@@ -26,6 +26,8 @@
   <routine address="4f890" name="subr_scale_lookup_16bit" />
   <routine address="148e4" name="subr_r0_equals_sst_clutch_ramp_up_adjust_offset2d_x_3" />
   <routine address="17e1c" name="r0_and_0x8089d0_equal_map_43_lookup" />
+  <routine address="17544" name="apply_sst_torque_requested_maps" />
   <routine address="180a0" name="apply_map_based_load_calc_tables" />
   <routine address="18474" name="calculate_requested_torque_w_sst_tables" />
+  <routine address="189cc" name="init_many_variables" />
 </rom>
