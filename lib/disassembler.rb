@@ -323,17 +323,13 @@ module ECUTools
             y_scale = table_address_map[header[:y_address]][:address]
             
             # register our new table as if it were known (if it's not)
-            if @table_addresses[match[1]].nil? and !(header[:rows] != y_elements and header[:dimensions] == 3)
+            if @table_addresses[match[1]].nil? and !(header[:rows] != y_elements and header[:dimensions] == 3) and !(table_address_map[header[:x_address]].nil? and header[:dimensions] == 3)
               x_elements = 1 # we set this to one for 2D tables so our elements calculation doesn't zero out
               puts "<table name=\"Unknown Map \##{unknown_table_count}\" address=\"#{(match[1].to_i(16) + header[:size]).to_s(16)}\" category=\"EcuTools Research\" type=\"#{header[:dimensions]}D\" #{header[:dimensions] == 3 ? 'swapxy="true"' : ''} scaling=\"uint8\">"
               if header[:dimensions] == 3
-                if table_address_map[header[:x_address]].nil?
-                  puts "  <table name=\"X Axis\" address=\"0x#{header[:x_address]}\" type=\"X Axis\" elements=\"FromRAM?!\" scaling=\"uint16\"/>"
-                else 
                   x_scale = table_address_map[header[:x_address]][:address]
                   x_elements = table_address_map[header[:x_address]][:elements]
                   puts "  <table name=\"#{@registered_scales[x_scale][:name]}\" address=\"#{(x_scale.to_i(16)+ 6).to_s(16)}\" type=\"X Axis\" elements=\"#{x_elements}\" scaling=\"#{@registered_scales[x_scale][:scaling]}\"/>"
-                end
               end
               puts "  <table name=\"#{@registered_scales[y_scale][:name]}\" address=\"#{(y_scale.to_i(16) + 6).to_s(16)}\" type=\"Y Axis\" elements=\"#{y_elements}\" scaling=\"#{@registered_scales[y_scale][:scaling]}\"/>"
               puts "</table>"
