@@ -64,6 +64,7 @@ module ECUTools
       injected_scales = []
       scales.each do |scale|
         next if scale.attr('address').nil? # skip scales without an address, they won't be in the ROM!
+        next if scale.attr('address') =~ /0x8\w+/ # skip scales that reference RAM addresses
         next if injected_scales.include? scale.attr('address')
         injected_scales << scale.attr('address')
 
@@ -92,7 +93,7 @@ module ECUTools
 
         possible_offsets.each do |offset|
           offset_hex = (address - offset).to_s(16)
-          @registered_scales[offset_hex] = {:label => scale_label, :name => scale.attr('name') } if !@registered_scales.include? offset_hex
+          @registered_scales[offset_hex] = {:label => scale_label, :name => scale.attr('name'), :scaling => scale.attr('scaling') } if !@registered_scales.include? offset_hex
         end
 
         storage_size.times do |n|
@@ -169,7 +170,7 @@ module ECUTools
         if header.nil?
           table_label = "#{table.attr('name')} (#{elements} elements, headless)"
         else
-          table_label = "#{table.attr('name')} (#{elements} elements, X = 0x#{header[:x_address]}, Y = 0x#{header[:y_address]})"
+          table_label = "#{table.attr('name')} (#{elements} elements, Y = 0x#{header[:y_address]}, X = 0x#{header[:x_address]})"
         end
       
         possible_offsets.each do |offset|
@@ -300,8 +301,8 @@ module ECUTools
             if @registered_scales[match[1]].nil?
               src_label = address_descriptions[header[:src]].nil? ? nil : " (#{address_descriptions[header[:src]]})"
               dest_label = address_descriptions[header[:dest]].nil? ? nil : " (#{address_descriptions[header[:dest]]})"
-              scale_label = "Unknown \##{unknown_scale_count}, #{elements} elements, S = 0x#{header[:src]}#{src_label}, D = 0x#{header[:dest]}#{dest_label}"
-              @registered_scales[match[1]] = { :label => scale_label, :name => "Unknown \##{unknown_scale_count}" }
+              scale_label = "Unknown \##{unknown_scale_count} @ #{(address + 6).to_s(16)}, #{elements} elements, S = 0x#{header[:src]}#{src_label}, D = 0x#{header[:dest]}#{dest_label}"
+              @registered_scales[match[1]] = { :label => scale_label, :name => "Unknown \##{unknown_scale_count}", :scaling => "uint16" }
               unknown_scale_count = unknown_scale_count + 1
             end
             
@@ -311,32 +312,32 @@ module ECUTools
             end
             
             # set the memory address so that we can use it in table discovery, we do this for *all* scale loads
-            table_address_map[header[:dest]] = { :elements => elements, :address => match[1] }
+            table_address_map[header[:dest]] = { :elements => elements, :address => match[1]}
           end
           
           # detect unknown 8bit tables
           header = read_8bit_header(address)
-          if !header.nil? && header[:x_address] =~ /8[01]\w\w\w\w/ && (header[:dimensions] == 2 || header[:y_address] =~ /8[01]\w\w\w\w/)
+          if !header.nil? && header[:y_address] =~ /8[01]\w\w\w\w/ && (header[:dimensions] == 2 || header[:x_address] =~ /8[01]\w\w\w\w/)
             # we have a valid scale header
+            y_elements = table_address_map[header[:y_address]][:elements]
+            y_scale = table_address_map[header[:y_address]][:address]
             
             # register our new table as if it were known (if it's not)
-            if @table_addresses[match[1]].nil?
-              x_scale = table_address_map[header[:x_address]][:address]
-              x_elements = table_address_map[header[:x_address]][:elements]
-              y_elements = 1 # we set this to one for 2D tables so our elements calculation doesn't zero out
-              puts "<table name=\"Unknown Map \##{unknown_table_count}\" address=\"#{match[1]}\" category=\"EcuTools Research\" type=\"#{header[:dimensions]}D\" swapxy=\"true\" scaling=\"uint8\">"
-              puts "  <table name=\"#{@registered_scales[x_scale][:name]}\" address=\"#{x_scale}\" type=\"Y Axis\" elements=\"#{x_elements}\" scaling=\"uint16\"/>"
+            if @table_addresses[match[1]].nil? and !(header[:rows] != y_elements and header[:dimensions] == 3)
+              x_elements = 1 # we set this to one for 2D tables so our elements calculation doesn't zero out
+              puts "<table name=\"Unknown Map \##{unknown_table_count}\" address=\"#{(match[1].to_i(16) + header[:size]).to_s(16)}\" category=\"EcuTools Research\" type=\"#{header[:dimensions]}D\" #{header[:dimensions] == 3 ? 'swapxy="true"' : ''} scaling=\"uint8\">"
               if header[:dimensions] == 3
-                if table_address_map[header[:y_address]].nil?
-                  puts "  <table name=\"X Axis\" address=\"0x#{header[:y_address]}\" type=\"X Axis\" elements=\"FromRAM!\" scaling=\"uint16\"/>"
+                if table_address_map[header[:x_address]].nil?
+                  puts "  <table name=\"X Axis\" address=\"0x#{header[:x_address]}\" type=\"X Axis\" elements=\"FromRAM?!\" scaling=\"uint16\"/>"
                 else 
-                  y_scale = table_address_map[header[:y_address]][:address]
-                  y_elements = table_address_map[header[:y_address]][:elements]
-                  puts "  <table name=\"#{@registered_scales[y_scale][:name]}\" address=\"#{y_scale}\" type=\"X Axis\" elements=\"#{y_elements}\" scaling=\"uint16\"/>"
+                  x_scale = table_address_map[header[:x_address]][:address]
+                  x_elements = table_address_map[header[:x_address]][:elements]
+                  puts "  <table name=\"#{@registered_scales[x_scale][:name]}\" address=\"#{(x_scale.to_i(16)+ 6).to_s(16)}\" type=\"X Axis\" elements=\"#{x_elements}\" scaling=\"#{@registered_scales[x_scale][:scaling]}\"/>"
                 end
               end
+              puts "  <table name=\"#{@registered_scales[y_scale][:name]}\" address=\"#{(y_scale.to_i(16) + 6).to_s(16)}\" type=\"Y Axis\" elements=\"#{y_elements}\" scaling=\"#{@registered_scales[y_scale][:scaling]}\"/>"
               puts "</table>"
-              table_label = "Unknown Map \##{unknown_table_count} (#{x_elements * y_elements} elements, X = 0x#{header[:x_address]}, Y = 0x#{header[:y_address]})"
+              table_label = "Unknown Map \##{unknown_table_count} (#{x_elements * y_elements} elements, Y = 0x#{header[:y_address]}, X = 0x#{header[:x_address]})"
               @table_addresses[match[1]] = table_label
               found_rom_addresses[@table_addresses[match[1]] ] = true
               unknown_table_count = unknown_table_count + 1
@@ -351,12 +352,6 @@ module ECUTools
       end
 
       $stderr.puts "#{count} lines of code annotated." if verbose
-      if verbose
-        @table_addresses.each_key do |key|
-          $stderr.puts "Unable to find any reference to table #{@table_addresses[key]}" if !found_rom_addresses.include? @table_addresses[key]
-          found_rom_addresses[@table_addresses[key]] = true # stop multiple reports
-        end
-      end
     end
 
   end

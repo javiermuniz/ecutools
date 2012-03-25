@@ -55,6 +55,12 @@ module ECUTools
       (base_address.to_i(16) + relative_address).to_s(16)
     end
 
+    def from_table_ref(ref)
+      ref = ref.to_i(16) # convert ref to integer
+      relative_address = ref - '0x10000'.to_i(16)
+      absolute_address relative_address
+    end
+
     def address_descriptions
       return @address_descriptions if @address_descriptions
       @address_descriptions = {}
@@ -83,9 +89,10 @@ module ECUTools
       header[:dimensions] = read_bytes(address,1).join.to_i(16)
       return nil if ![2,3].include? header[:dimensions] # return nil for "headless" tables
       header[:value_offset] = read_bytes(address+1,1).join.to_i(16)
-      header[:x_address] = from_table_ref read_bytes(address+2,2).join
-      header[:y_address] = from_table_ref read_bytes(address+4,2).join if(header[:dimensions] == 3)
+      header[:y_address] = from_table_ref read_bytes(address+2,2).join
+      header[:x_address] = from_table_ref read_bytes(address+4,2).join if(header[:dimensions] == 3)
       header[:rows] = read_bytes(address + 6 , 1).join.to_i(16) if(header[:dimensions] == 3)
+      header[:size] = header[:dimensions] == 2 ? 4 : 7;
       header
     end
     
@@ -94,16 +101,11 @@ module ECUTools
       header[:dimensions] = read_bytes(address,2).join.to_i(16)
       return nil if ![2,3].include? header[:dimensions] # return nil for "headless" tables
       header[:value_offset] = read_bytes(address+2,2).join.to_i(16)
-      header[:x_address] = from_table_ref read_bytes(address+4,2).join
-      header[:y_address] = from_table_ref read_bytes(address+6,2).join if(header[:dimensions] == 3)
-      header[:rows] = read_bytes(address + 8, 1).join.to_i(16) if(header[:dimensions] == 3)
+      header[:y_address] = from_table_ref read_bytes(address+4,2).join
+      header[:x_address] = from_table_ref read_bytes(address+6,2).join if(header[:dimensions] == 3)
+      header[:rows] = read_bytes(address + 8, 2).join.to_i(16) if(header[:dimensions] == 3)
+      header[:size] = header[:dimensions] == 2 ? 6 : 10
       header
-    end
-    
-    def from_table_ref(ref)
-      ref = ref.to_i(16) # convert ref to integer
-      relative_address = ref - '0x10000'.to_i(16)
-      absolute_address relative_address
     end
 
     def subroutine_descriptions
