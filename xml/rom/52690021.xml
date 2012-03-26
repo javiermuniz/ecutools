@@ -623,6 +623,11 @@
       <table name="RPM" address="612fc" type="Y Axis" elements="16" scaling="RPM"/>
     </table>
 
+    <table name="SST Upshift - Lower Bound Timing Retard Max" address="52a37" category="SST" type="3D" swapxy="true" scaling="Timing">
+      <table name="Load" address="61348" type="X Axis" elements="21" scaling="Load"/>
+      <table name="RPM" address="612fc" type="Y Axis" elements="16" scaling="RPM"/>
+    </table>
+
     <table name="SST Upshift - Lower Bound Timing Reduction vs Load/RPM" address="5063b" category="SST" type="3D" level="3" swapxy="true" scaling="Timing">
       <table name="Load" address="61348" type="X Axis" elements="21" scaling="Load"/>
       <table name="RPM" address="612fc" type="Y Axis" elements="16" scaling="RPM"/>
@@ -648,8 +653,22 @@
       <table name="RPM" address="63c7a" type="Y Axis" elements="16" scaling="RPM"/>
     </table>
 
+    <table name="SST Clutch Pressure Ramp Up - Reduction vs Octane" address="58fa9" category="SST" type="3D" swapxy="true" scaling="EngineTorque">
+      <table name="Load" address="61348" type="X Axis" elements="21" scaling="Load"/>
+      <table name="RPM" address="612fc" type="Y Axis" elements="16" scaling="RPM"/>
+    </table>
+
     <table name="SST Clutch Pressure Ramp Up - Adjust Offset 2D" address="503fc" category="SST" type="2D" level="3" scaling="EngineTorque">
       <table name="RPM" address="612fc" type="Y Axis" elements="16" scaling="RPM"/>
+    </table>
+
+    <table name="SST Clutch Pressure Ramp Up - Reduction vs CTS" address="597c8" category="SST" type="2D"  scaling="EngineTorque">
+      <table name="Coolant Temp" address="61216" type="Y Axis" elements="8" scaling="Temp"/>
+    </table>
+
+    <table name="SST Clutch Pressure Ramp Up - Reduction vs Alternator" address="50593" category="SST" type="3D" swapxy="true" scaling="Torque Calculation FtLbs">
+      <table name="Unknown #28" address="61438" type="X Axis" elements="10" scaling="uint16"/>
+      <table name="RPM" address="61322" type="Y Axis" elements="16" scaling="RPM"/>
     </table>
 
     <table name="SST Throttle Requested Torque Map #1 - Liftoff" address="59259" category="SST" type="3D" level="3" swapxy="true" scaling="Torque Calculation FtLbs">
@@ -665,6 +684,10 @@
     <table name="SST Throttle Requested Torque Map #3 - Hot/Interpolated" address="59489" category="SST" type="3D" level="3" swapxy="true" scaling="Torque Calculation FtLbs">
       <table name="Throttle" address="613a8" type="X Axis" elements="17" scaling="AcceleratorPedal %"/>
       <table name="RPM" address="61322" type="Y Axis" elements="16" scaling="RPM"/>
+    </table>
+
+    <table name="SST Throttle Requested Torque Base" address="50568" category="SST" type="2D"  scaling="EngineTorque">
+      <table name="RPM" address="612fc" type="Y Axis" elements="16" scaling="RPM"/>
     </table>
 
     <table name="SST Throttle Requested Torque Subtractor Map" address="60a89" category="SST" type="3D" level="3" swapxy="true" scaling="EngineTorque">
@@ -690,19 +713,7 @@
       <table name="VehicleSpeed" address="622ec" type="X Axis" elements="6" scaling="VehicleSpeed"/>
       <table name="RevPerMPH" address="62678" type="Y Axis" elements="8" scaling="RPMPerMPH"/>
     </table>
-    <table name="SST Throttle Requested Torque Ramp Rate - Unknown Mode" address="5f435" category="EcuTools Research" type="3D" swapxy="true" scaling="Percent255">
-      <table name="VehicleSpeed" address="622ec" type="X Axis" elements="6" scaling="VehicleSpeed"/>
-      <table name="RevPerMPH" address="62678" type="Y Axis" elements="8" scaling="RPMPerMPH"/>
-    </table>
-    <table name="SST Throttle Requested Torque Ramp Rate - Unknown Comparison Map - Base" address="5f426" category="EcuTools Research" type="2D"  scaling="uint8">
-      <table name="RevPerMPH" address="62678" type="Y Axis" elements="8" scaling="RPMPerMPH"/>
-    </table>
-    <table name="SST Throttle Requested Torque Ramp Rate - Unknown Comparison Map - Adder" address="5f41a" category="EcuTools Research" type="2D"  scaling="uint8">
-      <table name="RevPerMPH" address="62678" type="Y Axis" elements="8" scaling="RPMPerMPH"/>
-    </table>
-    <table name="SST Torque gearratio based adder" address="5f512" category="EcuTools Research" type="2D"  scaling="uint8">
-      <table name="RevPerMPH" address="62678" type="Y Axis" elements="8" scaling="RPMPerMPH"/>
-    </table>
+    
     <table name="SST Torque Limit #1 - Error" address="63383" category="SST" type="3D" level="3" swapxy="true" scaling="Torque Calculation FtLbs">
       <table name="Throttle" address="63cf6" type="X Axis" elements="17" scaling="AcceleratorPedal %"/>
       <table name="RPM" address="63c7a" type="Y Axis" elements="16" scaling="RPM"/>
@@ -738,6 +749,11 @@
       <table name="RPM" address="62466" type="Y Axis" elements="17" scaling="RPM"/>
     </table>
 
+    <table name="SST Torque Map #4 - Unknown" address="64393" category="SST" type="3D" swapxy="true" scaling="Torque Calculation FtLbs">
+      <table name="Unknown #142" address="65234" type="X Axis" elements="14" scaling="uint16"/>
+      <table name="Unknown #141" address="6520c" type="Y Axis" elements="17" scaling="uint16"/>
+    </table>
+
     <table name="SST Torque Limit Reduction Table by RPM (CPRU_A)" address="503fc" category="SST" type="2D" level="3" scaling="EngineTorque">
       <table name="RPM" address="612fc" type="Y Axis" elements="16" scaling="RPM"/>
     </table>
@@ -748,6 +764,10 @@
 
     <table name="SST Torque Limit Reduction Table by RPM (TqLimit_4, CPRU_C)" address="64366" category="SST" type="2D" level="3" scaling="EngineTorque">
       <table name="RPM" address="65106" type="Y Axis" elements="16" scaling="RPM"/>
+    </table>
+
+    <table name="SST Torque gearratio based adder" address="5f512" category="SST" type="2D"  scaling="uint8">
+      <table name="RevPerMPH" address="62678" type="Y Axis" elements="8" scaling="RPMPerMPH"/>
     </table>
 
     <table name="SST Max Requested Torque Limit" address="595a4" category="SST" type="3D" level="3" swapxy="true" scaling="uint16">
@@ -1158,6 +1178,16 @@
         <data>Catalyst</data> 
       </table>
     </table>
+    <table name="SST Throttle Requested Torque Ramp Rate - Unknown Mode" address="5f435" category="EcuTools Research" type="3D" swapxy="true" scaling="Percent255">
+      <table name="VehicleSpeed" address="622ec" type="X Axis" elements="6" scaling="VehicleSpeed"/>
+      <table name="RevPerMPH" address="62678" type="Y Axis" elements="8" scaling="RPMPerMPH"/>
+    </table>
+    <table name="SST Throttle Requested Torque Ramp Rate - Unknown Comparison Map - Base" address="5f426" category="EcuTools Research" type="2D"  scaling="uint8">
+      <table name="RevPerMPH" address="62678" type="Y Axis" elements="8" scaling="RPMPerMPH"/>
+    </table>
+    <table name="SST Throttle Requested Torque Ramp Rate - Unknown Comparison Map - Adder" address="5f41a" category="EcuTools Research" type="2D"  scaling="uint8">
+      <table name="RevPerMPH" address="62678" type="Y Axis" elements="8" scaling="RPMPerMPH"/>
+    </table>
     <table name="Unknown Map #0" address="5e91c" category="EcuTools Research" type="2D"  scaling="uint16">
   <table name="Unknown #1" address="6182e" type="Y Axis" elements="8" scaling="uint16"/>
 </table>
@@ -1176,11 +1206,11 @@
 <table name="Unknown Map #5" address="503f0" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="IAT" address="610f6" type="Y Axis" elements="7" scaling="Temp"/>
 </table>
-<table name="Unknown Map #6" address="5ab11" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
+<table name="Warm Up Fuel Calibration Map #1" address="5ab11" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
   <table name="Load" address="617d6" type="X Axis" elements="41" scaling="Load"/>
   <table name="Coolant Temperature" address="6101e" type="Y Axis" elements="9" scaling="Temp"/>
 </table>
-<table name="Unknown Map #7" address="5ac89" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
+<table name="Warm Up Fuel Calibration Map #2" address="5ac89" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
   <table name="Load" address="617d6" type="X Axis" elements="41" scaling="Load"/>
   <table name="Coolant Temperature" address="6101e" type="Y Axis" elements="9" scaling="Temp"/>
 </table>
@@ -1245,10 +1275,6 @@
 <table name="Unknown Map #26" address="5c020" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Unknown #19" address="61e98" type="Y Axis" elements="21" scaling="uint16"/>
 </table>
-<table name="Unknown Map #27" address="58fa9" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
-  <table name="Load" address="61348" type="X Axis" elements="21" scaling="Load"/>
-  <table name="RPM" address="612fc" type="Y Axis" elements="16" scaling="RPM"/>
-</table>
 <table name="Unknown Map #28" address="503e6" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Unknown #20" address="624e8" type="Y Axis" elements="6" scaling="uint16"/>
 </table>
@@ -1258,13 +1284,7 @@
 <table name="Unknown Map #30" address="5a98e" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Unknown #21" address="61c0a" type="Y Axis" elements="19" scaling="uint16"/>
 </table>
-<table name="Unknown Map #31" address="52a37" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
-  <table name="Load" address="61348" type="X Axis" elements="21" scaling="Load"/>
-  <table name="RPM" address="612fc" type="Y Axis" elements="16" scaling="RPM"/>
-</table>
-<table name="Unknown Map #32" address="50568" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="RPM" address="612fc" type="Y Axis" elements="16" scaling="RPM"/>
-</table>
+
 <table name="Unknown Map #33" address="5057c" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="RPM" address="612fc" type="Y Axis" elements="16" scaling="RPM"/>
 </table>
@@ -1343,13 +1363,6 @@
 </table>
 <table name="Unknown Map #56" address="5fc6c" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Unknown #7" address="60d32" type="Y Axis" elements="16" scaling="uint16"/>
-</table>
-<table name="Unknown Map #57" address="597c8" category="EcuTools Research" type="2D"  scaling="uint8">
-  <table name="Coolant Temp" address="61216" type="Y Axis" elements="8" scaling="Temp"/>
-</table>
-<table name="Unknown Map #58" address="50593" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
-  <table name="Unknown #28" address="61438" type="X Axis" elements="10" scaling="uint16"/>
-  <table name="RPM" address="61322" type="Y Axis" elements="16" scaling="RPM"/>
 </table>
 <table name="Unknown Map #59" address="5f6a6" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Unknown #8" address="60d58" type="Y Axis" elements="12" scaling="uint16"/>
@@ -1512,7 +1525,7 @@
 </table>
 <table name="Unknown Map #112" address="5a351" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
   <table name="Unknown #42" address="61b8a" type="X Axis" elements="12" scaling="uint16"/>
-  <table name="Unknown #41" address="61b68" type="Y Axis" elements="14" scaling="uint16"/>
+  <table name="RPM" address="61b68" type="Y Axis" elements="14" scaling="RPM"/>
 </table>
 <table name="Unknown Map #113" address="57b96" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Unknown #43" address="6104e" type="Y Axis" elements="11" scaling="uint16"/>
@@ -1606,11 +1619,11 @@
 </table>
 <table name="Unknown Map #143" address="5bbb7" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
   <table name="Coolant Temp" address="60fda" type="X Axis" elements="8" scaling="Temp"/>
-  <table name="Unknown #48" address="61e7a" type="Y Axis" elements="12" scaling="uint16"/>
+  <table name="RPM" address="61e7a" type="Y Axis" elements="12" scaling="RPM"/>
 </table>
 <table name="Unknown Map #144" address="5bc1f" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
   <table name="Coolant Temp" address="60fda" type="X Axis" elements="8" scaling="Temp"/>
-  <table name="Unknown #48" address="61e7a" type="Y Axis" elements="12" scaling="uint16"/>
+  <table name="RPM" address="61e7a" type="Y Axis" elements="12" scaling="RPM"/>
 </table>
 <table name="Unknown Map #145" address="5bc9a" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Coolant Temp" address="60fda" type="Y Axis" elements="8" scaling="Temp"/>
@@ -2324,10 +2337,6 @@
 </table>
 <table name="Unknown Map #360" address="64352" category="EcuTools Research" type="2D"  scaling="uint8">
   <table name="Unknown #140" address="651c0" type="Y Axis" elements="16" scaling="uint16"/>
-</table>
-<table name="Unknown Map #361" address="64393" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
-  <table name="Unknown #142" address="65234" type="X Axis" elements="14" scaling="uint16"/>
-  <table name="Unknown #141" address="6520c" type="Y Axis" elements="17" scaling="uint16"/>
 </table>
 <table name="Unknown Map #362" address="64489" category="EcuTools Research" type="3D" swapxy="true" scaling="uint8">
   <table name="Unknown #144" address="6527c" type="X Axis" elements="6" scaling="uint16"/>
