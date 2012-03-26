@@ -198,6 +198,26 @@
 		<table name="Unknown" address="6241a" type="Y Axis" elements="11" scaling="uint16"/>
 	</table>
 
+  <table name="Intake Valve Based Ignition Compensation (Actual &lt; Map)" category="Timing" address="5ae73" type="3D" swapxy="true" scaling="IgnitionCompensation">
+    <table name="Load" address="60f76" type="X Axis" elements="22" scaling="Load"/>
+    <table name="RPM" address="60f42" type="Y Axis" elements="23" scaling="RPM"/>
+  </table>
+
+  <table name="Intake Valve Based Ignition Compensation (Actual &gt; Map)" category="Timing" address="5b075" type="3D" swapxy="true" scaling="IgnitionCompensation">
+    <table name="Load" address="60f76" type="X Axis" elements="22" scaling="Load"/>
+    <table name="RPM" address="60f42" type="Y Axis" elements="23" scaling="RPM"/>
+  </table>
+
+  <table name="Exhaust Valve Based Ignition Compensation (Actual &lt; Map)" category="Timing" address="5b277" type="3D" swapxy="true" scaling="IgnitionCompensation">
+    <table name="Load" address="60f76" type="X Axis" elements="22" scaling="Load"/>
+    <table name="RPM" address="60f42" type="Y Axis" elements="23" scaling="RPM"/>
+  </table>
+
+  <table name="Exhaust Valve Based Ignition Compensation (Actual &gt; Map)" category="Timing" address="5b479" type="3D" swapxy="true" scaling="IgnitionCompensation">
+    <table name="Load" address="60f76" type="X Axis" elements="22" scaling="Load"/>
+    <table name="RPM" address="60f42" type="Y Axis" elements="23" scaling="RPM"/>
+  </table>
+
 	<table name="High Octane Fuel Map" category="Fuel" address="55027" type="3D" swapxy="true" scaling="AFR">
 		<table name="Load" address="60efc" type="X Axis" elements="21" scaling="Load"/>
 		<table name="RPM" address="60ed6" type="Y Axis" elements="16" scaling="RPM"/>
@@ -1867,25 +1887,6 @@
 		<table name="RPM" address="61538" type="Y Axis" elements="5" scaling="RPM"/>
 	</table>
 
-	<table name="Unknown Map #169" category="EcuTools Research" address="5ae73" type="3D" swapxy="true" scaling="uint8">
-		<table name="Load" address="60f76" type="X Axis" elements="22" scaling="Load"/>
-		<table name="RPM" address="60f42" type="Y Axis" elements="23" scaling="RPM"/>
-	</table>
-
-	<table name="Unknown Map #170" category="EcuTools Research" address="5b075" type="3D" swapxy="true" scaling="uint8">
-		<table name="Load" address="60f76" type="X Axis" elements="22" scaling="Load"/>
-		<table name="RPM" address="60f42" type="Y Axis" elements="23" scaling="RPM"/>
-	</table>
-
-	<table name="Unknown Map #171" category="EcuTools Research" address="5b277" type="3D" swapxy="true" scaling="uint8">
-		<table name="Load" address="60f76" type="X Axis" elements="22" scaling="Load"/>
-		<table name="RPM" address="60f42" type="Y Axis" elements="23" scaling="RPM"/>
-	</table>
-
-	<table name="Unknown Map #172" category="EcuTools Research" address="5b479" type="3D" swapxy="true" scaling="uint8">
-		<table name="Load" address="60f76" type="X Axis" elements="22" scaling="Load"/>
-		<table name="RPM" address="60f42" type="Y Axis" elements="23" scaling="RPM"/>
-	</table>
 
 	<table name="Unknown Map #173" category="EcuTools Research" address="57c54" type="2D" scaling="uint8">
 		<table name="Unknown #50" address="60e10" type="Y Axis" elements="6" scaling="uint16"/>
