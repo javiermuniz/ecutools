@@ -1,0 +1,229 @@
+<rom>
+	<romid>
+		<xmlid>C7280009</xmlid>
+		<internalidaddress>222</internalidaddress>
+		<internalidhex>C7280009</internalidhex>
+		<make>Mitsubishi</make>
+		<market>EDM</market>
+		<model>Outlander</model>
+		<transmission>Manual</transmission>
+		<flashmethod>mitsubootloader</flashmethod>
+		<memmodel>M32176F4</memmodel>
+	</romid>
+
+	<include>evo10base</include>
+	<scaling name="MAFVoltScaling" units="units" toexpr="x*5/1024" frexpr="x*1024/5" format="%.3f" min="0" max="5" inc="1" storagetype="uint16" endian="big"/>
+	<scaling name="ThrottlePercentage" units="%" toexpr="x/255*100" frexpr="x*255/100" format="%.0f" min="0" max="100" inc="1" storagetype="uint16"/>
+	<scaling name="ValveTiming" units="degrees" toexpr="72-x*0.6" frexpr="(72-x)/0.6" format="%.1f" min="0" max="30" inc="0.6" storagetype="uint8" endian="big"/>
+	<scaling name="ValveTiming16" units="degrees" toexpr="72-x*0.6/32" frexpr="(72-x)*32/0.6" format="%.1f" min="-1.8" max="28.8" inc="0.1" storagetype="uint16" endian="big"/>
+	<scaling name="WGDC" units="%WGDC" toexpr="x/2" frexpr="x*2" format="%.1f" min="0" max="100" inc="0.5" storagetype="uint8" endian="big"/>
+	<scaling name="WGDuty" units="%" toexpr="x/2" frexpr="x*2" format="%.1f" min="0" max="100" inc="0.5" storagetype="uint8" endian="big"/>
+	<scaling name="WGDuty16" units="%" toexpr="x/2" frexpr="x*2" format="%.1f" min="0" max="100" inc="0.5" storagetype="uint16" endian="big"/>
+
+	<table name="MAF Compensation Part 1" category="Intake" address="5252" type="2D" scaling="AirFlow16">
+		<table name="X" address="8a48" type="X Axis" elements="40" scaling="MAFVoltScaling"/>
+	</table>
+
+	<table name="MAF Compensation Part 2" category="Intake" address="52a2" type="2D" scaling="AirFlow16">
+		<table name="X" address="8a98" type="X Axis" elements="40" scaling="MAFVoltScaling"/>
+	</table>
+
+	<table name="MAF Compensation Part 3" category="Intake" address="52f2" type="2D" scaling="AirFlow16">
+		<table name="X" address="8ae8" type="X Axis" elements="50" scaling="MAFVoltScaling"/>
+	</table>
+
+	<table name="High Octane Timing Map #1" category="Timing" address="3359" type="3D" level="4" swapxy="true" scaling="Timing">
+		<table name="Load" address="819c" type="X Axis" elements="19" scaling="Load"/>
+		<table name="RPM" address="816e" type="Y Axis" elements="20" scaling="RPM"/>
+	</table>
+
+	<table name="Low Octane Timing Map #1" category="Timing" address="31d5" type="3D" level="4" swapxy="true" scaling="Timing">
+		<table name="Load" address="819c" type="X Axis" elements="19" scaling="Load"/>
+		<table name="RPM" address="816e" type="Y Axis" elements="20" scaling="RPM"/>
+	</table>
+
+	<table name="High Octane Timing Map #2" category="Timing" type="3D" level="4" swapxy="true" scaling="Timing">
+		<table name="Load" type="X Axis" elements="19" scaling="Load"/>
+		<table name="RPM" type="Y Axis" elements="18" scaling="RPM"/>
+	</table>
+
+	<table name="Low Octane Timing Map #2" category="Timing" type="3D" level="4" swapxy="true" scaling="Timing">
+		<table name="Load" type="X Axis" elements="19" scaling="Load"/>
+		<table name="RPM" type="Y Axis" elements="18" scaling="RPM"/>
+	</table>
+
+	<table name="High Octane Timing Map #3" category="Timing" type="3D" level="4" swapxy="true" scaling="Timing">
+		<table name="Load" type="X Axis" elements="19" scaling="Load"/>
+		<table name="RPM" type="Y Axis" elements="18" scaling="RPM"/>
+	</table>
+
+	<table name="Low Octane Timing Map #3" category="Timing" type="3D" level="4" swapxy="true" scaling="Timing">
+		<table name="Load" type="X Axis" elements="19" scaling="Load"/>
+		<table name="RPM" type="Y Axis" elements="18" scaling="RPM"/>
+	</table>
+
+	<table name="Open Loop Throttle Low Load" category="Fuel" address="2d56" type="2D" level="4" scaling="ThrottleVoltage">
+		<table name="RPM" address="7ed8" type="Y Axis" elements="16" scaling="RPM"/>
+	</table>
+
+	<table name="Open Loop Throttle High Load" category="Fuel" address="2d6a" type="2D" level="4" scaling="ThrottleVoltage">
+		<table name="RPM" address="7ed8" type="Y Axis" elements="16" scaling="RPM"/>
+	</table>
+
+	<table name="MIVEC Intake Advance Min" category="Timing" type="1D" level="2" scaling="ValveTiming16"/>
+
+	<table name="MIVEC Intake Advance Max" category="Timing" type="1D" level="2" scaling="ValveTiming16"/>
+
+	<table name="MIVEC Max vs Coolant Temp" category="Timing" type="2D" level="2" scaling="ValveTiming">
+		<table name="Coolant Temp" address="b812" type="Y Axis" elements="8" scaling="Temp"/>
+	</table>
+
+	<table name="Boost Desired Engine Load (High Gear Range)" category="Turbo Boost Single Solenoid" type="2D" scaling="Load8">
+		<table name="RPM" type="Y Axis" elements="16" scaling="RPM"/>
+	</table>
+
+	<table name="Boost Desired Engine Load (Low Gear Range)" category="Turbo Boost Single Solenoid" type="2D" scaling="Load8">
+		<table name="RPM" type="Y Axis" elements="16" scaling="RPM"/>
+	</table>
+
+	<table name="Baseline WGDC #1" category="Turbo Boost Single Solenoid" address="6de8" type="2D" level="4" swapxy="true" flipy="true" scaling="WGDuty">
+		<table name="TPS" address="83ac" type="Y Axis" elements="16" scaling="RPM"/>
+	</table>
+
+	<table name="Baseline WGDC #2" category="Turbo Boost Single Solenoid" address="6ba0" type="2D" level="4" swapxy="true" flipy="true" scaling="WGDuty">
+		<table name="RPM" address="83ac" type="Y Axis" elements="16" scaling="RPM"/>
+	</table>
+
+	<table name="Turbo Boost Error Correction" category="Turbo Boost Single Solenoid" address="6dd2" type="2D" scaling="OffsetWGDC">
+		<table name="Boost Error" address="83d2" type="Y Axis" elements="17" scaling="LoadError"/>
+	</table>
+
+	<table name="WGDC Correction Interval (High Gear Range)" category="Turbo Boost Single Solenoid" type="1D" scaling="uint16"/>
+
+	<table name="WGDC Correction Interval (Low Gear Range)" category="Turbo Boost Single Solenoid" type="1D" scaling="uint16"/>
+
+	<table name="Max Total Upward WGDC Correction vs TPS" category="Turbo Boost Single Solenoid" address="6dc4" type="2D" scaling="OffsetWGDC">
+		<table name="TPS" address="83fa" type="Y Axis" elements="9" scaling="ThrottlePercentage"/>
+	</table>
+
+	<table name="Max Total Downward WGDC Correction" category="Turbo Boost Single Solenoid" type="1D" level="3" scaling="OffsetWGDC"/>
+
+	<table name="Max WGDC vs Coolant Temp" category="Turbo Boost Single Solenoid" type="2D" scaling="WGDuty">
+		<table name="Coolant Temp" type="Y Axis" scaling="Temp"/>
+	</table>
+
+	<table name="WGDC Limit During Fault" category="Turbo Boost Single Solenoid" type="1D" level="3" scaling="WGDuty16"/>
+
+	<table name="Boost Control High/Low Gear Range RPM/MPH Crossover" category="Turbo Boost Single Solenoid" type="1D" level="3" scaling="RPMPerMPH"/>
+
+	<table name="Boost Cut Load" category="Turbo Boost Single Solenoid" type="2D" scaling="LoadBoost">
+		<table name="RPM" type="Y Axis" elements="9" scaling="RPM"/>
+	</table>
+
+	<table name="Boost Cut Delay" category="Turbo Boost Single Solenoid" type="1D" scaling="Time"/>
+
+	<table name="Min Load for Boost Control" category="Turbo Boost Single Solenoid" type="2D" scaling="Load8">
+		<table name="RPM" type="Y Axis" elements="16" scaling="RPM"/>
+	</table>
+
+	<table name="BCS Re/De-Activation RPM" category="Turbo Boost Single Solenoid" type="2D" scaling="RPMStatLimit">
+		<table name="Condition" type="Static Y Axis" elements="4">
+			<data>Reactivate On</data>
+			<data>Reactivate Off</data>
+			<data>Deactivate On</data>
+			<data>Deactivate Off</data>
+		</table>
+	</table>
+
+	<table name="MIVEC Intake #1">
+		<table name="Load" address="bce2"/>
+		<table name="RPM" address="bd0c"/>
+	</table>
+
+	<table name="Ignition Warmup Retard" address="3051" scaling="ValveTiming">
+		<table name="Load" address="819c" elements="19"/>
+		<table name="RPM" address="816e" elements="20"/>
+	</table>
+
+	<table name="EGR Timing Advance" address="3661" scaling="ValveTiming">
+		<table name="Load" address="819c" elements="19"/>
+		<table name="RPM" address="816e" elements="20"/>
+	</table>
+
+	<table name="High Octane Fuel Map" category="Fuel" address="2ab9" type="3D" level="4" swapxy="true" scaling="AFR">
+		<table name="Load" address="8144" type="X Axis" elements="18" scaling="Load"/>
+		<table name="RPM" address="8120" type="Y Axis" elements="15" scaling="RPM"/>
+	</table>
+
+	<table name="Low Octane Fuel Map" category="Fuel" address="2bcf" type="3D" level="4" swapxy="true" scaling="AFR">
+		<table name="Load" address="8144" type="X Axis" elements="18" scaling="Load"/>
+		<table name="RPM" address="8120" type="Y Axis" elements="15" scaling="RPM"/>
+	</table>
+
+	<table name="Fuel Injector Scaling" address="812"/>
+
+	<table name="Injector Battery Voltage Latency Compensation" address="2e1e">
+		<table name="Battery Voltage" address="80a0"/>
+	</table>
+
+	<table name="Injector Base Latency" address="800"/>
+
+	<table name="Open Loop Load Low Octane #1" address="2d2a">
+		<table name="RPM" address="7ed8" elements="16"/>
+	</table>
+
+	<table name="Open Loop Load High Octane #1" address="2d3e">
+		<table name="RPM" address="7ed8" elements="16"/>
+	</table>
+
+	<table name="Open Loop Load Low Octane #2">
+		<table name="RPM" elements="16"/>
+	</table>
+
+	<table name="Open Loop Load High Octane #2">
+		<table name="RPM" elements="16"/>
+	</table>
+
+	<table name="Boost Control Load Offset" category="Turbo Boost Single Solenoid" type="1D" scaling="Load16"/>
+
+	<table name="Throttle Map #1">
+		<table name="Unkown" elements="25"/>
+		<table name="RPM" elements="13"/>
+	</table>
+
+	<table name="Rev Limiter" address="86a">
+		<table elements="1"/>
+	</table>
+
+	<table name="Speed Limiter" address="86c">
+	</table>
+
+	<table name="Immobilizer" scaling="Hex16" type="1D" address="3ffce" category="Misc" level="3"/>
+
+	<table name="ECU ID" address="222"/>
+
+	<table name="ECU Options Set #1" address="26a">
+	</table>
+
+	<table name="ECU Options Set #2" address="27a">
+	</table>
+
+	<table name="ECU Options Set #3" address="28a">
+	</table>
+
+	<table name="ECU Options Set #4" address="29a">
+	</table>
+
+	<table name="ECU Options Set #5" address="2aa">
+	</table>
+
+	<table name="ECU Options Set #6" address="2ba">
+	</table>
+
+	<table name="ECU Options Set #7" address="2ca">
+	</table>
+
+	<table name="MUT Table" address="39bf4">
+	</table>
+
+</rom>
