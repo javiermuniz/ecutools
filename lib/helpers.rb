@@ -2,6 +2,7 @@ module ECUTools
   module Helpers
     def rom_id
       return @rom_id if @rom_id
+      return @options['romid'] if @options['romid']
       $stderr.puts "Getting ROM ID..." if verbose
       @rom_id = read_bytes("5002a", 4).join
     end
