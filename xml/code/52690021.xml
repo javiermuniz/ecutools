@@ -30,4 +30,6 @@
   <routine address="180a0" name="apply_map_based_load_calc_tables" />
   <routine address="18474" name="calculate_requested_torque_w_sst_tables" />
   <routine address="189cc" name="init_many_variables" />
+  <routine address="1f694" name="calculate_unknown_coolant_temp_tables" />
+  <routine address="2ea68" name="recalcaulate_values_set_by_unknown_coolant_temp_tables"
 </rom>

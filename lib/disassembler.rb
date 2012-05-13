@@ -170,7 +170,9 @@ module ECUTools
         if header.nil?
           table_label = "#{table.attr('name')} (#{elements} elements, headless)"
         else
-          table_label = "#{table.attr('name')} (#{elements} elements, Y = 0x#{header[:y_address]}, X = 0x#{header[:x_address]})"
+          y_label = address_descriptions[header[:y_address]].nil? ? nil : " (#{address_descriptions[header[:y_address]]})"
+          x_label = header[:x_address].nil? || address_descriptions[header[:x_address]].nil? ? nil : " (#{address_descriptions[header[:x_address]]})"
+          table_label = "#{table.attr('name')} (#{elements} elements, Y = 0x#{header[:y_address]}#{y_label}, X = 0x#{header[:x_address]}#{x_label})"
         end
       
         possible_offsets.each do |offset|

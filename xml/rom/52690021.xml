@@ -1211,7 +1211,7 @@
 	</table>
 
 	<table name="Unknown Map #0" category="EcuTools Research" address="5e91c" type="2D" scaling="uint16">
-		<table name="Unknown #1" address="6182e" type="Y Axis" elements="8" scaling="uint16"/>
+		<table name="Coolant Temperature" address="6182e" type="Y Axis" elements="8" scaling="Temp"/>
 	</table>
 
 	<table name="Unknown Map #1" category="EcuTools Research" address="5c90e" type="2D" scaling="uint8">
@@ -1729,7 +1729,7 @@
 	</table>
 
 	<table name="Unknown Map #131" category="EcuTools Research" address="56aa4" type="2D" scaling="uint16">
-		<table name="Coolant Temperature" address="6101e" type="Y Axis" elements="9" scaling="Temp"/>
+		<table name="Coolant Temp" address="6101e" type="Y Axis" elements="9" scaling="Temp"/>
 	</table>
 
 	<table name="Unknown Map #132" category="EcuTools Research" address="5bb1e" type="2D" scaling="uint16">
@@ -1753,11 +1753,11 @@
 	</table>
 
 	<table name="Unknown Map #137" category="EcuTools Research" address="5bb70" type="2D" scaling="uint8">
-		<table name="Unknown #1" address="6182e" type="Y Axis" elements="8" scaling="uint16"/>
+		<table name="Coolant Temp" address="6182e" type="Y Axis" elements="8" scaling="Temp"/>
 	</table>
 
 	<table name="Unknown Map #138" category="EcuTools Research" address="5bb58" type="2D" scaling="uint8">
-		<table name="Unknown #1" address="6182e" type="Y Axis" elements="8" scaling="uint16"/>
+		<table name="Coolant Temp" address="6182e" type="Y Axis" elements="8" scaling="Temp"/>
 	</table>
 
 	<table name="Unknown Map #139" category="EcuTools Research" address="5bb7c" type="2D" scaling="uint8">
@@ -1796,7 +1796,7 @@
 	</table>
 
 	<table name="Unknown Map #147" category="EcuTools Research" address="5aaf6" type="2D" scaling="uint8">
-		<table name="Unknown #1" address="6182e" type="Y Axis" elements="8" scaling="uint16"/>
+		<table name="Coolant Temp" address="6182e" type="Y Axis" elements="8" scaling="Temp"/>
 	</table>
 
 	<table name="Unknown Map #148" category="EcuTools Research" address="59dbc" type="2D" scaling="uint8">
@@ -1914,7 +1914,7 @@
 	</table>
 
 	<table name="Unknown Map #179" category="EcuTools Research" address="6077e" type="2D" scaling="uint8">
-		<table name="Unknown #1" address="6182e" type="Y Axis" elements="8" scaling="uint16"/>
+		<table name="Coolant Temp" address="6182e" type="Y Axis" elements="8" scaling="Temp"/>
 	</table>
 
 	<table name="Unknown Map #180" category="EcuTools Research" address="562a2" type="2D" scaling="uint16">
@@ -2816,11 +2816,11 @@
 	</table>
 
 	<table name="Unknown Map #391" category="EcuTools Research" address="5643e" type="2D" scaling="uint16">
-		<table name="Unknown #1" address="6182e" type="Y Axis" elements="8" scaling="uint16"/>
+		<table name="Coolant Temp" address="6182e" type="Y Axis" elements="8" scaling="Temp"/>
 	</table>
 
 	<table name="Unknown Map #392" category="EcuTools Research" address="56454" type="2D" scaling="uint16">
-		<table name="Unknown #1" address="6182e" type="Y Axis" elements="8" scaling="uint16"/>
+		<table name="Coolant Temp" address="6182e" type="Y Axis" elements="8" scaling="Temp"/>
 	</table>
 
 	<table name="Unknown Map #393" category="EcuTools Research" address="5a214" type="2D" scaling="uint8">
@@ -2864,43 +2864,43 @@
 	</table>
 
 	<table name="Unknown Map #402" category="EcuTools Research" address="57b6e" type="2D" scaling="uint8">
-		<table name="Unknown #1" address="6182e" type="Y Axis" elements="8" scaling="uint16"/>
+		<table name="Coolant Temp" address="6182e" type="Y Axis" elements="8" scaling="Temp"/>
 	</table>
 
 	<table name="Unknown Map #403" category="EcuTools Research" address="5aab6" type="2D" scaling="uint8">
-		<table name="Unknown #1" address="6182e" type="Y Axis" elements="8" scaling="uint16"/>
+		<table name="Coolant Temp" address="6182e" type="Y Axis" elements="8" scaling="Temp"/>
 	</table>
 
 	<table name="Unknown Map #404" category="EcuTools Research" address="5aa7a" type="2D" scaling="uint8">
-		<table name="Unknown #1" address="6182e" type="Y Axis" elements="8" scaling="uint16"/>
+		<table name="Coolant Temp" address="6182e" type="Y Axis" elements="8" scaling="Temp"/>
 	</table>
 
 	<table name="Unknown Map #405" category="EcuTools Research" address="5aa86" type="2D" scaling="uint8">
-		<table name="Unknown #1" address="6182e" type="Y Axis" elements="8" scaling="uint16"/>
+		<table name="Coolant Temp" address="6182e" type="Y Axis" elements="8" scaling="Temp"/>
 	</table>
 
 	<table name="Unknown Map #406" category="EcuTools Research" address="5aac2" type="2D" scaling="uint8">
-		<table name="Unknown #1" address="6182e" type="Y Axis" elements="8" scaling="uint16"/>
+		<table name="Coolant Temp" address="6182e" type="Y Axis" elements="8" scaling="Temp"/>
 	</table>
 
 	<table name="Unknown Map #407" category="EcuTools Research" address="5aa92" type="2D" scaling="uint8">
-		<table name="Unknown #1" address="6182e" type="Y Axis" elements="8" scaling="uint16"/>
+		<table name="Coolant Temp" address="6182e" type="Y Axis" elements="8" scaling="Temp"/>
 	</table>
 
 	<table name="Unknown Map #408" category="EcuTools Research" address="5aa9e" type="2D" scaling="uint8">
-		<table name="Unknown #1" address="6182e" type="Y Axis" elements="8" scaling="uint16"/>
+		<table name="Coolant Temp" address="6182e" type="Y Axis" elements="8" scaling="Temp"/>
 	</table>
 
 	<table name="Unknown Map #409" category="EcuTools Research" address="5aaaa" type="2D" scaling="uint8">
-		<table name="Unknown #1" address="6182e" type="Y Axis" elements="8" scaling="uint16"/>
+		<table name="Coolant Temp" address="6182e" type="Y Axis" elements="8" scaling="Temp"/>
 	</table>
 
 	<table name="Unknown Map #410" category="EcuTools Research" address="5aa3e" type="2D" scaling="uint8">
-		<table name="Unknown #1" address="6182e" type="Y Axis" elements="8" scaling="uint16"/>
+		<table name="Coolant Temp" address="6182e" type="Y Axis" elements="8" scaling="Temp"/>
 	</table>
 
 	<table name="Unknown Map #411" category="EcuTools Research" address="5aa4a" type="2D" scaling="uint8">
-		<table name="Unknown #1" address="6182e" type="Y Axis" elements="8" scaling="uint16"/>
+		<table name="Coolant Temp" address="6182e" type="Y Axis" elements="8" scaling="Temp"/>
 	</table>
 
 	<table name="Unknown Map #412" category="EcuTools Research" address="563c2" type="2D" scaling="uint8">
@@ -2908,15 +2908,15 @@
 	</table>
 
 	<table name="Unknown Map #413" category="EcuTools Research" address="5aa56" type="2D" scaling="uint8">
-		<table name="Unknown #1" address="6182e" type="Y Axis" elements="8" scaling="uint16"/>
+		<table name="Coolant Temp" address="6182e" type="Y Axis" elements="8" scaling="Temp"/>
 	</table>
 
 	<table name="Unknown Map #414" category="EcuTools Research" address="5aa62" type="2D" scaling="uint8">
-		<table name="Unknown #1" address="6182e" type="Y Axis" elements="8" scaling="uint16"/>
+		<table name="Coolant Temp" address="6182e" type="Y Axis" elements="8" scaling="Temp"/>
 	</table>
 
 	<table name="Unknown Map #415" category="EcuTools Research" address="5aa6e" type="2D" scaling="uint8">
-		<table name="Unknown #1" address="6182e" type="Y Axis" elements="8" scaling="uint16"/>
+		<table name="Coolant Temp" address="6182e" type="Y Axis" elements="8" scaling="Temp"/>
 	</table>
 
 </rom>
